@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://db0qqllkmpol2"]
+
+[ext_resource type="Script" uid="uid://djivs8gwemn5h" path="res://menu.gd" id="1_b3bc3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b3bc3"]
+bg_color = Color(0.5452941, 0.6432939, 0.37003794, 1)
+border_width_left = 30
+border_width_top = 30
+border_width_right = 30
+border_width_bottom = 30
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Control" type="Control" unique_id=1788034972]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b3bc3")
+
+[node name="Panel" type="Panel" parent="." unique_id=396764778]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_b3bc3")
+
+[node name="Label" type="Label" parent="." unique_id=1037249915]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -319.5
+offset_right = 319.5
+offset_bottom = 137.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.5860698, 0.57190824, 0.49494696, 0)
+theme_override_font_sizes/font_size = 100
+text = "MENU INICIO"
+
+[node name="Start" type="Button" parent="." unique_id=336332887]
+layout_mode = 0
+offset_left = 213.0
+offset_top = 426.0
+offset_right = 465.0
+offset_bottom = 537.0
+toggle_mode = true
+action_mode = 0
+text = "START"
+
+[node name="Exit" type="Button" parent="." unique_id=90704419]
+layout_mode = 0
+offset_left = 705.0
+offset_top = 426.0
+offset_right = 964.0
+offset_bottom = 542.0
+toggle_mode = true
+text = "EXIT"

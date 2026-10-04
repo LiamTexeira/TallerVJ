@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://womd21qaq3x3"]
+
+[ext_resource type="Script" uid="uid://cist7gfuexrhg" path="res://arma.gd" id="1_uya3a"]
+[ext_resource type="Texture2D" uid="uid://cr5t7mko16uf3" path="res://Assets/kenney_roguelike-characters/Spritesheet/roguelikeChar_transparent.png" id="2_bftl6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47or8"]
+atlas = ExtResource("2_bftl6")
+region = Rect2(866, 0, 8, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlgde"]
+atlas = ExtResource("2_bftl6")
+region = Rect2(866, 16, 8, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bmbf3"]
+atlas = ExtResource("2_bftl6")
+region = Rect2(866, 32, 8, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bulvi"]
+atlas = ExtResource("2_bftl6")
+region = Rect2(866, 48, 8, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pcjl"]
+atlas = ExtResource("2_bftl6")
+region = Rect2(866, 64, 8, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwfed"]
+atlas = ExtResource("2_bftl6")
+region = Rect2(866, 80, 8, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkig6"]
+atlas = ExtResource("2_bftl6")
+region = Rect2(866, 96, 8, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fs2fy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47or8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wlgde")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bmbf3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bulvi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pcjl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwfed")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkig6")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qeg6f"]
+radius = 7.0
+
+[node name="Area2D" type="Area2D" unique_id=564433244]
+script = ExtResource("1_uya3a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=210858469]
+position = Vector2(1, 0)
+scale = Vector2(1.25, 1)
+sprite_frames = SubResource("SpriteFrames_fs2fy")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.13833205
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1020951773]
+shape = SubResource("CircleShape2D_qeg6f")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
