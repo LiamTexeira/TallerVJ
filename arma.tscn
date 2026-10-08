@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://womd21qaq3x3"]
 
-[ext_resource type="Script" uid="uid://cist7gfuexrhg" path="res://arma.gd" id="1_uya3a"]
+[ext_resource type="Script" uid="uid://cist7gfuexrhg" path="res://Scripts/arma.gd" id="1_uya3a"]
 [ext_resource type="Texture2D" uid="uid://cr5t7mko16uf3" path="res://Assets/kenney_roguelike-characters/Spritesheet/roguelikeChar_transparent.png" id="2_bftl6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_47or8"]

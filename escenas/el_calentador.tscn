@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dw4chnwehktwe"]
+
+[ext_resource type="Script" uid="uid://clxmldjjurae7" path="res://escenas/el_calentador.gd" id="1_7v04n"]
+
+[node name="ElCalentador" type="Control" unique_id=1225885389]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_7v04n")
+
+[node name="Control" type="Control" parent="." unique_id=413738451]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=918063035]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1
+
+[node name="FASE 1_ EL CALENTADOR - Elige la temperatura del agua" type="Label" parent="VBoxContainer" unique_id=1627306586]
+layout_mode = 2
+
+[node name="Boton80" type="Button" parent="VBoxContainer" unique_id=2090535388]
+layout_mode = 2
+text = "80°C Agua Templada (Normal)"
+
+[node name="Boton100" type="Button" parent="VBoxContainer" unique_id=1331034266]
+layout_mode = 2
+text = "100°C - Agua Caliente (+25_ Efecto Yerba)"
+
+[node name="Boton120" type="Button" parent="VBoxContainer" unique_id=1756623114]
+layout_mode = 2
+text = "120°C - Agua Hirviendo (2x Efecto Yerba _ Sufres Quemadura)"
