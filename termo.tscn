@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bpso1ywl2omgn"]
+
+[ext_resource type="PackedScene" uid="uid://dqdxlfus8q05" path="res://Weapon.tscn" id="1_6owgs"]
+[ext_resource type="Texture2D" uid="uid://dsagpb18a4qm8" path="res://Assets/kenney_roguelike-characters/Preview.png" id="2_7qfcs"]
+[ext_resource type="Script" uid="uid://dv0wcbh80frmm" path="res://termo.gd" id="2_ruas0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ruas0"]
+atlas = ExtResource("2_7qfcs")
+region = Rect2(403, 364, 6, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6owgs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ruas0")
+}],
+"loop": 1,
+"name": &"termo",
+"speed": 5.0
+}]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_md1gn"]
+b = Vector2(0, 13)
+
+[node name="Node2D" unique_id=497934142 instance=ExtResource("1_6owgs")]
+script = ExtResource("2_ruas0")
+
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=1443688121]
+position = Vector2(0, 7)
+sprite_frames = SubResource("SpriteFrames_6owgs")
+animation = &"termo"
+
+[node name="CollisionShape2D" parent="Area2D" parent_id_path=PackedInt32Array(1333312529) index="0" unique_id=1549134662]
+shape = SubResource("SegmentShape2D_md1gn")

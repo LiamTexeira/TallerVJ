@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://dmbcgoorl3ghr" path="res://Assets/kenney_roguelike-rpg-pack/Sample1.png" id="1_jwv3a"]
 [ext_resource type="PackedScene" uid="uid://jbd8mylxstx3" path="res://player.tscn" id="2_dopym"]
 [ext_resource type="PackedScene" uid="uid://womd21qaq3x3" path="res://arma.tscn" id="3_ootpb"]
-[ext_resource type="PackedScene" uid="uid://c4op6cup2nrcs" path="res://paloma_mutante.tscn" id="4_v38iq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dopym"]
 texture = ExtResource("1_jwv3a")
@@ -2475,7 +2474,7 @@ tile_map_data = PackedByteArray("AAD+//r/AAAAAAAAAAD+//v/AAAAAAEAAAD+//z/AAAAAAI
 tile_set = SubResource("TileSet_v38iq")
 
 [node name="CharacterBody2D" parent="." unique_id=1835732082 instance=ExtResource("2_dopym")]
-position = Vector2(353, 123)
+position = Vector2(324, 229)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=2124442814]
 position = Vector2(2, 2)
@@ -2484,6 +2483,3 @@ position_smoothing_enabled = true
 
 [node name="Area2D" parent="." unique_id=564433244 instance=ExtResource("3_ootpb")]
 position = Vector2(272, 221)
-
-[node name="PalomaMutante" parent="." unique_id=1613642628 instance=ExtResource("4_v38iq")]
-position = Vector2(313, 47)
