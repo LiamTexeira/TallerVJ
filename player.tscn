@@ -440,6 +440,8 @@ position = Vector2(0.99999994, -16)
 scale = Vector2(0.12, 0.13254687)
 sprite_frames = SubResource("SpriteFrames_xrivr")
 animation = &"walk"
+frame = 12
+frame_progress = 0.93092585
 
 [node name="AreaAtaque" type="Area2D" parent="." unique_id=1268118716]
 position = Vector2(-3, -15)
@@ -450,5 +452,9 @@ collision_mask = 4
 position = Vector2(6, 0)
 shape = SubResource("CircleShape2D_xrivr")
 disabled = true
+
+[node name="WeaponHolder" type="Marker2D" parent="." unique_id=1589956605]
+position = Vector2(2, -12)
+rotation = 0.55152404
 
 [connection signal="body_entered" from="AreaAtaque" to="." method="_on_area_ataque_body_entered"]

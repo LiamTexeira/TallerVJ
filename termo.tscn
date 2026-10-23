@@ -68,7 +68,7 @@ region = Rect2(540, 464, 270, 123)
 atlas = ExtResource("4_d2ui2")
 region = Rect2(810, 464, 270, 123)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_y7rex"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ruas0"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -136,18 +136,19 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y7rex"]
 radius = 4.117591
 
-[node name="Node2D" unique_id=497934142 instance=ExtResource("1_6owgs")]
+[node name="Node2D2" unique_id=497934142 instance=ExtResource("1_6owgs")]
 visibility_layer = 1
 script = ExtResource("2_ruas0")
+damage = 5
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=1443688121]
 position = Vector2(11.713196, -6.545385)
 rotation = -0.43109632
 scale = Vector2(0.13716538, 0.13331248)
-sprite_frames = SubResource("SpriteFrames_y7rex")
+sprite_frames = SubResource("SpriteFrames_ruas0")
 animation = &"swing_heavy"
-frame = 4
-frame_progress = 0.5928436
+frame = 9
+frame_progress = 0.6276052
 
 [node name="CollisionShape2D" parent="Area2D" parent_id_path=PackedInt32Array(1333312529) index="0" unique_id=1549134662]
 visibility_layer = 2
