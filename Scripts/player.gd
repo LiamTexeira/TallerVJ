@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+signal vida_cambiada(vida_actual, vida_maxima)
+signal jugador_muerto
+
 const SPEED := 100.0
 const DASH_SPEED := 300.0
 const DASH_TIME := 0.15
@@ -14,7 +17,6 @@ var dash_cooldown_timer := 0.0
 var attack_timer := 0.0
 var dash_direction := Vector2.ZERO
 var facing := Vector2.DOWN
-
 
 # --- VARIABLES DE VIDA E INVULNERABILIDAD ---
 @export var vida_maxima: int = 100
@@ -32,16 +34,56 @@ var is_invulnerable := false
 
 func _ready() -> void:
 	vida_actual = RunManager.vida_actual # Sincronizar vida inicial con el RunManager
+	emit_signal("vida_cambiada", vida_actual, vida_maxima) # Notifica vida inicial
 	
 	# Aseguramos que el hitbox comience desactivado
 	if collision_ataque:
 		collision_ataque.disabled = true
+		
+	# Sincronizamos el HUD de entrada
+	_notificar_hud_temperatura()
 
 
 func _unhandled_input(event: InputEvent) -> void:
 	# Verificamos si se presiono la tecla y evitamos que se repita si queda apretada
 	if event.is_action_pressed("ui_accept") and not event.is_echo():
 		tomar_mate()
+		
+	# Teclas 1, 2 y 3 para cambiar la temperatura en tiempo real
+	if event is InputEventKey and event.pressed and not event.echo:
+		match event.keycode:
+			KEY_1:
+				cambiar_temperatura(80)
+			KEY_2:
+				cambiar_temperatura(100)
+			KEY_3:
+				cambiar_temperatura(120)
+
+
+func cambiar_temperatura(temp: int) -> void:
+	RunManager.temperatura_actual = temp
+	
+	match temp:
+		80:
+			RunManager.multiplicador_buff_yerba = 1.00
+			RunManager.dano_quemadura_por_sorbo = 0
+		100:
+			RunManager.multiplicador_buff_yerba = 1.50
+			RunManager.dano_quemadura_por_sorbo = 0
+		120:
+			RunManager.multiplicador_buff_yerba = 2.00
+			RunManager.dano_quemadura_por_sorbo = 1 # O el daño por quemadura que prefieras
+			
+	_notificar_hud_temperatura()
+
+
+func _notificar_hud_temperatura() -> void:
+	var texto_hud := "Temp: %d°C | Buff Yerba: x%.2f" % [RunManager.temperatura_actual, RunManager.multiplicador_buff_yerba]
+	
+	if has_node("/root/HUD"):
+		get_node("/root/HUD").actualizar_temperatura_label(texto_hud)
+	elif has_node("/root/Hud"):
+		get_node("/root/Hud").actualizar_temperatura_label(texto_hud)
 
 
 func _physics_process(delta: float) -> void:
@@ -74,7 +116,8 @@ func _physics_process(delta: float) -> void:
 			is_attacking = false
 			collision_ataque.disabled = true # Desactivamos el hitbox al finalizar el ataque
 	else:
-		velocity = input_dir * SPEED
+		var speed_actual: float = SPEED * RunManager.multiplicador_buff_yerba
+		velocity = input_dir * speed_actual
 
 		if Input.is_action_just_pressed("dash") and dash_cooldown_timer <= 0.0:
 			start_dash(input_dir)
@@ -83,6 +126,12 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	_actualizar_animacion(input_dir)
+
+
+func _process(_delta: float) -> void:
+	# tecla rapida para probar la muerte instantanea
+	if Input.is_key_pressed(KEY_N):
+		morir()
 
 
 func start_dash(input_dir: Vector2) -> void:
@@ -128,7 +177,6 @@ func _actualizar_animacion(input_dir: Vector2) -> void:
 
 # SEÑAL CONECTADA DESDE AreaAtaque
 func _on_area_ataque_body_entered(body: Node2D) -> void:
-	# Si choca con un nodo que tenga la función recibir_danio (como la paloma_mutante)
 	if body.has_method("recibir_danio"):
 		body.recibir_danio(1)
 
@@ -140,12 +188,12 @@ func recibir_danio(cantidad: int) -> void:
 		
 	RunManager.recibir_danio(cantidad)
 	vida_actual = RunManager.vida_actual
+	emit_signal("vida_cambiada", vida_actual, vida_maxima)
 	print("¡Jugador golpeado! Vida restante: ", vida_actual)
 	
 	if vida_actual <= 0:
 		morir()
 	else:
-		# Activar invulnerabilidad temporal
 		is_invulnerable = true
 		invulnerable_timer = TIEMPO_INVULNERABLE
 
@@ -155,7 +203,6 @@ func tomar_mate() -> void:
 	print("\n--- CEBANDO MATE ---")
 	print("Temperatura elegida en El Calentador: ", RunManager.temperatura_actual, "°C")
 	
-	# Aplicar daño por quemadura si elegiste 120°C (sin curación)
 	if RunManager.dano_quemadura_por_sorbo > 0:
 		recibir_danio(RunManager.dano_quemadura_por_sorbo)
 		print("¡Te quemaste la boca al cebar a ", RunManager.temperatura_actual, "°C! Daño sufrido: ", RunManager.dano_quemadura_por_sorbo)
@@ -163,7 +210,20 @@ func tomar_mate() -> void:
 		print("Mate cebado sin quemaduras. Buff multiplicador: x", RunManager.multiplicador_buff_yerba)
 
 
+func curar(cantidad: int) -> void:
+	if vida_actual < vida_maxima:
+		vida_actual = min(vida_actual + cantidad, vida_maxima)
+		print("Jugador curado. Vida actual: ", vida_actual)
+		
+		if has_signal("vida_cambiada"):
+			emit_signal("vida_cambiada", vida_actual, vida_maxima)
+
+
 func morir() -> void:
 	print("El jugador ha muerto")
+	emit_signal("jugador_muerto")
 	set_physics_process(false)
 	visible = false
+	
+	var pantalla_over = load("res://escenas/game_over.tscn").instantiate()
+	get_tree().current_scene.add_child(pantalla_over)

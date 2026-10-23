@@ -4,6 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://jbd8mylxstx3" path="res://player.tscn" id="2_dopym"]
 [ext_resource type="PackedScene" uid="uid://womd21qaq3x3" path="res://arma.tscn" id="3_ootpb"]
 [ext_resource type="PackedScene" uid="uid://c4op6cup2nrcs" path="res://paloma_mutante.tscn" id="4_v38iq"]
+[ext_resource type="PackedScene" uid="uid://eu10cgxy31o0" path="res://escenas/PauseMenu.tscn" id="5_v8kj3"]
+[ext_resource type="PackedScene" uid="uid://d1fwgugvp4px7" path="res://escenas/Spawner.tscn" id="6_crycw"]
+[ext_resource type="Script" uid="uid://bv7yfnolrxifc" path="res://WaveManager.gd" id="7_i2041"]
+[ext_resource type="PackedScene" uid="uid://7pcrrydwp62y" path="res://perro_cimarron.tscn" id="7_usj0q"]
+[ext_resource type="AudioStream" uid="uid://00ufkvp7lhif" path="res://Assets/ACTION PACK 1 OGG/Battle Encounter.ogg" id="8_xy4tn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dopym"]
 texture = ExtResource("1_jwv3a")
@@ -2486,4 +2491,30 @@ position_smoothing_enabled = true
 position = Vector2(272, 221)
 
 [node name="PalomaMutante" parent="." unique_id=1613642628 instance=ExtResource("4_v38iq")]
-position = Vector2(313, 47)
+position = Vector2(305, 38)
+
+[node name="PalomaMutante2" parent="." unique_id=100917534 instance=ExtResource("4_v38iq")]
+position = Vector2(784, 33)
+
+[node name="PalomaMutante3" parent="." unique_id=183433101 instance=ExtResource("4_v38iq")]
+position = Vector2(212, 106)
+
+[node name="PalomaMutante4" parent="." unique_id=17524735 instance=ExtResource("4_v38iq")]
+position = Vector2(202.00002, 196)
+
+[node name="PauseMenu" parent="." unique_id=742826565 instance=ExtResource("5_v8kj3")]
+
+[node name="Spawner" parent="." unique_id=379270129 node_paths=PackedStringArray("jugador") instance=ExtResource("6_crycw")]
+jugador = NodePath("../CharacterBody2D")
+perro_scene = ExtResource("7_usj0q")
+radio_minimo = 80.0
+radio_maximo = 130.0
+
+[node name="WaveManager" type="Node" parent="." unique_id=951739922 node_paths=PackedStringArray("spawner")]
+script = ExtResource("7_i2041")
+spawner = NodePath("../Spawner")
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="." unique_id=1141073140]
+stream = ExtResource("8_xy4tn")
+volume_db = -20.632
+autoplay = true

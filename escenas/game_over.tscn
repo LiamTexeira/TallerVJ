@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://qrknk6hs0ykl"]
+
+[ext_resource type="Script" uid="uid://bukfbgufqnn1r" path="res://escenas/game_over.gd" id="1_5bjgx"]
+
+[node name="GameOver" type="CanvasLayer" unique_id=948824668]
+script = ExtResource("1_5bjgx")
+
+[node name="FondoOscuro" type="ColorRect" parent="." unique_id=221014486]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.26, 0.26, 0.26, 0.5137255)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=818877795]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1325025236]
+layout_mode = 2
+
+[node name="TituloGameOver" type="Label" parent="CenterContainer/VBoxContainer" unique_id=99724593]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.14999998, 0.14999998, 1)
+theme_override_font_sizes/font_size = 64
+text = "¡HAS MUERTO!"
+horizontal_alignment = 1
+
+[node name="TextoInstruccion" type="Label" parent="CenterContainer/VBoxContainer" unique_id=296164321]
+layout_mode = 2
+text = "Los enemigos te han superado... presiona R para intentar de nuevo "
+
+[node name="Espaciador" type="Control" parent="CenterContainer/VBoxContainer" unique_id=1423579270]
+layout_mode = 2
+
+[node name="BotonReiniciar" type="Button" parent="CenterContainer/VBoxContainer" unique_id=4918840]
+custom_minimum_size = Vector2(160, 40)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+text = "REINTENTAR"
+
+[node name="Espaciador2" type="Control" parent="CenterContainer/VBoxContainer" unique_id=554492263]
+layout_mode = 2
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/BotonReiniciar" to="." method="_on_boton_reiniciar_pressed"]

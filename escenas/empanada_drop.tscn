@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bgpxg1n5kovrm"]
+
+[ext_resource type="Script" uid="uid://b2a1iqa6wjubf" path="res://escenas/empanada_drop.gd" id="1_jwj5i"]
+[ext_resource type="Texture2D" uid="uid://3hcd5ydtjkh7" path="res://Assets/comida/empanada-mordida.png" id="2_etnhs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hqtel"]
+radius = 5.0990195
+
+[node name="EmpanadaDrop" type="Area2D" unique_id=1664003771]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_jwj5i")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=99388086]
+position = Vector2(-3.2499995, -2.4999998)
+scale = Vector2(0.5666667, 0.5833334)
+texture = ExtResource("2_etnhs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=305839097]
+position = Vector2(-4, -2)
+shape = SubResource("CircleShape2D_hqtel")

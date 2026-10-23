@@ -9,6 +9,9 @@ extends CanvasLayer
 @onready var label_temperatura: Label = $Control/MarginContainer/VBoxContainer/LabelTemperatura
 
 
+@onready var label_oleada: Label = $Control/MarginContainer/VBoxContainer/LabelOleada
+@onready var label_tiempo: Label = $Control/MarginContainer/VBoxContainer/LabelTiempo
+
 func _ready() -> void:
 	# Escuchar la señal del RunManager cuando la vida cambia
 	RunManager.vida_cambiada.connect(_on_vida_cambiada)
@@ -50,3 +53,24 @@ func _actualizar_texto_temperatura() -> void:
 			RunManager.temperatura_actual,
 			RunManager.multiplicador_buff_yerba
 		]
+
+
+func actualizar_oleada(numero: int) -> void:
+	if label_oleada:
+		label_oleada.text = "Oleada: " + str(numero)
+
+
+func actualizar_tiempo(segundos_restantes: float) -> void:
+	if label_tiempo:
+		var total_seg: int = int(max(0.0, segundos_restantes))
+		var minutos: int = total_seg / 60
+		var segundos: int = total_seg % 60
+		label_tiempo.text = "%02d:%02d" % [minutos, segundos]
+		#print("HUD actualizado visualmente a: ", label_tiempo.text)
+	else:
+		print("ERROR HUD: label_tiempo es NULL")
+
+
+func actualizar_temperatura_label(texto: String) -> void:
+	if label_temperatura:
+		label_temperatura.text = texto

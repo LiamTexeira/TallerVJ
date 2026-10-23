@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dw0crub2wjdnq" path="res://Assets/HUD/Life/life5.png" id="7_iyjop"]
 [ext_resource type="Texture2D" uid="uid://c16sbu26o083m" path="res://Assets/HUD/Life/life6.png" id="8_nqx4a"]
 
-[node name="Hud" type="CanvasLayer" unique_id=1017823070]
+[node name="Hud" type="CanvasLayer" unique_id=1017823070 groups=["HUD"]]
 script = ExtResource("1_adsit")
 texturas_vida = Array[Texture2D]([ExtResource("3_43qxj"), ExtResource("4_yp0x8"), ExtResource("5_a7n87"), ExtResource("6_k70nb"), ExtResource("7_iyjop"), ExtResource("8_nqx4a")])
 
@@ -45,8 +45,16 @@ layout_mode = 2
 text = "Temp: 80°C | Buff Yerba: x1.00"
 
 [node name="BarraVida" type="TextureProgressBar" parent="Control/MarginContainer/VBoxContainer" unique_id=741906818]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
-size_flags_horizontal = 0
 value = 100.0
 nine_patch_stretch = true
 texture_progress = ExtResource("3_43qxj")
+
+[node name="LabelOleada" type="Label" parent="Control/MarginContainer/VBoxContainer" unique_id=2108040984]
+layout_mode = 2
+text = "Oleada 1"
+
+[node name="LabelTiempo" type="Label" parent="Control/MarginContainer/VBoxContainer" unique_id=1466180984]
+layout_mode = 2
+text = "02:00"
