@@ -64,16 +64,26 @@ func _actualizar_animacion() -> void:
 
 	match estado_actual:
 		Estado.PATRULLA:
-			sprite.play("walk" if velocity != Vector2.ZERO else "idle")
+			sprite.play(_animacion_caminar("walk") if velocity != Vector2.ZERO else "idle")
 		Estado.PERSECUCION:
-			sprite.play("walk")
+			sprite.play(_animacion_caminar("walk2"))
 		Estado.ATAQUE:
-			sprite.play("attack")
+			sprite.play("attack2")
 		Estado.HERIDO:
-			sprite.play("hurt")
+			sprite.play("hurt2")
 		Estado.MUERTE:
-			sprite.play("death")
+			sprite.play("death2")
 
+func _animacion_caminar(prefijo: String) -> String:
+	# Si se mueve más en vertical que en horizontal, usa la variante _n / _s
+	if abs(velocity.y) > abs(velocity.x):
+		var nombre := prefijo + ("_n" if velocity.y < 0.0 else "_s")
+		if sprite.sprite_frames.has_animation(nombre):
+			return nombre
+	# Movimiento lateral: usa el prefijo solo si existe, si no "walk"
+	if sprite.sprite_frames.has_animation(prefijo):
+		return prefijo
+	return "walk"
 
 func _logica_patrulla(delta: float) -> void:
 	tiempo_cambio_patrulla -= delta
@@ -152,19 +162,57 @@ func _desactivar_dano() -> void:
 
 func _on_animation_finished() -> void:
 	match sprite.animation:
-		"attack":
+		"attack2":
 			_desactivar_dano()
 			if objetivo_jugador:
 				estado_actual = Estado.PERSECUCION
 			else:
 				estado_actual = Estado.PATRULLA
-		"hurt":
+		"hurt2":
 			if objetivo_jugador:
 				estado_actual = Estado.PERSECUCION
 			else:
 				estado_actual = Estado.PATRULLA
+<<<<<<< Updated upstream
 		"death":
 			queue_free()
+=======
+		"death2":
+			morir() # <-- Llamamos a morir() aquí para procesar el drop antes del queue_free
+
+
+# En paloma_mutante.gd
+func morir() -> void:
+	print("--- PALOMA MUERTA ---")
+	
+	# Buscamos el nodo de forma segura en el árbol
+	var wave_mgr = get_tree().root.find_child("WaveManager", true, false)
+	
+	if wave_mgr:
+		print("WaveManager encontrado correctamente. Llamando a reducir_tiempo...")
+		wave_mgr.reducir_tiempo(10.0)
+	else:
+		print("ERROR CRÍTICO: No se encontró el nodo WaveManager en la escena")
+
+	_intentar_drop()
+	queue_free()
+
+func _intentar_drop() -> void:
+	if not empanada_scene:
+		print("OJO: No hay empanada_scene asignada en el Inspector de la Paloma")
+		return
+
+	var numero_azar := randf()
+	if numero_azar <= probabilidad_drop:
+		var empanada = empanada_scene.instantiate()
+		empanada.global_position = global_position
+		
+		# Agregamos al nivel para que persista
+		get_parent().add_child(empanada)
+		print("¡Empanada soltada con éxito en la posición: ", global_position)
+	else:
+		print("Mala suerte, esta paloma no soltó empanada (roll: ", numero_azar, ")")
+>>>>>>> Stashed changes
 
 
 func _on_zona_deteccion_body_entered(body: Node2D) -> void:
