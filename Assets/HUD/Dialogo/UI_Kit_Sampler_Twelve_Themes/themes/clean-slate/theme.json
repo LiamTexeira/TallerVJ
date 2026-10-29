@@ -1,0 +1,193 @@
+{
+  "schema": "csaf-uikit-theme/1",
+  "id": "clean-slate",
+  "name": "Clean Slate",
+  "note": "Kit 2 (2026-10-16): a flat, light, modern minimal theme. Hairline outlines in each family's dark tone, 4-unit rounded corners, a 1-unit lip band instead of a bevel, a soft straight-down shadow, no ornaments. One cool blue accent, one red danger family, neutral cool greys. Every text-on-fill pair is re-measured by the gate.",
+  "geometry": {
+    "border": 1,
+    "radius": 4,
+    "shadow": 1,
+    "hdScale": 3,
+    "style": "flat",
+    "ornaments": false
+  },
+  "demo": {
+    "buttons": [
+      "Play",
+      "Settings",
+      "Reset",
+      "Locked"
+    ],
+    "checks": [
+      "Sound",
+      "Hints"
+    ],
+    "toggle": "Dark mode",
+    "slider": "Volume",
+    "field": "Player name",
+    "options": [
+      "Easy",
+      "Normal",
+      "Expert"
+    ],
+    "tabs": [
+      "Levels",
+      "Stats",
+      "Shop"
+    ],
+    "tooltip": "Bonus  +250 pts",
+    "speaker": "Guide",
+    "lines": [
+      "Match three tiles of one colour to clear them.",
+      "Clear the board before the timer runs out."
+    ]
+  },
+  "colors": {
+    "outline": "#2a3140",
+    "shadow": "#bcc3ce",
+    "track": "#e4e8ee",
+    "trackLight": "#f1f3f6",
+    "backdrop": "#dde2e9",
+    "cursorFill": "#ffffff",
+    "cursorShade": "#c9ced8",
+    "textDim": "#6b7383",
+    "hp": [
+      "#a82828",
+      "#e04848",
+      "#f59a9a"
+    ],
+    "mp": [
+      "#1f4fb8",
+      "#3b7af0",
+      "#9cc0ff"
+    ],
+    "xp": [
+      "#a87708",
+      "#efb22a",
+      "#ffe08a"
+    ],
+    "stamina": [
+      "#2a8039",
+      "#44bd59",
+      "#a6eab2"
+    ],
+    "boss": [
+      "#64289e",
+      "#9654dd",
+      "#d2b0f5"
+    ],
+    "panelDarkFill": "#1d2330d0"
+  },
+  "families": {
+    "frame": {
+      "normal": {
+        "light": "#ffffff",
+        "mid": "#e6e9ef",
+        "dark": "#aeb6c3",
+        "fill": "#f8f9fb",
+        "shade": "#e3e7ee",
+        "text": "#1d2330"
+      },
+      "hover": {
+        "light": "#ffffff",
+        "mid": "#eef1f5",
+        "dark": "#8a94a5",
+        "fill": "#ffffff",
+        "shade": "#e6e9ef",
+        "text": "#11161f"
+      },
+      "pressed": {
+        "light": "#ffffff",
+        "mid": "#e6e9ef",
+        "dark": "#8a94a5",
+        "fill": "#eceff4",
+        "shade": "#d9dee7",
+        "text": "#1d2330"
+      },
+      "active": {
+        "light": "#ffffff",
+        "mid": "#eef1f5",
+        "dark": "#356be0",
+        "fill": "#ffffff",
+        "shade": "#e6e9ef",
+        "text": "#11161f"
+      },
+      "disabled": {
+        "light": "#f3f4f6",
+        "mid": "#e9ebef",
+        "dark": "#cdd2db",
+        "fill": "#eef0f3",
+        "shade": "#e5e8ed",
+        "text": "#5b6372"
+      }
+    },
+    "accent": {
+      "normal": {
+        "light": "#9db8f5",
+        "mid": "#5a86ee",
+        "dark": "#2552c0",
+        "fill": "#356be0",
+        "shade": "#2c5bc9",
+        "text": "#ffffff"
+      },
+      "hover": {
+        "light": "#a8c0f6",
+        "mid": "#5f8bef",
+        "dark": "#1f47a8",
+        "fill": "#2e61d4",
+        "shade": "#2651ba",
+        "text": "#ffffff"
+      },
+      "pressed": {
+        "light": "#9db8f5",
+        "mid": "#4f7ce6",
+        "dark": "#1b3f96",
+        "fill": "#2856c0",
+        "shade": "#2149a6",
+        "text": "#ffffff"
+      },
+      "disabled": {
+        "light": "#d3dbea",
+        "mid": "#b6c2d8",
+        "dark": "#a2b0c8",
+        "fill": "#c3cde0",
+        "shade": "#b5c1d6",
+        "text": "#2b3650"
+      }
+    },
+    "danger": {
+      "normal": {
+        "light": "#f6a3a3",
+        "mid": "#e05a5a",
+        "dark": "#a32828",
+        "fill": "#cf3a3a",
+        "shade": "#b83131",
+        "text": "#ffffff"
+      },
+      "hover": {
+        "light": "#f8b4b4",
+        "mid": "#e46a6a",
+        "dark": "#902020",
+        "fill": "#bf3131",
+        "shade": "#a82929",
+        "text": "#ffffff"
+      },
+      "pressed": {
+        "light": "#f6a3a3",
+        "mid": "#d04c4c",
+        "dark": "#7f1b1b",
+        "fill": "#aa2a2a",
+        "shade": "#932222",
+        "text": "#ffffff"
+      },
+      "disabled": {
+        "light": "#efd9d9",
+        "mid": "#e4c5c5",
+        "dark": "#d3afaf",
+        "fill": "#e6caca",
+        "shade": "#dbbcbc",
+        "text": "#5c2a2a"
+      }
+    }
+  }
+}

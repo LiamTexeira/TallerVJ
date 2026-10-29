@@ -3,12 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://dmbcgoorl3ghr" path="res://Assets/kenney_roguelike-rpg-pack/Sample1.png" id="1_jwv3a"]
 [ext_resource type="PackedScene" uid="uid://jbd8mylxstx3" path="res://player.tscn" id="2_dopym"]
 [ext_resource type="PackedScene" uid="uid://womd21qaq3x3" path="res://arma.tscn" id="3_ootpb"]
-[ext_resource type="PackedScene" uid="uid://c4op6cup2nrcs" path="res://paloma_mutante.tscn" id="4_v38iq"]
 [ext_resource type="PackedScene" uid="uid://eu10cgxy31o0" path="res://escenas/PauseMenu.tscn" id="5_v8kj3"]
 [ext_resource type="PackedScene" uid="uid://d1fwgugvp4px7" path="res://escenas/Spawner.tscn" id="6_crycw"]
 [ext_resource type="Script" uid="uid://bv7yfnolrxifc" path="res://WaveManager.gd" id="7_i2041"]
 [ext_resource type="PackedScene" uid="uid://7pcrrydwp62y" path="res://perro_cimarron.tscn" id="7_usj0q"]
+[ext_resource type="PackedScene" uid="uid://t67fr2djnru3" path="res://escenas/npc_chofer.tscn" id="8_5j5gb"]
 [ext_resource type="AudioStream" uid="uid://00ufkvp7lhif" path="res://Assets/ACTION PACK 1 OGG/Battle Encounter.ogg" id="8_xy4tn"]
+[ext_resource type="PackedScene" uid="uid://da1wsqqmvfruc" path="res://escenas/npc_el10.tscn" id="9_5j5gb"]
+[ext_resource type="PackedScene" uid="uid://c50s0n7viab3b" path="res://escenas/npc_tortas_fritas.tscn" id="11_hx44q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dopym"]
 texture = ExtResource("1_jwv3a")
@@ -2490,18 +2492,6 @@ position_smoothing_enabled = true
 [node name="Area2D" parent="." unique_id=564433244 instance=ExtResource("3_ootpb")]
 position = Vector2(272, 221)
 
-[node name="PalomaMutante" parent="." unique_id=1613642628 instance=ExtResource("4_v38iq")]
-position = Vector2(305, 38)
-
-[node name="PalomaMutante2" parent="." unique_id=100917534 instance=ExtResource("4_v38iq")]
-position = Vector2(784, 33)
-
-[node name="PalomaMutante3" parent="." unique_id=183433101 instance=ExtResource("4_v38iq")]
-position = Vector2(212, 106)
-
-[node name="PalomaMutante4" parent="." unique_id=17524735 instance=ExtResource("4_v38iq")]
-position = Vector2(202.00002, 196)
-
 [node name="PauseMenu" parent="." unique_id=742826565 instance=ExtResource("5_v8kj3")]
 
 [node name="Spawner" parent="." unique_id=379270129 node_paths=PackedStringArray("jugador") instance=ExtResource("6_crycw")]
@@ -2510,11 +2500,26 @@ perro_scene = ExtResource("7_usj0q")
 radio_minimo = 80.0
 radio_maximo = 130.0
 
-[node name="WaveManager" type="Node" parent="." unique_id=951739922 node_paths=PackedStringArray("spawner")]
+[node name="NpcEl10" parent="." unique_id=522372568 instance=ExtResource("8_5j5gb")]
+visible = false
+position = Vector2(133, 421)
+
+[node name="WaveManager" type="Node" parent="." unique_id=951739922]
 script = ExtResource("7_i2041")
-spawner = NodePath("../Spawner")
+npc_el10_scene = ExtResource("9_5j5gb")
+npc_chofer_scene = ExtResource("8_5j5gb")
+npc_tortas_fritas_scene = ExtResource("11_hx44q")
 
 [node name="BGM" type="AudioStreamPlayer2D" parent="." unique_id=1141073140]
 stream = ExtResource("8_xy4tn")
 volume_db = -20.632
 autoplay = true
+
+[node name="SpawnEl10" type="Marker2D" parent="." unique_id=1233196043]
+position = Vector2(281, 387)
+
+[node name="SpawnChofer" type="Marker2D" parent="." unique_id=576738191]
+position = Vector2(636, 417)
+
+[node name="SpawnTortasFritas" type="Marker2D" parent="." unique_id=940705572]
+position = Vector2(861, 104)

@@ -1,0 +1,160 @@
+{
+  "schema": "csaf-uikit-theme/1",
+  "id": "ember-court",
+  "name": "Ember Court",
+  "note": "Built-in reference theme: dark plum panels, gilt frames, teal accent, crimson danger. Copy it to start a new theme; every colour is a decision, every contrast pair is re-measured by the gate.",
+  "geometry": {
+    "border": 3,
+    "radius": 2,
+    "shadow": 1,
+    "hdScale": 3
+  },
+  "colors": {
+    "outline": "#1b1020",
+    "shadow": "#0d0812",
+    "track": "#120c1a",
+    "trackLight": "#2a2236",
+    "backdrop": "#465468",
+    "cursorFill": "#fff8e8",
+    "cursorShade": "#c9b991",
+    "textDim": "#b9ab8e",
+    "hp": [
+      "#6b1a24",
+      "#d0453f",
+      "#ff8f73"
+    ],
+    "mp": [
+      "#1d3470",
+      "#3f6fd8",
+      "#8fb8ff"
+    ],
+    "xp": [
+      "#5b4a12",
+      "#d9a92b",
+      "#ffe17a"
+    ],
+    "stamina": [
+      "#245a1f",
+      "#4fae3a",
+      "#a8e57a"
+    ],
+    "boss": [
+      "#3a0f3f",
+      "#8e2a8a",
+      "#d873c9"
+    ],
+    "panelDarkFill": "#140c1cdc"
+  },
+  "families": {
+    "frame": {
+      "normal": {
+        "light": "#f2d184",
+        "mid": "#c9963f",
+        "dark": "#7a4f1f",
+        "fill": "#2b2040",
+        "shade": "#211830",
+        "text": "#f5ead2"
+      },
+      "hover": {
+        "light": "#fff0b8",
+        "mid": "#e3b458",
+        "dark": "#946227",
+        "fill": "#382a52",
+        "shade": "#2b2040",
+        "text": "#fff8e8"
+      },
+      "pressed": {
+        "light": "#f2d184",
+        "mid": "#a8782f",
+        "dark": "#5e3b16",
+        "fill": "#211830",
+        "shade": "#181122",
+        "text": "#f5ead2"
+      },
+      "active": {
+        "light": "#fff0b8",
+        "mid": "#e3b458",
+        "dark": "#946227",
+        "fill": "#2b2040",
+        "shade": "#211830",
+        "text": "#fff8e8"
+      },
+      "disabled": {
+        "light": "#8d8696",
+        "mid": "#5d5866",
+        "dark": "#3a3641",
+        "fill": "#2c2a31",
+        "shade": "#232128",
+        "text": "#c9c4d1"
+      }
+    },
+    "accent": {
+      "normal": {
+        "light": "#7fd6c8",
+        "mid": "#2f8f84",
+        "dark": "#174a45",
+        "fill": "#1d625c",
+        "shade": "#174a45",
+        "text": "#fff3e3"
+      },
+      "hover": {
+        "light": "#b0f0e4",
+        "mid": "#3aa597",
+        "dark": "#1d5c56",
+        "fill": "#21706a",
+        "shade": "#1d625c",
+        "text": "#fff8ee"
+      },
+      "pressed": {
+        "light": "#7fd6c8",
+        "mid": "#256f67",
+        "dark": "#103632",
+        "fill": "#174a45",
+        "shade": "#103632",
+        "text": "#fff3e3"
+      },
+      "disabled": {
+        "light": "#86978f",
+        "mid": "#4f605b",
+        "dark": "#33403d",
+        "fill": "#29312f",
+        "shade": "#212826",
+        "text": "#c9d4d0"
+      }
+    },
+    "danger": {
+      "normal": {
+        "light": "#ff9a7e",
+        "mid": "#c8473a",
+        "dark": "#6b1a24",
+        "fill": "#9e2f35",
+        "shade": "#7d1f2a",
+        "text": "#fff3e3"
+      },
+      "hover": {
+        "light": "#ffc2a8",
+        "mid": "#de5a48",
+        "dark": "#7d1f2a",
+        "fill": "#ad353a",
+        "shade": "#9e2f35",
+        "text": "#fff8ee"
+      },
+      "pressed": {
+        "light": "#ff9a7e",
+        "mid": "#a8333a",
+        "dark": "#4f1019",
+        "fill": "#7d1f2a",
+        "shade": "#5f1520",
+        "text": "#fff3e3"
+      },
+      "disabled": {
+        "light": "#9a8a8c",
+        "mid": "#665457",
+        "dark": "#41353a",
+        "fill": "#322a2d",
+        "shade": "#272124",
+        "text": "#d6c9cc"
+      }
+    }
+  }
+}

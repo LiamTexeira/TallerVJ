@@ -1,0 +1,195 @@
+{
+  "schema": "csaf-uikit-theme/1",
+  "id": "hearthwood",
+  "name": "Hearthwood",
+  "note": "Kit 4 (2026-10-17): a warm cozy farming bevel theme. Honey wood frames with a carved channel (geometry.groove) and round log ends at the corners (geometry.corner \"log\") over cream parchment panels and paper fields, a leaf-green accent family for the main actions, brick red for danger, rounded corners. For farming and life sims. Every text-on-fill pair is re-measured by the gate.",
+  "geometry": {
+    "border": 4,
+    "radius": 4,
+    "shadow": 1,
+    "hdScale": 3,
+    "style": "bevel",
+    "ornaments": true,
+    "corner": "log",
+    "groove": true
+  },
+  "demo": {
+    "buttons": [
+      "Plant",
+      "Inventory",
+      "Uproot",
+      "Locked"
+    ],
+    "checks": [
+      "Rain",
+      "Music"
+    ],
+    "toggle": "Autosave",
+    "slider": "Volume",
+    "field": "Name your farm",
+    "options": [
+      "Spring",
+      "Summer",
+      "Autumn"
+    ],
+    "tabs": [
+      "Seeds",
+      "Tools",
+      "Recipes"
+    ],
+    "tooltip": "Turnip Seeds  4 days",
+    "speaker": "Neighbour Wren",
+    "lines": [
+      "The rain came early this year.",
+      "Your turnips should be ready by Friday."
+    ]
+  },
+  "colors": {
+    "outline": "#3b2412",
+    "shadow": "#3a2a16",
+    "track": "#fff6e3",
+    "trackLight": "#f3e3c3",
+    "backdrop": "#7c9a55",
+    "cursorFill": "#f0b45a",
+    "cursorShade": "#b97a3e",
+    "textDim": "#7a6248",
+    "hp": [
+      "#8f2024",
+      "#de463d",
+      "#ff9a7e"
+    ],
+    "mp": [
+      "#2c4f8f",
+      "#4f86d6",
+      "#9cc4ff"
+    ],
+    "xp": [
+      "#8a6416",
+      "#e0ad2c",
+      "#ffe08a"
+    ],
+    "stamina": [
+      "#3c6e24",
+      "#6fb83e",
+      "#b8e889"
+    ],
+    "boss": [
+      "#4e2a6e",
+      "#8c4fc2",
+      "#cfa0f0"
+    ],
+    "panelDarkFill": "#3b2412cc"
+  },
+  "families": {
+    "frame": {
+      "normal": {
+        "light": "#f6cf8c",
+        "mid": "#b97a3e",
+        "dark": "#6e4220",
+        "fill": "#f6e7c8",
+        "shade": "#ead6ae",
+        "text": "#4a2c17"
+      },
+      "hover": {
+        "light": "#ffe0a8",
+        "mid": "#c98a4a",
+        "dark": "#7a4a24",
+        "fill": "#fbefd6",
+        "shade": "#efdcb8",
+        "text": "#4a2c17"
+      },
+      "pressed": {
+        "light": "#f6cf8c",
+        "mid": "#a86c34",
+        "dark": "#5a3418",
+        "fill": "#efdcb8",
+        "shade": "#e3cba0",
+        "text": "#4a2c17"
+      },
+      "active": {
+        "light": "#ffe0a8",
+        "mid": "#c98a4a",
+        "dark": "#7a4a24",
+        "fill": "#f6e7c8",
+        "shade": "#ead6ae",
+        "text": "#4a2c17"
+      },
+      "disabled": {
+        "light": "#d8cfc0",
+        "mid": "#a89c8a",
+        "dark": "#6e6456",
+        "fill": "#e8e0d2",
+        "shade": "#dbd2c2",
+        "text": "#5c5244"
+      }
+    },
+    "accent": {
+      "normal": {
+        "light": "#a8d86a",
+        "mid": "#5f9a33",
+        "dark": "#2f5a16",
+        "fill": "#3f7a22",
+        "shade": "#346a1b",
+        "text": "#fffbea"
+      },
+      "hover": {
+        "light": "#c2e88a",
+        "mid": "#6cab3a",
+        "dark": "#356519",
+        "fill": "#3b7c1f",
+        "shade": "#3f7a22",
+        "text": "#ffffff"
+      },
+      "pressed": {
+        "light": "#a8d86a",
+        "mid": "#4f8a2a",
+        "dark": "#24460f",
+        "fill": "#33661b",
+        "shade": "#2a5414",
+        "text": "#fffbea"
+      },
+      "disabled": {
+        "light": "#c4ccb6",
+        "mid": "#96a286",
+        "dark": "#5c6850",
+        "fill": "#d9dfcf",
+        "shade": "#ccd3c0",
+        "text": "#4f5a44"
+      }
+    },
+    "danger": {
+      "normal": {
+        "light": "#f0a07a",
+        "mid": "#c25a36",
+        "dark": "#5e1f10",
+        "fill": "#9c3a24",
+        "shade": "#86301d",
+        "text": "#fff4ea"
+      },
+      "hover": {
+        "light": "#ffb08a",
+        "mid": "#d0653f",
+        "dark": "#6b2414",
+        "fill": "#a84028",
+        "shade": "#9c3a24",
+        "text": "#ffffff"
+      },
+      "pressed": {
+        "light": "#f0a07a",
+        "mid": "#a84a2c",
+        "dark": "#4a170b",
+        "fill": "#86301d",
+        "shade": "#6e2716",
+        "text": "#fff4ea"
+      },
+      "disabled": {
+        "light": "#dcc8bf",
+        "mid": "#b09a90",
+        "dark": "#6e5f58",
+        "fill": "#ebdfd9",
+        "shade": "#ddd0c9",
+        "text": "#5e4e47"
+      }
+    }
+  }
+}

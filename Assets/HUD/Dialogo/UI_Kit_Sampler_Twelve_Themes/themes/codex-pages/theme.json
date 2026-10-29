@@ -1,0 +1,223 @@
+{
+  "schema": "csaf-uikit-theme/1",
+  "id": "codex-pages",
+  "name": "Codex Pages",
+  "note": "Kit 11 (2026-10-24): a book and journal theme. Oxblood leather bands around parchment pages, a gilt book-corner guard over every corner of the heavy frames (geometry.corner \"guard\", new in the generator: a right triangle with an engraved fillet and a stud, the way metal corners shield an old ledger), ink-blue bookcloth for the main actions, wax-seal crimson for danger. geometry.book adds the book set: a left and a right page whose cover rim and stacked page edges sit in the outer margins and whose gutter sits in the inner margin (two side by side are a spread at any size), a cover-opening strip (closed, lifting, edge-on, falling, open) and a page-turn strip (six frames), four ribbon bookmarks, three paper index tabs, a quest-log entry, four ink stamps, a wax seal, a quill cursor, a chapter heading, a flourish divider, a page-number cartouche, an illuminated drop-cap frame and three book icons. Every text-on-fill pair is re-measured by the gate.",
+  "geometry": {
+    "border": 3,
+    "radius": 2,
+    "shadow": 1,
+    "hdScale": 3,
+    "corner": "guard",
+    "coin": "disc",
+    "book": true
+  },
+  "demo": {
+    "buttons": [
+      "Read",
+      "Journal",
+      "Burn",
+      "Sealed"
+    ],
+    "checks": [
+      "Music",
+      "Ink sounds"
+    ],
+    "toggle": "Auto turn",
+    "slider": "Volume",
+    "field": "Journal title",
+    "options": [
+      "Chapter I",
+      "Chapter II",
+      "Chapter III"
+    ],
+    "tabs": [
+      "Quests",
+      "Lore",
+      "Map"
+    ],
+    "tooltip": "Old Key: opens the west vault",
+    "speaker": "Archivist",
+    "lines": [
+      "Every page here was copied by hand.",
+      "Turn carefully, the binding is old."
+    ],
+    "bars": [
+      "HpBar",
+      "MpBar"
+    ],
+    "skip": [
+      "slider",
+      "field",
+      "dialogue"
+    ],
+    "slotIcons": [
+      "icon_journal",
+      "icon_tome",
+      "icon_ledger",
+      "wax_seal",
+      "stamp_done",
+      "icon_coin",
+      "heart_full",
+      "icon_star"
+    ]
+  },
+  "colors": {
+    "outline": "#1e100a",
+    "shadow": "#0e0806",
+    "track": "#e8d6aa",
+    "trackLight": "#f4e8c8",
+    "backdrop": "#1f2b28",
+    "cursorFill": "#f8eed4",
+    "cursorShade": "#c9b28a",
+    "textDim": "#8a7258",
+    "hp": [
+      "#6a1418",
+      "#c8383a",
+      "#f2826e"
+    ],
+    "mp": [
+      "#1c3266",
+      "#3d66c4",
+      "#92b6f6"
+    ],
+    "xp": [
+      "#5e4410",
+      "#d4a22e",
+      "#fbdc7c"
+    ],
+    "stamina": [
+      "#22562a",
+      "#4c9e3e",
+      "#a4dc7c"
+    ],
+    "boss": [
+      "#3e1446",
+      "#8c3090",
+      "#d47ccc"
+    ],
+    "panelDarkFill": "#1e100add",
+    "gilt": [
+      "#6e4c16",
+      "#c9973c",
+      "#f4d88c"
+    ],
+    "bookPaper": [
+      "#9c7e52",
+      "#c4a978",
+      "#d6c08e"
+    ]
+  },
+  "families": {
+    "frame": {
+      "normal": {
+        "light": "#b5764a",
+        "mid": "#7c3b22",
+        "dark": "#3f170c",
+        "fill": "#efe0bc",
+        "shade": "#e2cfa2",
+        "text": "#2e1c10"
+      },
+      "hover": {
+        "light": "#c98a5a",
+        "mid": "#8e4628",
+        "dark": "#4c1d10",
+        "fill": "#f6ead0",
+        "shade": "#e9d8ae",
+        "text": "#2e1c10"
+      },
+      "pressed": {
+        "light": "#b5764a",
+        "mid": "#6c321c",
+        "dark": "#34130a",
+        "fill": "#e6d4a8",
+        "shade": "#d9c391",
+        "text": "#2e1c10"
+      },
+      "active": {
+        "light": "#f4d88c",
+        "mid": "#c9973c",
+        "dark": "#6e4c16",
+        "fill": "#f6ead0",
+        "shade": "#e9d8ae",
+        "text": "#2e1c10"
+      },
+      "disabled": {
+        "light": "#b9ada0",
+        "mid": "#8a7d70",
+        "dark": "#574d44",
+        "fill": "#ddd5c6",
+        "shade": "#d0c7b6",
+        "text": "#4e453d"
+      }
+    },
+    "accent": {
+      "normal": {
+        "light": "#9fb8e8",
+        "mid": "#3f5f9e",
+        "dark": "#1a2a52",
+        "fill": "#2c4a86",
+        "shade": "#233c6e",
+        "text": "#fbf3dc"
+      },
+      "hover": {
+        "light": "#bccff2",
+        "mid": "#4d6fb0",
+        "dark": "#20335e",
+        "fill": "#355796",
+        "shade": "#2c4a86",
+        "text": "#fffaea"
+      },
+      "pressed": {
+        "light": "#9fb8e8",
+        "mid": "#33508a",
+        "dark": "#121f3e",
+        "fill": "#243d70",
+        "shade": "#1c3159",
+        "text": "#fbf3dc"
+      },
+      "disabled": {
+        "light": "#b6bccb",
+        "mid": "#868ea0",
+        "dark": "#4f5566",
+        "fill": "#d6d8de",
+        "shade": "#c8cbd3",
+        "text": "#41465a"
+      }
+    },
+    "danger": {
+      "normal": {
+        "light": "#f08a72",
+        "mid": "#b0302a",
+        "dark": "#521012",
+        "fill": "#8f2126",
+        "shade": "#761a1f",
+        "text": "#fff1e0"
+      },
+      "hover": {
+        "light": "#f8a48e",
+        "mid": "#c23a32",
+        "dark": "#601316",
+        "fill": "#9e282c",
+        "shade": "#8f2126",
+        "text": "#fff8ee"
+      },
+      "pressed": {
+        "light": "#f08a72",
+        "mid": "#962722",
+        "dark": "#3e0b0d",
+        "fill": "#771a1f",
+        "shade": "#621418",
+        "text": "#fff1e0"
+      },
+      "disabled": {
+        "light": "#d4c2bd",
+        "mid": "#a8928c",
+        "dark": "#62504b",
+        "fill": "#e2d6d2",
+        "shade": "#d6c8c3",
+        "text": "#54433e"
+      }
+    }
+  }
+}

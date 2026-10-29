@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://t67fr2djnru3"]
+
+[ext_resource type="Script" uid="uid://bcno3ne1vob2h" path="res://escenas/npc_chofer.gd" id="1_6om6a"]
+[ext_resource type="Texture2D" uid="uid://drs33r7us46n4" path="res://Assets/village_head.png" id="2_6om6a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36s2r"]
+atlas = ExtResource("2_6om6a")
+region = Rect2(0, 0, 113, 134)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_as4k3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36s2r")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xrivr"]
+radius = 11.401754
+
+[node name="NpcEl10" type="Area2D" unique_id=522372568]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_6om6a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1412978783]
+position = Vector2(-9.536743e-07, 0)
+scale = Vector2(0.10840709, 0.13432837)
+sprite_frames = SubResource("SpriteFrames_as4k3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1610709578]
+position = Vector2(-1, 1)
+shape = SubResource("CircleShape2D_xrivr")

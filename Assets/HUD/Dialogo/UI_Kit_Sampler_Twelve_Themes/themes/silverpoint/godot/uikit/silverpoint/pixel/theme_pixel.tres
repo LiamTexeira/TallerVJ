@@ -1,0 +1,242 @@
+[gd_resource type="Theme" load_steps=26 format=3]
+
+[ext_resource type="Texture2D" path="res://uikit/silverpoint/pixel/atlas.png" id="1_atlas"]
+[ext_resource type="FontFile" path="res://uikit/silverpoint/font/silverpoint_pixel.tres" id="2_font"]
+
+[sub_resource type="StyleBoxTexture" id="sb__panel_window__normal"]
+texture = ExtResource("1_atlas")
+region_rect = Rect2(2, 2, 32, 32)
+texture_margin_left = 7.0
+texture_margin_top = 7.0
+texture_margin_right = 7.0
+texture_margin_bottom = 8.0
+content_margin_left = 9.0
+content_margin_top = 7.0
+content_margin_right = 9.0
+content_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id="sb__button_primary__normal"]
+texture = ExtResource("1_atlas")
+region_rect = Rect2(24, 36, 40, 16)
+texture_margin_left = 4.0
+texture_margin_top = 5.0
+texture_margin_right = 4.0
+texture_margin_bottom = 5.0
+content_margin_left = 6.0
+content_margin_top = 3.0
+content_margin_right = 6.0
+content_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="sb__button_primary__hover"]
+texture = ExtResource("1_atlas")
+region_rect = Rect2(66, 36, 40, 16)
+texture_margin_left = 4.0
+texture_margin_top = 5.0
+texture_margin_right = 4.0
+texture_margin_bottom = 5.0
+content_margin_left = 6.0
+content_margin_top = 3.0
+content_margin_right = 6.0
+content_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="sb__button_primary__pressed"]
+texture = ExtResource("1_atlas")
+region_rect = Rect2(108, 36, 40, 16)
+texture_margin_left = 4.0
+texture_margin_top = 5.0
+texture_margin_right = 4.0
+texture_margin_bottom = 5.0
+content_margin_left = 6.0
+content_margin_top = 3.0
+content_margin_right = 6.0
+content_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="sb__button_primary__disabled"]
+texture = ExtResource("1_atlas")
+region_rect = Rect2(150, 36, 40, 16)
+texture_margin_left = 4.0
+texture_margin_top = 5.0
+texture_margin_right = 4.0
+texture_margin_bottom = 5.0
+content_margin_left = 6.0
+content_margin_top = 3.0
+content_margin_right = 6.0
+content_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="sb_empty"]
+
+[sub_resource type="StyleBoxTexture" id="sb__bar_frame__normal"]
+texture = ExtResource("1_atlas")
+region_rect = Rect2(48, 58, 40, 8)
+texture_margin_left = 3.0
+texture_margin_top = 0.0
+texture_margin_right = 3.0
+texture_margin_bottom = 0.0
+content_margin_left = 3.0
+content_margin_top = 4.0
+content_margin_right = 3.0
+content_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="sb__bar_hp_fill__normal"]
+texture = ExtResource("1_atlas")
+region_rect = Rect2(136, 58, 36, 4)
+texture_margin_left = 1.0
+texture_margin_top = 0.0
+texture_margin_right = 1.0
+texture_margin_bottom = 0.0
+content_margin_left = 1.0
+content_margin_top = 2.0
+content_margin_right = 1.0
+content_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="sb__dialogue_box__normal"]
+texture = ExtResource("1_atlas")
+region_rect = Rect2(36, 2, 64, 28)
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 9.0
+content_margin_left = 12.0
+content_margin_top = 10.0
+content_margin_right = 12.0
+content_margin_bottom = 11.0
+
+[sub_resource type="StyleBoxTexture" id="sb__nameplate__normal"]
+texture = ExtResource("1_atlas")
+region_rect = Rect2(2, 58, 36, 12)
+texture_margin_left = 4.0
+texture_margin_top = 5.0
+texture_margin_right = 4.0
+texture_margin_bottom = 5.0
+content_margin_left = 6.0
+content_margin_top = 1.0
+content_margin_right = 6.0
+content_margin_bottom = 0.0
+
+[sub_resource type="StyleBoxTexture" id="sb__panel_header__normal"]
+texture = ExtResource("1_atlas")
+region_rect = Rect2(192, 36, 32, 16)
+texture_margin_left = 4.0
+texture_margin_top = 5.0
+texture_margin_right = 4.0
+texture_margin_bottom = 5.0
+content_margin_left = 6.0
+content_margin_top = 3.0
+content_margin_right = 6.0
+content_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="sb__slot_inventory__normal"]
+texture = ExtResource("1_atlas")
+region_rect = Rect2(102, 2, 20, 20)
+texture_margin_left = 4.0
+texture_margin_top = 5.0
+texture_margin_right = 4.0
+texture_margin_bottom = 5.0
+content_margin_left = 6.0
+content_margin_top = 5.0
+content_margin_right = 6.0
+content_margin_bottom = 5.0
+
+[sub_resource type="AtlasTexture" id="at__equip_weapon__normal"]
+atlas = ExtResource("1_atlas")
+region = Rect2(190, 2, 20, 20)
+
+[sub_resource type="AtlasTexture" id="at__equip_weapon__hover"]
+atlas = ExtResource("1_atlas")
+region = Rect2(212, 2, 20, 20)
+
+[sub_resource type="AtlasTexture" id="at__equip_weapon__selected"]
+atlas = ExtResource("1_atlas")
+region = Rect2(234, 2, 20, 20)
+
+[sub_resource type="AtlasTexture" id="at__equip_weapon__disabled"]
+atlas = ExtResource("1_atlas")
+region = Rect2(2, 36, 20, 20)
+
+[sub_resource type="AtlasTexture" id="at__cursor_pointer__normal"]
+atlas = ExtResource("1_atlas")
+region = Rect2(226, 36, 10, 14)
+
+[sub_resource type="AtlasTexture" id="at__cursor_select__normal"]
+atlas = ExtResource("1_atlas")
+region = Rect2(40, 58, 6, 9)
+
+[sub_resource type="AtlasTexture" id="at__advance_arrow__frame0"]
+atlas = ExtResource("1_atlas")
+region = Rect2(118, 58, 7, 6)
+
+[sub_resource type="AtlasTexture" id="at__advance_arrow__frame1"]
+atlas = ExtResource("1_atlas")
+region = Rect2(127, 58, 7, 6)
+
+[sub_resource type="AtlasTexture" id="at__heart_full__normal"]
+atlas = ExtResource("1_atlas")
+region = Rect2(100, 58, 7, 7)
+
+[sub_resource type="AtlasTexture" id="at__heart_empty__normal"]
+atlas = ExtResource("1_atlas")
+region = Rect2(109, 58, 7, 7)
+
+[sub_resource type="AtlasTexture" id="at__icon_coin__normal"]
+atlas = ExtResource("1_atlas")
+region = Rect2(90, 58, 8, 8)
+
+[resource]
+default_font = ExtResource("2_font")
+default_font_size = 11
+Label/colors/font_color = Color(0.1686, 0.1294, 0.0941, 1.0000)
+Panel/styles/panel = SubResource("sb__panel_window__normal")
+PanelContainer/styles/panel = SubResource("sb__panel_window__normal")
+Button/styles/normal = SubResource("sb__button_primary__normal")
+Button/styles/hover = SubResource("sb__button_primary__hover")
+Button/styles/pressed = SubResource("sb__button_primary__pressed")
+Button/styles/disabled = SubResource("sb__button_primary__disabled")
+Button/styles/focus = SubResource("sb_empty")
+Button/colors/font_color = Color(0.1647, 0.1216, 0.0706, 1.0000)
+Button/colors/font_hover_color = Color(0.1333, 0.0980, 0.0549, 1.0000)
+Button/colors/font_pressed_color = Color(0.1647, 0.1216, 0.0706, 1.0000)
+Button/colors/font_focus_color = Color(0.1647, 0.1216, 0.0706, 1.0000)
+Button/colors/font_hover_pressed_color = Color(0.1647, 0.1216, 0.0706, 1.0000)
+Button/colors/font_disabled_color = Color(0.3529, 0.2980, 0.2039, 1.0000)
+PrimaryButton/base_type = &"Button"
+PrimaryButton/styles/normal = SubResource("sb__button_primary__normal")
+PrimaryButton/styles/hover = SubResource("sb__button_primary__hover")
+PrimaryButton/styles/pressed = SubResource("sb__button_primary__pressed")
+PrimaryButton/styles/disabled = SubResource("sb__button_primary__disabled")
+PrimaryButton/styles/focus = SubResource("sb_empty")
+PrimaryButton/colors/font_color = Color(0.1647, 0.1216, 0.0706, 1.0000)
+PrimaryButton/colors/font_hover_color = Color(0.1333, 0.0980, 0.0549, 1.0000)
+PrimaryButton/colors/font_pressed_color = Color(0.1647, 0.1216, 0.0706, 1.0000)
+PrimaryButton/colors/font_focus_color = Color(0.1647, 0.1216, 0.0706, 1.0000)
+PrimaryButton/colors/font_hover_pressed_color = Color(0.1647, 0.1216, 0.0706, 1.0000)
+PrimaryButton/colors/font_disabled_color = Color(0.3529, 0.2980, 0.2039, 1.0000)
+ProgressBar/styles/background = SubResource("sb__bar_frame__normal")
+ProgressBar/colors/font_color = Color(0.1686, 0.1294, 0.0941, 1.0000)
+ProgressBar/styles/fill = SubResource("sb__bar_hp_fill__normal")
+HpBar/base_type = &"ProgressBar"
+HpBar/styles/fill = SubResource("sb__bar_hp_fill__normal")
+DialogueBox/base_type = &"PanelContainer"
+DialogueBox/styles/panel = SubResource("sb__dialogue_box__normal")
+NamePlate/base_type = &"PanelContainer"
+NamePlate/styles/panel = SubResource("sb__nameplate__normal")
+HeaderPanel/base_type = &"PanelContainer"
+HeaderPanel/styles/panel = SubResource("sb__panel_header__normal")
+InventorySlot/base_type = &"PanelContainer"
+InventorySlot/styles/panel = SubResource("sb__slot_inventory__normal")
+NamePlateLabel/base_type = &"Label"
+NamePlateLabel/colors/font_color = Color(0.1647, 0.1216, 0.0706, 1.0000)
+HeaderLabel/base_type = &"Label"
+HeaderLabel/colors/font_color = Color(0.1647, 0.1216, 0.0706, 1.0000)
+DialogueLabel/base_type = &"Label"
+DialogueLabel/colors/font_color = Color(0.1686, 0.1294, 0.0941, 1.0000)
+UiKit/icons/equip_weapon = SubResource("at__equip_weapon__normal")
+UiKit/icons/equip_weapon_hover = SubResource("at__equip_weapon__hover")
+UiKit/icons/equip_weapon_selected = SubResource("at__equip_weapon__selected")
+UiKit/icons/equip_weapon_disabled = SubResource("at__equip_weapon__disabled")
+UiKit/icons/cursor_pointer = SubResource("at__cursor_pointer__normal")
+UiKit/icons/cursor_select = SubResource("at__cursor_select__normal")
+UiKit/icons/advance_arrow_frame0 = SubResource("at__advance_arrow__frame0")
+UiKit/icons/advance_arrow_frame1 = SubResource("at__advance_arrow__frame1")
+UiKit/icons/heart_full = SubResource("at__heart_full__normal")
+UiKit/icons/heart_empty = SubResource("at__heart_empty__normal")
+UiKit/icons/icon_coin = SubResource("at__icon_coin__normal")

@@ -1,0 +1,207 @@
+{
+  "schema": "csaf-uikit-theme/1",
+  "id": "verdant-frame",
+  "name": "Verdant Frame",
+  "note": "Every colour below is an entry of Kernel/tilesets/pixel_forge.js PALETTE, the series palette the Verdant tilesets are drawn in (names in paletteNames). Frame: Verdant's cool blue-grey cliff stone; panels: dark slate flagstone; accent: the Verdant foliage ramp; danger: the cloth reds; leaf tufts grow over the heavy frames' corners.",
+  "paletteSource": "Kernel/tilesets/pixel_forge.js PALETTE",
+  "paletteSha256": "339f90654c24f82ad66cd7f0310b0f3f3f542f354fce0d3d533822878fef590d",
+  "demo": {
+    "buttons": [
+      "Explore",
+      "Camp",
+      "Abandon",
+      "Locked"
+    ],
+    "checks": [
+      "Music",
+      "Footsteps"
+    ],
+    "toggle": "Auto run",
+    "slider": "Volume",
+    "field": "Village name",
+    "options": [
+      "Meadow",
+      "Marsh",
+      "Highland"
+    ],
+    "tabs": [
+      "Satchel",
+      "Quests",
+      "Map"
+    ],
+    "tooltip": "Oak Staff  +6 MAG",
+    "speaker": "Old Miller",
+    "lines": [
+      "The river rose and took the ford.",
+      "Cross at the mill bridge by dusk."
+    ]
+  },
+  "geometry": {
+    "border": 3,
+    "radius": 2,
+    "shadow": 1,
+    "hdScale": 3,
+    "style": "bevel",
+    "ornaments": true,
+    "corner": "tuft",
+    "coin": "disc"
+  },
+  "colors": {
+    "outline": "#1a1a24",
+    "shadow": "#111420",
+    "track": "#1e2129",
+    "trackLight": "#333945",
+    "backdrop": "#4f8a3c",
+    "cursorFill": "#eef0e6",
+    "cursorShade": "#9494a2",
+    "textDim": "#b6c8d8",
+    "hp": [
+      "#7a2f3a",
+      "#c8443c",
+      "#f07a62"
+    ],
+    "mp": [
+      "#163a5c",
+      "#2d7aa8",
+      "#55a8cc"
+    ],
+    "xp": [
+      "#8a6a1e",
+      "#e0b93f",
+      "#f0d97a"
+    ],
+    "stamina": [
+      "#2b4a2a",
+      "#6faa48",
+      "#a6d76a"
+    ],
+    "boss": [
+      "#4b1c68",
+      "#8a5fb0",
+      "#c6a6e4"
+    ],
+    "panelDarkFill": "#1e2129dc",
+    "tuft": [
+      "#1c3a24",
+      "#3d7a3c",
+      "#58a34d",
+      "#a6d76a"
+    ],
+    "bloom": [
+      "#eef0e6",
+      "#e0b93f"
+    ]
+  },
+  "families": {
+    "frame": {
+      "normal": {
+        "light": "#9494a2",
+        "mid": "#6e6e7d",
+        "dark": "#2f4d2c",
+        "fill": "#282d37",
+        "shade": "#1e2129",
+        "text": "#eef0e6"
+      },
+      "hover": {
+        "light": "#c4ccd6",
+        "mid": "#9494a2",
+        "dark": "#6e6e7d",
+        "fill": "#333945",
+        "shade": "#282d37",
+        "text": "#f2f7fb"
+      },
+      "pressed": {
+        "light": "#6e6e7d",
+        "mid": "#4e4e5c",
+        "dark": "#33333f",
+        "fill": "#1e2129",
+        "shade": "#191e2b",
+        "text": "#eef0e6"
+      },
+      "active": {
+        "light": "#c4ccd6",
+        "mid": "#9494a2",
+        "dark": "#6e6e7d",
+        "fill": "#282d37",
+        "shade": "#1e2129",
+        "text": "#f2f7fb"
+      },
+      "disabled": {
+        "light": "#78706a",
+        "mid": "#554d47",
+        "dark": "#35302e",
+        "fill": "#3a3634",
+        "shade": "#22201f",
+        "text": "#cbc9ba"
+      }
+    },
+    "accent": {
+      "normal": {
+        "light": "#a6d76a",
+        "mid": "#58a34d",
+        "dark": "#2b5730",
+        "fill": "#3d7a3c",
+        "shade": "#2b5730",
+        "text": "#f2f7fb"
+      },
+      "hover": {
+        "light": "#c9e88e",
+        "mid": "#5f9a45",
+        "dark": "#3d7a3c",
+        "fill": "#3d7a3c",
+        "shade": "#2b5730",
+        "text": "#f2f7fb"
+      },
+      "pressed": {
+        "light": "#58a34d",
+        "mid": "#3d7a3c",
+        "dark": "#1c3a24",
+        "fill": "#2b5730",
+        "shade": "#1c3a24",
+        "text": "#f2f7fb"
+      },
+      "disabled": {
+        "light": "#79857a",
+        "mid": "#5c665c",
+        "dark": "#293d2c",
+        "fill": "#2c4232",
+        "shade": "#293d2c",
+        "text": "#b6c1b6"
+      }
+    },
+    "danger": {
+      "normal": {
+        "light": "#d97b74",
+        "mid": "#b04a52",
+        "dark": "#7a2f3a",
+        "fill": "#b04a52",
+        "shade": "#7a2f3a",
+        "text": "#f2f7fb"
+      },
+      "hover": {
+        "light": "#f4aeb8",
+        "mid": "#d97b74",
+        "dark": "#b04a52",
+        "fill": "#b04a52",
+        "shade": "#7a2f3a",
+        "text": "#f2f7fb"
+      },
+      "pressed": {
+        "light": "#b04a52",
+        "mid": "#7a2f3a",
+        "dark": "#5a2338",
+        "fill": "#7a2f3a",
+        "shade": "#5a2338",
+        "text": "#f2f7fb"
+      },
+      "disabled": {
+        "light": "#a48281",
+        "mid": "#7a5259",
+        "dark": "#493a2b",
+        "fill": "#35291f",
+        "shade": "#211a16",
+        "text": "#b99a95"
+      }
+    }
+  }
+}

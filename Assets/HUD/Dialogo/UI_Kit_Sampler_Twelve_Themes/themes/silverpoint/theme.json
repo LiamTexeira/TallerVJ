@@ -1,0 +1,201 @@
+{
+  "schema": "csaf-uikit-theme/1",
+  "id": "silverpoint",
+  "name": "Silverpoint",
+  "note": "Kit 9 (2026-10-23): a flat, light, minimal FANTASY theme, the sibling of Clean Slate. Warm vellum fills, sepia ink hairlines, square-ish 2-unit corners, a soft straight-down shadow. Its frame idea is geometry.keyline \"notch\": a second, softer hairline inside the outline of the heavy frames, turned inward at each corner as a square bookplate notch with a muted gold pin. One muted gold accent family (dark ink text), one oxblood danger family, opt-in equipment slots with faint silhouettes. Every text-on-fill pair is re-measured by the gate.",
+  "geometry": {
+    "border": 1,
+    "radius": 2,
+    "shadow": 1,
+    "hdScale": 3,
+    "style": "flat",
+    "ornaments": false,
+    "keyline": "notch",
+    "equipment": true,
+    "coin": "disc"
+  },
+  "demo": {
+    "buttons": [
+      "Begin",
+      "Journal",
+      "Abandon",
+      "Sealed"
+    ],
+    "checks": [
+      "Music",
+      "Hints"
+    ],
+    "toggle": "Auto-save",
+    "slider": "Volume",
+    "field": "Hero name",
+    "options": [
+      "Wanderer",
+      "Knight",
+      "Sage"
+    ],
+    "tabs": [
+      "Satchel",
+      "Gear",
+      "Quests"
+    ],
+    "tooltip": "Ashen Blade  +9 STR",
+    "speaker": "Archivist",
+    "lines": [
+      "The old road north is marked on this map.",
+      "Take it before the snow closes the pass."
+    ]
+  },
+  "colors": {
+    "outline": "#3a2f25",
+    "shadow": "#cdbf9f",
+    "track": "#e9dfc8",
+    "trackLight": "#f1e9d6",
+    "backdrop": "#34302a",
+    "cursorFill": "#fffaf0",
+    "cursorShade": "#d6c9ad",
+    "textDim": "#7a6a55",
+    "hp": [
+      "#6e1f1f",
+      "#a83a32",
+      "#d9786a"
+    ],
+    "mp": [
+      "#233d63",
+      "#3f6696",
+      "#86a8cf"
+    ],
+    "xp": [
+      "#6b4a12",
+      "#d9a72e",
+      "#f5dc8c"
+    ],
+    "stamina": [
+      "#2f5a34",
+      "#4f8a50",
+      "#9cc48f"
+    ],
+    "boss": [
+      "#4a2650",
+      "#7a4585",
+      "#b58fbf"
+    ],
+    "panelDarkFill": "#2b2118d8",
+    "keyline": [
+      "#b39c74",
+      "#b8892e"
+    ],
+    "silhouette": "#cbbd9c"
+  },
+  "families": {
+    "frame": {
+      "normal": {
+        "light": "#fffaf0",
+        "mid": "#e6dbc3",
+        "dark": "#5e4f3f",
+        "fill": "#f4ecda",
+        "shade": "#e4d8be",
+        "text": "#2b2118"
+      },
+      "hover": {
+        "light": "#fffcf5",
+        "mid": "#ece2cc",
+        "dark": "#3f3328",
+        "fill": "#faf4e7",
+        "shade": "#ebe1cb",
+        "text": "#1f170f"
+      },
+      "pressed": {
+        "light": "#fffaf0",
+        "mid": "#e2d6bc",
+        "dark": "#3f3328",
+        "fill": "#ebe1cb",
+        "shade": "#ddd0b4",
+        "text": "#2b2118"
+      },
+      "active": {
+        "light": "#fffcf5",
+        "mid": "#ece2cc",
+        "dark": "#9a7632",
+        "fill": "#faf4e7",
+        "shade": "#ebe1cb",
+        "text": "#1f170f"
+      },
+      "disabled": {
+        "light": "#f1ebde",
+        "mid": "#e4dccb",
+        "dark": "#c3b69e",
+        "fill": "#ece4d3",
+        "shade": "#e2d9c6",
+        "text": "#6b5d4b"
+      }
+    },
+    "accent": {
+      "normal": {
+        "light": "#e6cf94",
+        "mid": "#b8913f",
+        "dark": "#6b4f1c",
+        "fill": "#b8913f",
+        "shade": "#a07d36",
+        "text": "#2a1f12"
+      },
+      "hover": {
+        "light": "#eed9a3",
+        "mid": "#c49c4a",
+        "dark": "#5e441a",
+        "fill": "#c49c4a",
+        "shade": "#b08c42",
+        "text": "#22190e"
+      },
+      "pressed": {
+        "light": "#e6cf94",
+        "mid": "#a8843f",
+        "dark": "#523b16",
+        "fill": "#a8843f",
+        "shade": "#94742f",
+        "text": "#2a1f12"
+      },
+      "disabled": {
+        "light": "#f1e8cf",
+        "mid": "#e6d8b2",
+        "dark": "#c4b083",
+        "fill": "#e6d8b4",
+        "shade": "#dccca2",
+        "text": "#5a4c34"
+      }
+    },
+    "danger": {
+      "normal": {
+        "light": "#c97a6e",
+        "mid": "#9c3b36",
+        "dark": "#4a1414",
+        "fill": "#7a2a2a",
+        "shade": "#662222",
+        "text": "#fbf3e6"
+      },
+      "hover": {
+        "light": "#d48a7e",
+        "mid": "#a8443e",
+        "dark": "#3d1010",
+        "fill": "#8a3030",
+        "shade": "#742828",
+        "text": "#fff8ee"
+      },
+      "pressed": {
+        "light": "#c97a6e",
+        "mid": "#8a3330",
+        "dark": "#330c0c",
+        "fill": "#682323",
+        "shade": "#561c1c",
+        "text": "#fbf3e6"
+      },
+      "disabled": {
+        "light": "#f0dcd5",
+        "mid": "#e2c4bb",
+        "dark": "#c9a99f",
+        "fill": "#e6cfc6",
+        "shade": "#dcc1b7",
+        "text": "#5a2a26"
+      }
+    }
+  }
+}

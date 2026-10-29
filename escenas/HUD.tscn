@@ -6,7 +6,17 @@
 [ext_resource type="Texture2D" uid="uid://bm82anhcovbgf" path="res://Assets/HUD/Life/life3.png" id="5_a7n87"]
 [ext_resource type="Texture2D" uid="uid://wyu5pafxjhkt" path="res://Assets/HUD/Life/life4.png" id="6_k70nb"]
 [ext_resource type="Texture2D" uid="uid://dw0crub2wjdnq" path="res://Assets/HUD/Life/life5.png" id="7_iyjop"]
+[ext_resource type="Theme" uid="uid://ce43kmc4fuufw" path="res://Assets/pixel/theme_pixel.tres" id="8_n4xgl"]
 [ext_resource type="Texture2D" uid="uid://c16sbu26o083m" path="res://Assets/HUD/Life/life6.png" id="8_nqx4a"]
+[ext_resource type="Texture2D" uid="uid://djb3jxo1s1rqh" path="res://Assets/HUD/Dialogo/UI_Kit_Sampler_Twelve_Themes/themes/bone-and-brass/pixel/atlas.png" id="9_43qxj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rijus"]
+texture = ExtResource("9_43qxj")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+region_rect = Rect2(36, 2, 64, 28)
 
 [node name="Hud" type="CanvasLayer" unique_id=1017823070 groups=["HUD"]]
 script = ExtResource("1_adsit")
@@ -55,6 +65,56 @@ texture_progress = ExtResource("3_43qxj")
 layout_mode = 2
 text = "Oleada 1"
 
+[node name="LabelEnemigos" type="Label" parent="Control/MarginContainer/VBoxContainer" unique_id=1793430892]
+layout_mode = 2
+text = "Enemigos restantes: "
+
 [node name="LabelTiempo" type="Label" parent="Control/MarginContainer/VBoxContainer" unique_id=1466180984]
 layout_mode = 2
 text = "02:00"
+
+[node name="CuadroDialogo" type="PanelContainer" parent="." unique_id=1842830992]
+custom_minimum_size = Vector2(500, 120)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -462.0
+offset_top = -196.0
+offset_right = 319.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("8_n4xgl")
+theme_override_styles/panel = SubResource("StyleBoxTexture_rijus")
+
+[node name="MarginContainer" type="MarginContainer" parent="CuadroDialogo" unique_id=1738890415]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CuadroDialogo/MarginContainer" unique_id=1978629343]
+layout_mode = 2
+
+[node name="LabelNombreNPC" type="Label" parent="CuadroDialogo/MarginContainer/VBoxContainer" unique_id=1290725672]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+
+[node name="LabelTextoDialogo" type="RichTextLabel" parent="CuadroDialogo/MarginContainer/VBoxContainer" unique_id=1771623446]
+layout_mode = 2
+text = "Este es un texto de prueba para ver cómo queda el diálogo en la pantalla."
+fit_content = true
+
+[node name="BotonContinuar" type="Button" parent="CuadroDialogo/MarginContainer/VBoxContainer" unique_id=548988116]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_font_sizes/font_size = 11
+text = "Continuar "
+
+[node name="ContenedorOpciones" type="VBoxContainer" parent="CuadroDialogo/MarginContainer/VBoxContainer" unique_id=1716607294]
+layout_mode = 2

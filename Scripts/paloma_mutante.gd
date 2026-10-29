@@ -230,21 +230,22 @@ func _on_animation_finished() -> void:
 			else:
 				estado_actual = Estado.PATRULLA
 		"death":
-			morir() # <-- Llamamos a morir() aquí para procesar el drop antes del queue_free
+			morir() # <-- Llamamos a morir() para procesar el drop antes del queue_free
 
 
-# En paloma_mutante.gd
+
 func morir() -> void:
-	print("--- PALOMA MUERTA ---")
+	print("--- ENEMIGO MUERTO (Diagnóstico) ---")
+	print("Escena actual: ", get_tree().current_scene)
 	
-	# Buscamos el nodo de forma segura en el árbol
-	var wave_mgr = get_tree().root.find_child("WaveManager", true, false)
+	var wave_mgr = get_tree().current_scene.find_child("WaveManager", true, false)
+	print("¿Encontró WaveManager con find_child?: ", wave_mgr)
 	
-	if wave_mgr:
-		print("WaveManager encontrado correctamente. Llamando a reducir_tiempo...")
-		wave_mgr.reducir_tiempo(10.0)
+	if wave_mgr and wave_mgr.has_method("registrar_enemigo_derrotado"):
+		wave_mgr.registrar_enemigo_derrotado()
+		print("¡Éxito! Baja registrada.")
 	else:
-		print("ERROR CRÍTICO: No se encontró el nodo WaveManager en la escena")
+		print("FALLÓ: El WaveManager no existe en esta escena o no tiene el método.")
 
 	_intentar_drop()
 	queue_free()
