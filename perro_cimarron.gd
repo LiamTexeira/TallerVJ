@@ -5,18 +5,17 @@ enum Estado { PATRULLA, PERSECUCION, ATAQUE, HERIDO, MUERTE }
 var estado_actual: Estado = Estado.PATRULLA
 
 # vida
-@export var vida_maxima: int = 7
+@export var vida_maxima: int = 10
 var vida_actual: int
 
 # movimiento
-@export var velocidad_patrulla: float = 80.0
-@export var velocidad_persecucion: float = 180.0
-@export var distancia_ataque: float = 20.0
+@export var velocidad_patrulla: float = 70.0
+@export var velocidad_persecucion: float = 160.0
+@export var distancia_ataque: float = 25.0
 
-#Empanada
+# Empanada / Drop
 @export var empanada_scene: PackedScene
-@export_range(0.0, 1.0) var probabilidad_drop: float = 0.4 # 40% de probabilidad de caer
-
+@export_range(0.0, 1.0) var probabilidad_drop: float = 0.4
 
 var objetivo_jugador: Node2D = null
 var ya_hizo_dano_en_este_ataque: bool = false
@@ -37,14 +36,12 @@ var posicion_anterior: Vector2 = Vector2.ZERO
 var tiempo_atascado: float = 0.0
 
 
-
-
 func _ready() -> void:
 	vida_actual = vida_maxima
-	add_to_group("Enemigos") # para detectarse entre ellas
+	add_to_group("Enemigos")
 	
 	if distancia_ataque <= 0:
-		distancia_ataque = 20.0
+		distancia_ataque = 25.0
 		
 	_desactivar_dano()
 	_elegir_nueva_direccion_patrulla()
@@ -76,9 +73,9 @@ func _actualizar_animacion() -> void:
 
 	match estado_actual:
 		Estado.PATRULLA:
-			sprite.play("walk" if velocity != Vector2.ZERO else "idle")
+			sprite.play(_animacion_caminar("walk") if velocity != Vector2.ZERO else "idle")
 		Estado.PERSECUCION:
-			sprite.play("walk")
+			sprite.play(_animacion_caminar("walk"))
 		Estado.ATAQUE:
 			sprite.play("attack")
 		Estado.HERIDO:
@@ -87,12 +84,19 @@ func _actualizar_animacion() -> void:
 			sprite.play("death")
 
 
+func _animacion_caminar(base: String) -> String:
+	if velocity.y < 0.0 and abs(velocity.y) > abs(velocity.x):
+		var nombre := base + "_n"
+		if sprite.sprite_frames.has_animation(nombre):
+			return nombre
+	return base
+
+
 func _logica_patrulla(delta: float) -> void:
 	tiempo_cambio_patrulla -= delta
 	if tiempo_cambio_patrulla <= 0:
 		_elegir_nueva_direccion_patrulla()
 
-	# se juntan un poco si hay otras cerca
 	var fuerza_bandada = _calcular_fuerza_bandada()
 	var direccion_final = (direccion_patrulla + fuerza_bandada).normalized()
 
@@ -101,19 +105,18 @@ func _logica_patrulla(delta: float) -> void:
 
 func _calcular_fuerza_bandada() -> Vector2:
 	var centro_grupo = Vector2.ZERO
-	var palomas_cercanas = 0
+	var perros_cercanos = 0
 	var radio_cohesion = 120.0
 
-	# busca otras palomas en patrulla
 	for enemigo in get_tree().get_nodes_in_group("Enemigos"):
 		if enemigo != self and is_instance_valid(enemigo):
 			var dist = global_position.distance_to(enemigo.global_position)
 			if dist < radio_cohesion:
 				centro_grupo += enemigo.global_position
-				palomas_cercanas += 1
+				perros_cercanos += 1
 
-	if palomas_cercanas > 0:
-		centro_grupo /= palomas_cercanas
+	if perros_cercanos > 0:
+		centro_grupo /= perros_cercanos
 		return (centro_grupo - global_position).normalized() * 0.4
 
 	return Vector2.ZERO
@@ -139,7 +142,6 @@ func _logica_persecucion(delta: float) -> void:
 		buscando_escape = false
 		return
 
-	# revisa si se trabo
 	if global_position.distance_to(posicion_anterior) < 0.5:
 		tiempo_atascado += delta
 	else:
@@ -147,7 +149,6 @@ func _logica_persecucion(delta: float) -> void:
 
 	posicion_anterior = global_position
 
-	# saca punto a un costado si se traba
 	if tiempo_atascado >= 0.15:
 		tiempo_atascado = 0.0
 		buscando_escape = true
@@ -194,7 +195,7 @@ func _aplicar_dano_a_cuerpo(body: Node2D) -> void:
 		return
 
 	if estado_actual == Estado.ATAQUE and body.is_in_group("Player") and body.has_method("recibir_danio"):
-		body.recibir_danio(1)
+		body.recibir_danio(2) # El perro pega un poco más fuerte
 		ya_hizo_dano_en_este_ataque = true
 
 
@@ -230,40 +231,39 @@ func _on_animation_finished() -> void:
 			else:
 				estado_actual = Estado.PATRULLA
 		"death":
-			morir() # <-- Llamamos a morir() para procesar el drop antes del queue_free
+			morir()
 
 
 func morir() -> void:
-	print("--- ENEMIGO MUERTO (Diagnóstico) ---")
-	print("Escena actual: ", get_tree().current_scene)
+	print("--- PERRO CIMARRÓN MUERTO ---")
 	
-	var wave_mgr = get_tree().current_scene.find_child("WaveManager", true, false)
-	print("¿Encontró WaveManager con find_child?: ", wave_mgr)
+	var wave_mgr = null
+	var escena_actual = get_tree().current_scene
+	if escena_actual:
+		wave_mgr = escena_actual.find_child("WaveManager", true, false)
 	
+	if not wave_mgr and has_node("/root/WaveManager"):
+		wave_mgr = get_node("/root/WaveManager")
+		
 	if wave_mgr and wave_mgr.has_method("registrar_enemigo_derrotado"):
 		wave_mgr.registrar_enemigo_derrotado()
-		print("¡Éxito! Baja registrada.")
+		print("¡Éxito! Baja de perro registrada correctamente.")
 	else:
-		print("FALLÓ: El WaveManager no existe en esta escena o no tiene el método.")
+		print("ERROR CRÍTICO: No se encontró el WaveManager al morir el perro.")
 
 	_intentar_drop()
 	queue_free()
 
+
 func _intentar_drop() -> void:
 	if not empanada_scene:
-		print("OJO: No hay empanada_scene asignada en el Inspector de la Paloma")
 		return
 
 	var numero_azar := randf()
 	if numero_azar <= probabilidad_drop:
 		var empanada = empanada_scene.instantiate()
 		empanada.global_position = global_position
-		
-		# Agregamos al nivel para que persista
 		get_parent().add_child(empanada)
-		print("¡Empanada soltada con éxito en la posición: ", global_position)
-	else:
-		print("Mala suerte, esta paloma no soltó empanada (roll: ", numero_azar, ")")
 
 
 func _on_zona_deteccion_body_entered(body: Node2D) -> void:
@@ -274,14 +274,8 @@ func _on_zona_deteccion_body_entered(body: Node2D) -> void:
 
 
 func _on_zona_deteccion_body_exited(_body: Node2D) -> void:
-	# persigue para siempre
 	pass
 
 
 func _on_area_dano_body_entered(body: Node2D) -> void:
 	_aplicar_dano_a_cuerpo(body)
-	
-	
-	
-	
-	

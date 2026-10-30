@@ -17,7 +17,6 @@ var vida_actual: int
 @export var empanada_scene: PackedScene
 @export_range(0.0, 1.0) var probabilidad_drop: float = 0.4 # 40% de probabilidad de caer
 
-
 var objetivo_jugador: Node2D = null
 var ya_hizo_dano_en_este_ataque: bool = false
 
@@ -35,8 +34,6 @@ var punto_escape: Vector2 = Vector2.ZERO
 var buscando_escape: bool = false
 var posicion_anterior: Vector2 = Vector2.ZERO
 var tiempo_atascado: float = 0.0
-
-
 
 
 func _ready() -> void:
@@ -76,15 +73,27 @@ func _actualizar_animacion() -> void:
 
 	match estado_actual:
 		Estado.PATRULLA:
-			sprite.play("walk" if velocity != Vector2.ZERO else "idle")
+			sprite.play(_animacion_caminar("walk") if velocity != Vector2.ZERO else "idle")
 		Estado.PERSECUCION:
-			sprite.play("walk")
+			sprite.play(_animacion_caminar("walk2"))
 		Estado.ATAQUE:
-			sprite.play("attack")
+			sprite.play("attack2")
 		Estado.HERIDO:
-			sprite.play("hurt")
+			sprite.play("hurt2")
 		Estado.MUERTE:
-			sprite.play("death")
+			sprite.play("death2")
+
+
+func _animacion_caminar(prefijo: String) -> String:
+	# Si se mueve más en vertical que en horizontal, usa la variante _n / _s
+	if abs(velocity.y) > abs(velocity.x):
+		var nombre := prefijo + ("_n" if velocity.y < 0.0 else "_s")
+		if sprite.sprite_frames.has_animation(nombre):
+			return nombre
+	# Movimiento lateral: usa el prefijo solo si existe, si no "walk"
+	if sprite.sprite_frames.has_animation(prefijo):
+		return prefijo
+	return "walk"
 
 
 func _logica_patrulla(delta: float) -> void:
@@ -218,37 +227,43 @@ func _desactivar_dano() -> void:
 
 func _on_animation_finished() -> void:
 	match sprite.animation:
-		"attack":
+		"attack2":
 			_desactivar_dano()
 			if objetivo_jugador:
 				estado_actual = Estado.PERSECUCION
 			else:
 				estado_actual = Estado.PATRULLA
-		"hurt":
+		"hurt2":
 			if objetivo_jugador:
 				estado_actual = Estado.PERSECUCION
 			else:
 				estado_actual = Estado.PATRULLA
-		"death":
-			morir() # <-- Llamamos a morir() para procesar el drop antes del queue_free
-
+		"death2":
+			morir()
 
 
 func morir() -> void:
-	print("--- ENEMIGO MUERTO (Diagnóstico) ---")
-	print("Escena actual: ", get_tree().current_scene)
+	print("--- PALOMA MUERTA ---")
 	
-	var wave_mgr = get_tree().current_scene.find_child("WaveManager", true, false)
-	print("¿Encontró WaveManager con find_child?: ", wave_mgr)
+	var wave_mgr = null
+	var escena_actual = get_tree().current_scene
+	if escena_actual:
+		wave_mgr = escena_actual.find_child("WaveManager", true, false)
 	
+	if not wave_mgr and has_node("/root/WaveManager"):
+		wave_mgr = get_node("/root/WaveManager")
+		
 	if wave_mgr and wave_mgr.has_method("registrar_enemigo_derrotado"):
 		wave_mgr.registrar_enemigo_derrotado()
 		print("¡Éxito! Baja registrada.")
+	elif wave_mgr and wave_mgr.has_method("reducir_tiempo"):
+		wave_mgr.reducir_tiempo(10.0)
 	else:
-		print("FALLÓ: El WaveManager no existe en esta escena o no tiene el método.")
+		print("ERROR CRÍTICO: No se encontró el WaveManager o método de conteo al morir.")
 
 	_intentar_drop()
 	queue_free()
+
 
 func _intentar_drop() -> void:
 	if not empanada_scene:
@@ -259,8 +274,6 @@ func _intentar_drop() -> void:
 	if numero_azar <= probabilidad_drop:
 		var empanada = empanada_scene.instantiate()
 		empanada.global_position = global_position
-		
-		# Agregamos al nivel para que persista
 		get_parent().add_child(empanada)
 		print("¡Empanada soltada con éxito en la posición: ", global_position)
 	else:
@@ -275,14 +288,8 @@ func _on_zona_deteccion_body_entered(body: Node2D) -> void:
 
 
 func _on_zona_deteccion_body_exited(_body: Node2D) -> void:
-	# persigue para siempre
 	pass
 
 
 func _on_area_dano_body_entered(body: Node2D) -> void:
 	_aplicar_dano_a_cuerpo(body)
-	
-	
-	
-	
-	

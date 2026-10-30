@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dvcpu8f72wtyq"]
+
+[ext_resource type="PackedScene" uid="uid://dqdxlfus8q05" path="res://Weapon.tscn" id="1_sm6sl"]
+[ext_resource type="Script" uid="uid://bqbioqfff4p5j" path="res://mate.gd" id="2_32cub"]
+[ext_resource type="Texture2D" uid="uid://dsagpb18a4qm8" path="res://Assets/kenney_roguelike-characters/Preview.png" id="2_u6iyh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32cub"]
+atlas = ExtResource("2_u6iyh")
+region = Rect2(420, 330, 6, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d2ui2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32cub")
+}],
+"loop": 1,
+"name": &"mate",
+"speed": 5.0
+}]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_3eqau"]
+b = Vector2(0, 7)
+
+[node name="Node2D" unique_id=497934142 instance=ExtResource("1_sm6sl")]
+script = ExtResource("2_32cub")
+
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=1443688121]
+position = Vector2(0.25, 3.625)
+scale = Vector2(0.5833333, 0.45000002)
+sprite_frames = SubResource("SpriteFrames_d2ui2")
+animation = &"mate"
+
+[node name="CollisionShape2D" parent="Area2D" parent_id_path=PackedInt32Array(1333312529) index="0" unique_id=1549134662]
+shape = SubResource("SegmentShape2D_3eqau")

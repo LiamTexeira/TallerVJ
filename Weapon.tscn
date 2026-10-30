@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dqdxlfus8q05"]
+
+[ext_resource type="Script" uid="uid://c14b8ctcc81ds" path="res://Weapon.gd" id="1_2og4f"]
+
+[node name="Node2D" type="Node2D" unique_id=497934142]
+script = ExtResource("1_2og4f")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1443688121]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1333312529]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1549134662]

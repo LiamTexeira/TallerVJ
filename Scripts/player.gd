@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+const TERMO_SCENE := preload("res://termo.tscn")
+const MATE_SCENE := preload("res://mate.tscn")
+
 signal vida_cambiada(vida_actual, vida_maxima)
 signal jugador_muerto
 
@@ -7,14 +10,14 @@ const SPEED := 100.0
 const DASH_SPEED := 300.0
 const DASH_TIME := 0.15
 const DASH_COOLDOWN := 0.5
-const ATTACK_TIME := 0.3
-const ALCANCE_ATAQUE := 16.0 # Distancia a la que se desplaza la hitbox desde el centro
+
+var current_weapon: Weapon
+var stamina := 100.0
 
 var is_dashing := false
 var is_attacking := false
 var dash_timer := 0.0
 var dash_cooldown_timer := 0.0
-var attack_timer := 0.0
 var dash_direction := Vector2.ZERO
 var facing := Vector2.DOWN
 
@@ -30,6 +33,7 @@ var is_invulnerable := false
 @onready var sprite = $RoguelikeCharTransparent
 @onready var area_ataque: Area2D = $AreaAtaque
 @onready var collision_ataque: CollisionShape2D = $AreaAtaque/CollisionShape2D
+@onready var weapon_holder: Marker2D = $WeaponHolder
 
 
 func _ready() -> void:
@@ -42,6 +46,9 @@ func _ready() -> void:
 		
 	# Sincronizamos el HUD de entrada
 	_notificar_hud_temperatura()
+	
+	# Arma inicial de tu compañero
+	equip_weapon(TERMO_SCENE)
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -72,7 +79,7 @@ func cambiar_temperatura(temp: int) -> void:
 			RunManager.dano_quemadura_por_sorbo = 0
 		120:
 			RunManager.multiplicador_buff_yerba = 2.00
-			RunManager.dano_quemadura_por_sorbo = 1 # O el daño por quemadura que prefieras
+			RunManager.dano_quemadura_por_sorbo = 1
 			
 	_notificar_hud_temperatura()
 
@@ -89,17 +96,12 @@ func _notificar_hud_temperatura() -> void:
 func _physics_process(delta: float) -> void:
 	dash_cooldown_timer = max(dash_cooldown_timer - delta, 0.0)
 	
-	# Reducir tiempo de invulnerabilidad
 	if is_invulnerable:
 		invulnerable_timer -= delta
-		# Parpadeo visual mientras es invulnerable
-		sprite.modulate.a = 0.5 if fmod(invulnerable_timer, 0.2) > 0.1 else 1.0
-		
 		if invulnerable_timer <= 0.0:
 			is_invulnerable = false
-			sprite.modulate.a = 1.0 # Restablece la opacidad normal
 
-	# Flechas + WASD (ya mapeados). get_vector normaliza la diagonal.
+	# Flechas + WASD
 	var input_dir := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	if input_dir != Vector2.ZERO:
 		facing = input_dir.normalized()
@@ -110,19 +112,15 @@ func _physics_process(delta: float) -> void:
 		if dash_timer <= 0.0:
 			is_dashing = false
 	elif is_attacking:
-		attack_timer -= delta
-		velocity = Vector2.ZERO # Quieto mientras ataca
-		if attack_timer <= 0.0:
-			is_attacking = false
-			collision_ataque.disabled = true # Desactivamos el hitbox al finalizar el ataque
+		velocity = Vector2.ZERO  # quieto mientras ataca
 	else:
 		var speed_actual: float = SPEED * RunManager.multiplicador_buff_yerba
 		velocity = input_dir * speed_actual
 
-		if Input.is_action_just_pressed("dash") and dash_cooldown_timer <= 0.0:
-			start_dash(input_dir)
-		elif Input.is_action_just_pressed("attack"):
-			start_attack()
+	if Input.is_action_just_pressed("dash") and dash_cooldown_timer <= 0.0:
+		start_dash(input_dir)
+	elif Input.is_action_just_pressed("attack"):
+		start_attack()
 
 	move_and_slide()
 	_actualizar_animacion(input_dir)
@@ -138,34 +136,41 @@ func start_dash(input_dir: Vector2) -> void:
 	is_dashing = true
 	dash_timer = DASH_TIME
 	dash_cooldown_timer = DASH_COOLDOWN
-	# Si esta quieto, dashea hacia donde mirabas
 	dash_direction = input_dir.normalized() if input_dir != Vector2.ZERO else facing
 
 
+func equip_weapon(weapon_scene: PackedScene) -> void:
+	if current_weapon:
+		current_weapon.queue_free()
+	current_weapon = weapon_scene.instantiate()
+	weapon_holder.add_child(current_weapon)
+
+
 func start_attack() -> void:
+	if not current_weapon or is_attacking:
+		return
+	if stamina < current_weapon.stamina_cost:
+		return  # no hay estamina suficiente
+		
+	stamina -= current_weapon.stamina_cost
 	is_attacking = true
-	attack_timer = ATTACK_TIME
 	
-	# Posicionamos el Area2D en frente del jugador según la dirección 'facing'
-	area_ataque.position = facing * ALCANCE_ATAQUE
-	
-	# Activamos la colision de ataque
-	collision_ataque.disabled = false
+	current_weapon.do_attack()
+	current_weapon.attack_finished.connect(func(): is_attacking = false, CONNECT_ONE_SHOT)
 	
 	if sprite and sprite.sprite_frames.has_animation("attack"):
 		sprite.play("attack")
 
 
-func _actualizar_animacion(input_dir: Vector2) -> void:
+func _actualizar_animacion(_input_dir: Vector2) -> void:
 	if not sprite:
 		return
 		
-	# Volteamos el sprite en X segun hacia donde camine o mire
 	if facing.x != 0:
 		sprite.flip_h = facing.x < 0
 
 	if is_attacking:
-		return # Mantiene la animacion "attack" activada en start_attack()
+		return
 		
 	if velocity != Vector2.ZERO:
 		if sprite.sprite_frames.has_animation("walk"):
