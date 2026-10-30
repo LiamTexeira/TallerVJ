@@ -63,3 +63,18 @@ offset_right = 964.0
 offset_bottom = 542.0
 toggle_mode = true
 text = "EXIT"
+
+[node name="btn_80C" type="Button" parent="." unique_id=150907911]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="btn_100C" type="Button" parent="." unique_id=2080790247]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="btn_120C" type="Button" parent="." unique_id=823345428]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
