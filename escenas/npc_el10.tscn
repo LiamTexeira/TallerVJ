@@ -2,10 +2,15 @@
 
 [ext_resource type="Script" uid="uid://bkgghxlvnjtwo" path="res://escenas/npc_el10.gd" id="1_a0os5"]
 [ext_resource type="Texture2D" uid="uid://dq51gs8io4kfi" path="res://Assets/Tiny RPG Character Asset Pack 02 -Free Demon_A&Blood Monster_A/Characters(100x100 split)/Demon_A/Demon_A with shadows/Demon_A.png" id="2_as4k3"]
+[ext_resource type="Texture2D" uid="uid://bh4sjwk0cinik" path="res://Assets/asset_npcs.png" id="3_poaut"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_poaut"]
 atlas = ExtResource("2_as4k3")
 region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j16lr"]
+atlas = ExtResource("3_poaut")
+region = Rect2(377, 68, 256, 498)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_as4k3"]
 animations = [{
@@ -15,6 +20,14 @@ animations = [{
 }],
 "loop": 1,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j16lr")
+}],
+"loop": 1,
+"name": &"idle",
 "speed": 5.0
 }]
 
@@ -27,7 +40,9 @@ collision_mask = 2
 script = ExtResource("1_a0os5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1412978783]
+scale = Vector2(0.035, 0.035)
 sprite_frames = SubResource("SpriteFrames_as4k3")
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1610709578]
 shape = SubResource("CircleShape2D_xrivr")

@@ -181,10 +181,6 @@ region = Rect2(709, 294, 122, 147)
 atlas = ExtResource("4_sweqy")
 region = Rect2(831, 294, 122, 147)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yem3p"]
-atlas = ExtResource("4_sweqy")
-region = Rect2(99, 147, 122, 147)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_86rna"]
 atlas = ExtResource("4_sweqy")
 region = Rect2(221, 147, 122, 147)
@@ -462,9 +458,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yem3p")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_86rna")
 }, {
 "duration": 1.0,
@@ -596,7 +589,8 @@ shape = SubResource("RectangleShape2D_13qdw")
 position = Vector2(1.63, -15.129)
 scale = Vector2(0.14264463, 0.1479061)
 sprite_frames = SubResource("SpriteFrames_xrivr")
-animation = &"walk3_s"
+animation = &"walk3_e"
+frame_progress = 0.09142815
 
 [node name="AreaAtaque" type="Area2D" parent="." unique_id=1268118716]
 position = Vector2(-3, -15)
@@ -609,6 +603,6 @@ shape = SubResource("CircleShape2D_xrivr")
 disabled = true
 
 [node name="WeaponHolder" type="Marker2D" parent="." unique_id=296095989]
-position = Vector2(-1, -12)
+position = Vector2(-3, -11)
 
 [connection signal="body_entered" from="AreaAtaque" to="." method="_on_area_ataque_body_entered"]

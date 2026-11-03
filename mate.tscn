@@ -97,23 +97,23 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6lfig"]
-radius = 3.7352123
-height = 27.391556
+radius = 1.3145286
+height = 14.940847
 
 [node name="Node2D" unique_id=497934142 instance=ExtResource("1_sm6sl")]
 script = ExtResource("2_32cub")
 damage = 1
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=1443688121]
-position = Vector2(10, 0.9999999)
-scale = Vector2(0.21607144, 0.20011112)
+position = Vector2(4, 5.9604645e-08)
+scale = Vector2(0.1, 0.093)
 sprite_frames = SubResource("SpriteFrames_d2ui2")
 animation = &"swing_fast"
 frame = 7
 frame_progress = 1.0
 
 [node name="CollisionShape2D" parent="Area2D" parent_id_path=PackedInt32Array(1333312529) index="0" unique_id=1549134662]
-position = Vector2(10, 1)
+position = Vector2(4, 4.2632564e-14)
 rotation = 4.4296455
 scale = Vector2(0.8, 0.8)
 skew = 0.2687807
