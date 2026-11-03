@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://eu10cgxy31o0"]
+
+[ext_resource type="Script" uid="uid://b6aclt82qwt7s" path="res://escenas/pause_menu.gd" id="1_m1gaa"]
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=742826565]
+process_mode = 3
+script = ExtResource("1_m1gaa")
+
+[node name="MenuPause" type="Control" parent="." unique_id=1914812250]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FondoOscuro" type="ColorRect" parent="MenuPause" unique_id=173547640]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.42, 0.42, 0.42, 0.5019608)
+
+[node name="CenterContainer" type="CenterContainer" parent="MenuPause" unique_id=1368779045]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuPause/CenterContainer" unique_id=1706953836]
+layout_mode = 2
+
+[node name="Titulo" type="Label" parent="MenuPause/CenterContainer/VBoxContainer" unique_id=765241852]
+layout_mode = 2
+text = "JUEGO EN PAUSA"
+
+[node name="Espaciador" type="Control" parent="MenuPause/CenterContainer/VBoxContainer" unique_id=2077569601]
+layout_mode = 2
+
+[node name="BotonReanudar" type="Button" parent="MenuPause/CenterContainer/VBoxContainer" unique_id=1870008241]
+layout_mode = 2
+text = "REANUDAR"
+
+[node name="BotonSalir" type="Button" parent="MenuPause/CenterContainer/VBoxContainer" unique_id=349130318]
+layout_mode = 2
+text = "SALIR AL MENU"
+
+[connection signal="pressed" from="MenuPause/CenterContainer/VBoxContainer/BotonReanudar" to="." method="_on_boton_reanudar_pressed"]

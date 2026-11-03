@@ -1,0 +1,474 @@
+[gd_resource type="Theme" load_steps=40 format=3]
+
+[ext_resource type="Texture2D" path="res://uikit/codex-pages/pixel/atlas.png" id="1_atlas"]
+[ext_resource type="FontFile" path="res://uikit/codex-pages/font/codex-pages_pixel.tres" id="2_font"]
+
+[sub_resource type="StyleBoxTexture" id="sb__panel_window__normal"]
+texture = ExtResource("1_atlas")
+region_rect = Rect2(134, 2, 32, 32)
+texture_margin_left = 11.0
+texture_margin_top = 11.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+content_margin_left = 7.0
+content_margin_top = 6.0
+content_margin_right = 8.0
+content_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="sb__button_primary__normal"]
+texture = ExtResource("1_atlas")
+region_rect = Rect2(48, 84, 40, 16)
+texture_margin_left = 5.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+content_margin_left = 7.0
+content_margin_top = 3.0
+content_margin_right = 8.0
+content_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="sb__button_primary__hover"]
+texture = ExtResource("1_atlas")
+region_rect = Rect2(90, 84, 40, 16)
+texture_margin_left = 5.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+content_margin_left = 7.0
+content_margin_top = 3.0
+content_margin_right = 8.0
+content_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="sb__button_primary__pressed"]
+texture = ExtResource("1_atlas")
+region_rect = Rect2(132, 84, 40, 16)
+texture_margin_left = 5.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+content_margin_left = 7.0
+content_margin_top = 3.0
+content_margin_right = 8.0
+content_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="sb__button_primary__disabled"]
+texture = ExtResource("1_atlas")
+region_rect = Rect2(174, 84, 40, 16)
+texture_margin_left = 5.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+content_margin_left = 7.0
+content_margin_top = 3.0
+content_margin_right = 8.0
+content_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="sb_empty"]
+
+[sub_resource type="StyleBoxTexture" id="sb__bar_frame__normal"]
+texture = ExtResource("1_atlas")
+region_rect = Rect2(122, 148, 40, 8)
+texture_margin_left = 3.0
+texture_margin_top = 0.0
+texture_margin_right = 3.0
+texture_margin_bottom = 0.0
+content_margin_left = 3.0
+content_margin_top = 4.0
+content_margin_right = 3.0
+content_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="sb__bar_hp_fill__normal"]
+texture = ExtResource("1_atlas")
+region_rect = Rect2(191, 148, 36, 4)
+texture_margin_left = 1.0
+texture_margin_top = 0.0
+texture_margin_right = 1.0
+texture_margin_bottom = 0.0
+content_margin_left = 1.0
+content_margin_top = 2.0
+content_margin_right = 1.0
+content_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="sb__dialogue_box__normal"]
+texture = ExtResource("1_atlas")
+region_rect = Rect2(168, 2, 64, 28)
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 13.0
+texture_margin_bottom = 13.0
+content_margin_left = 10.0
+content_margin_top = 9.0
+content_margin_right = 11.0
+content_margin_bottom = 9.0
+
+[sub_resource type="StyleBoxTexture" id="sb__nameplate__normal"]
+texture = ExtResource("1_atlas")
+region_rect = Rect2(212, 132, 36, 12)
+texture_margin_left = 3.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+content_margin_left = 5.0
+content_margin_top = 1.0
+content_margin_right = 6.0
+content_margin_bottom = 0.0
+
+[sub_resource type="StyleBoxTexture" id="sb__panel_header__normal"]
+texture = ExtResource("1_atlas")
+region_rect = Rect2(216, 84, 32, 16)
+texture_margin_left = 4.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+content_margin_left = 6.0
+content_margin_top = 3.0
+content_margin_right = 7.0
+content_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="sb__page_left__normal"]
+texture = ExtResource("1_atlas")
+region_rect = Rect2(2, 2, 64, 80)
+texture_margin_left = 9.0
+texture_margin_top = 9.0
+texture_margin_right = 5.0
+texture_margin_bottom = 10.0
+content_margin_left = 11.0
+content_margin_top = 6.0
+content_margin_right = 7.0
+content_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="sb__page_right__normal"]
+texture = ExtResource("1_atlas")
+region_rect = Rect2(68, 2, 64, 80)
+texture_margin_left = 5.0
+texture_margin_top = 9.0
+texture_margin_right = 9.0
+texture_margin_bottom = 10.0
+content_margin_left = 7.0
+content_margin_top = 6.0
+content_margin_right = 11.0
+content_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="sb__chapter_heading__normal"]
+texture = ExtResource("1_atlas")
+region_rect = Rect2(16, 114, 64, 15)
+texture_margin_left = 8.0
+texture_margin_top = 0.0
+texture_margin_right = 8.0
+texture_margin_bottom = 0.0
+content_margin_left = 10.0
+content_margin_top = 3.0
+content_margin_right = 10.0
+content_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxTexture" id="sb__page_number__normal"]
+texture = ExtResource("1_atlas")
+region_rect = Rect2(162, 132, 18, 13)
+texture_margin_left = 5.0
+texture_margin_top = 4.0
+texture_margin_right = 5.0
+texture_margin_bottom = 4.0
+content_margin_left = 6.0
+content_margin_top = 2.0
+content_margin_right = 6.0
+content_margin_bottom = 0.0
+
+[sub_resource type="StyleBoxTexture" id="sb__drop_cap__normal"]
+texture = ExtResource("1_atlas")
+region_rect = Rect2(24, 84, 22, 22)
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+content_margin_left = 7.0
+content_margin_top = 6.0
+content_margin_right = 7.0
+content_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="sb__quest_entry__normal"]
+texture = ExtResource("1_atlas")
+region_rect = Rect2(99, 114, 72, 14)
+texture_margin_left = 13.0
+texture_margin_top = 0.0
+texture_margin_right = 2.0
+texture_margin_bottom = 0.0
+content_margin_left = 13.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxTexture" id="sb__quest_entry__hover"]
+texture = ExtResource("1_atlas")
+region_rect = Rect2(173, 114, 72, 14)
+texture_margin_left = 13.0
+texture_margin_top = 0.0
+texture_margin_right = 2.0
+texture_margin_bottom = 0.0
+content_margin_left = 13.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxTexture" id="sb__quest_entry__selected"]
+texture = ExtResource("1_atlas")
+region_rect = Rect2(2, 132, 72, 14)
+texture_margin_left = 13.0
+texture_margin_top = 0.0
+texture_margin_right = 2.0
+texture_margin_bottom = 0.0
+content_margin_left = 13.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxTexture" id="sb__quest_entry__disabled"]
+texture = ExtResource("1_atlas")
+region_rect = Rect2(76, 132, 72, 14)
+texture_margin_left = 13.0
+texture_margin_top = 0.0
+texture_margin_right = 2.0
+texture_margin_bottom = 0.0
+content_margin_left = 13.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxTexture" id="sb__bookmark_red__normal"]
+texture = ExtResource("1_atlas")
+region_rect = Rect2(234, 2, 9, 28)
+texture_margin_left = 0.0
+texture_margin_top = 3.0
+texture_margin_right = 0.0
+texture_margin_bottom = 5.0
+content_margin_left = 0.0
+content_margin_top = 3.0
+content_margin_right = 0.0
+content_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="sb__bookmark_red__hover"]
+texture = ExtResource("1_atlas")
+region_rect = Rect2(245, 2, 9, 28)
+texture_margin_left = 0.0
+texture_margin_top = 3.0
+texture_margin_right = 0.0
+texture_margin_bottom = 5.0
+content_margin_left = 0.0
+content_margin_top = 3.0
+content_margin_right = 0.0
+content_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="sb__bookmark_red__active"]
+texture = ExtResource("1_atlas")
+region_rect = Rect2(2, 84, 9, 28)
+texture_margin_left = 0.0
+texture_margin_top = 3.0
+texture_margin_right = 0.0
+texture_margin_bottom = 5.0
+content_margin_left = 0.0
+content_margin_top = 3.0
+content_margin_right = 0.0
+content_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="sb__bookmark_red__disabled"]
+texture = ExtResource("1_atlas")
+region_rect = Rect2(13, 84, 9, 28)
+texture_margin_left = 0.0
+texture_margin_top = 3.0
+texture_margin_right = 0.0
+texture_margin_bottom = 5.0
+content_margin_left = 0.0
+content_margin_top = 3.0
+content_margin_right = 0.0
+content_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="sb__edge_tab_blue__normal"]
+texture = ExtResource("1_atlas")
+region_rect = Rect2(2, 148, 26, 12)
+texture_margin_left = 4.0
+texture_margin_top = 0.0
+texture_margin_right = 5.0
+texture_margin_bottom = 0.0
+content_margin_left = 4.0
+content_margin_top = 1.0
+content_margin_right = 5.0
+content_margin_bottom = 0.0
+
+[sub_resource type="StyleBoxTexture" id="sb__edge_tab_blue__hover"]
+texture = ExtResource("1_atlas")
+region_rect = Rect2(30, 148, 26, 12)
+texture_margin_left = 4.0
+texture_margin_top = 0.0
+texture_margin_right = 5.0
+texture_margin_bottom = 0.0
+content_margin_left = 4.0
+content_margin_top = 1.0
+content_margin_right = 5.0
+content_margin_bottom = 0.0
+
+[sub_resource type="StyleBoxTexture" id="sb__edge_tab_blue__active"]
+texture = ExtResource("1_atlas")
+region_rect = Rect2(58, 148, 26, 12)
+texture_margin_left = 4.0
+texture_margin_top = 0.0
+texture_margin_right = 5.0
+texture_margin_bottom = 0.0
+content_margin_left = 4.0
+content_margin_top = 1.0
+content_margin_right = 5.0
+content_margin_bottom = 0.0
+
+[sub_resource type="StyleBoxTexture" id="sb__edge_tab_blue__disabled"]
+texture = ExtResource("1_atlas")
+region_rect = Rect2(86, 148, 26, 12)
+texture_margin_left = 4.0
+texture_margin_top = 0.0
+texture_margin_right = 5.0
+texture_margin_bottom = 0.0
+content_margin_left = 4.0
+content_margin_top = 1.0
+content_margin_right = 5.0
+content_margin_bottom = 0.0
+
+[sub_resource type="AtlasTexture" id="at__cursor_pointer__normal"]
+atlas = ExtResource("1_atlas")
+region = Rect2(150, 132, 10, 14)
+
+[sub_resource type="AtlasTexture" id="at__cursor_select__normal"]
+atlas = ExtResource("1_atlas")
+region = Rect2(114, 148, 6, 9)
+
+[sub_resource type="AtlasTexture" id="at__advance_arrow__frame0"]
+atlas = ExtResource("1_atlas")
+region = Rect2(173, 148, 7, 6)
+
+[sub_resource type="AtlasTexture" id="at__advance_arrow__frame1"]
+atlas = ExtResource("1_atlas")
+region = Rect2(182, 148, 7, 6)
+
+[sub_resource type="AtlasTexture" id="at__heart_full__normal"]
+atlas = ExtResource("1_atlas")
+region = Rect2(164, 148, 7, 7)
+
+[sub_resource type="AtlasTexture" id="at__stamp_active__normal"]
+atlas = ExtResource("1_atlas")
+region = Rect2(182, 132, 13, 13)
+
+[sub_resource type="AtlasTexture" id="at__stamp_done__normal"]
+atlas = ExtResource("1_atlas")
+region = Rect2(197, 132, 13, 13)
+
+[sub_resource type="AtlasTexture" id="at__wax_seal__normal"]
+atlas = ExtResource("1_atlas")
+region = Rect2(82, 114, 15, 15)
+
+[sub_resource type="AtlasTexture" id="at__cursor_quill__normal"]
+atlas = ExtResource("1_atlas")
+region = Rect2(2, 114, 12, 16)
+
+[resource]
+default_font = ExtResource("2_font")
+default_font_size = 11
+Label/colors/font_color = Color(0.1804, 0.1098, 0.0627, 1.0000)
+Panel/styles/panel = SubResource("sb__panel_window__normal")
+PanelContainer/styles/panel = SubResource("sb__panel_window__normal")
+Button/styles/normal = SubResource("sb__button_primary__normal")
+Button/styles/hover = SubResource("sb__button_primary__hover")
+Button/styles/pressed = SubResource("sb__button_primary__pressed")
+Button/styles/disabled = SubResource("sb__button_primary__disabled")
+Button/styles/focus = SubResource("sb_empty")
+Button/colors/font_color = Color(0.9843, 0.9529, 0.8627, 1.0000)
+Button/colors/font_hover_color = Color(1.0000, 0.9804, 0.9176, 1.0000)
+Button/colors/font_pressed_color = Color(0.9843, 0.9529, 0.8627, 1.0000)
+Button/colors/font_focus_color = Color(0.9843, 0.9529, 0.8627, 1.0000)
+Button/colors/font_hover_pressed_color = Color(0.9843, 0.9529, 0.8627, 1.0000)
+Button/colors/font_disabled_color = Color(0.2549, 0.2745, 0.3529, 1.0000)
+PrimaryButton/base_type = &"Button"
+PrimaryButton/styles/normal = SubResource("sb__button_primary__normal")
+PrimaryButton/styles/hover = SubResource("sb__button_primary__hover")
+PrimaryButton/styles/pressed = SubResource("sb__button_primary__pressed")
+PrimaryButton/styles/disabled = SubResource("sb__button_primary__disabled")
+PrimaryButton/styles/focus = SubResource("sb_empty")
+PrimaryButton/colors/font_color = Color(0.9843, 0.9529, 0.8627, 1.0000)
+PrimaryButton/colors/font_hover_color = Color(1.0000, 0.9804, 0.9176, 1.0000)
+PrimaryButton/colors/font_pressed_color = Color(0.9843, 0.9529, 0.8627, 1.0000)
+PrimaryButton/colors/font_focus_color = Color(0.9843, 0.9529, 0.8627, 1.0000)
+PrimaryButton/colors/font_hover_pressed_color = Color(0.9843, 0.9529, 0.8627, 1.0000)
+PrimaryButton/colors/font_disabled_color = Color(0.2549, 0.2745, 0.3529, 1.0000)
+ProgressBar/styles/background = SubResource("sb__bar_frame__normal")
+ProgressBar/colors/font_color = Color(0.1804, 0.1098, 0.0627, 1.0000)
+ProgressBar/styles/fill = SubResource("sb__bar_hp_fill__normal")
+HpBar/base_type = &"ProgressBar"
+HpBar/styles/fill = SubResource("sb__bar_hp_fill__normal")
+DialogueBox/base_type = &"PanelContainer"
+DialogueBox/styles/panel = SubResource("sb__dialogue_box__normal")
+NamePlate/base_type = &"PanelContainer"
+NamePlate/styles/panel = SubResource("sb__nameplate__normal")
+HeaderPanel/base_type = &"PanelContainer"
+HeaderPanel/styles/panel = SubResource("sb__panel_header__normal")
+NamePlateLabel/base_type = &"Label"
+NamePlateLabel/colors/font_color = Color(0.9843, 0.9529, 0.8627, 1.0000)
+HeaderLabel/base_type = &"Label"
+HeaderLabel/colors/font_color = Color(0.9843, 0.9529, 0.8627, 1.0000)
+DialogueLabel/base_type = &"Label"
+DialogueLabel/colors/font_color = Color(0.1804, 0.1098, 0.0627, 1.0000)
+PageLeft/base_type = &"PanelContainer"
+PageLeft/styles/panel = SubResource("sb__page_left__normal")
+PageRight/base_type = &"PanelContainer"
+PageRight/styles/panel = SubResource("sb__page_right__normal")
+ChapterHeading/base_type = &"PanelContainer"
+ChapterHeading/styles/panel = SubResource("sb__chapter_heading__normal")
+PageNumber/base_type = &"PanelContainer"
+PageNumber/styles/panel = SubResource("sb__page_number__normal")
+DropCap/base_type = &"PanelContainer"
+DropCap/styles/panel = SubResource("sb__drop_cap__normal")
+PageLabel/base_type = &"Label"
+PageLabel/colors/font_color = Color(0.1804, 0.1098, 0.0627, 1.0000)
+ChapterLabel/base_type = &"Label"
+ChapterLabel/colors/font_color = Color(0.1804, 0.1098, 0.0627, 1.0000)
+PageNumberLabel/base_type = &"Label"
+PageNumberLabel/colors/font_color = Color(0.1804, 0.1098, 0.0627, 1.0000)
+DropCapLabel/base_type = &"Label"
+DropCapLabel/colors/font_color = Color(0.9725, 0.9333, 0.8314, 1.0000)
+PageLabel/constants/line_spacing = 0
+QuestEntry/base_type = &"Button"
+QuestEntry/styles/normal = SubResource("sb__quest_entry__normal")
+QuestEntry/styles/hover = SubResource("sb__quest_entry__hover")
+QuestEntry/styles/pressed = SubResource("sb__quest_entry__selected")
+QuestEntry/styles/hover_pressed = SubResource("sb__quest_entry__selected")
+QuestEntry/styles/disabled = SubResource("sb__quest_entry__disabled")
+QuestEntry/styles/focus = SubResource("sb_empty")
+QuestEntry/colors/font_color = Color(0.1804, 0.1098, 0.0627, 1.0000)
+QuestEntry/colors/font_hover_color = Color(0.1804, 0.1098, 0.0627, 1.0000)
+QuestEntry/colors/font_pressed_color = Color(0.1804, 0.1098, 0.0627, 1.0000)
+QuestEntry/colors/font_hover_pressed_color = Color(0.1804, 0.1098, 0.0627, 1.0000)
+QuestEntry/colors/font_focus_color = Color(0.1804, 0.1098, 0.0627, 1.0000)
+QuestEntry/colors/font_disabled_color = Color(0.3059, 0.2706, 0.2392, 1.0000)
+BookmarkRed/base_type = &"Button"
+BookmarkRed/styles/normal = SubResource("sb__bookmark_red__normal")
+BookmarkRed/styles/hover = SubResource("sb__bookmark_red__hover")
+BookmarkRed/styles/pressed = SubResource("sb__bookmark_red__active")
+BookmarkRed/styles/hover_pressed = SubResource("sb__bookmark_red__active")
+BookmarkRed/styles/disabled = SubResource("sb__bookmark_red__disabled")
+BookmarkRed/styles/focus = SubResource("sb_empty")
+EdgeTabBlue/base_type = &"Button"
+EdgeTabBlue/styles/normal = SubResource("sb__edge_tab_blue__normal")
+EdgeTabBlue/styles/hover = SubResource("sb__edge_tab_blue__hover")
+EdgeTabBlue/styles/pressed = SubResource("sb__edge_tab_blue__active")
+EdgeTabBlue/styles/hover_pressed = SubResource("sb__edge_tab_blue__active")
+EdgeTabBlue/styles/disabled = SubResource("sb__edge_tab_blue__disabled")
+EdgeTabBlue/styles/focus = SubResource("sb_empty")
+EdgeTabBlue/colors/font_color = Color(0.1804, 0.1098, 0.0627, 1.0000)
+EdgeTabBlue/colors/font_hover_color = Color(0.1804, 0.1098, 0.0627, 1.0000)
+EdgeTabBlue/colors/font_pressed_color = Color(0.1804, 0.1098, 0.0627, 1.0000)
+EdgeTabBlue/colors/font_hover_pressed_color = Color(0.1804, 0.1098, 0.0627, 1.0000)
+EdgeTabBlue/colors/font_focus_color = Color(0.1804, 0.1098, 0.0627, 1.0000)
+EdgeTabBlue/colors/font_disabled_color = Color(0.3059, 0.2706, 0.2392, 1.0000)
+UiKit/icons/cursor_pointer = SubResource("at__cursor_pointer__normal")
+UiKit/icons/cursor_select = SubResource("at__cursor_select__normal")
+UiKit/icons/advance_arrow_frame0 = SubResource("at__advance_arrow__frame0")
+UiKit/icons/advance_arrow_frame1 = SubResource("at__advance_arrow__frame1")
+UiKit/icons/heart_full = SubResource("at__heart_full__normal")
+UiKit/icons/stamp_active = SubResource("at__stamp_active__normal")
+UiKit/icons/stamp_done = SubResource("at__stamp_done__normal")
+UiKit/icons/wax_seal = SubResource("at__wax_seal__normal")
+UiKit/icons/cursor_quill = SubResource("at__cursor_quill__normal")

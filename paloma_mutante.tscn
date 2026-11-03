@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://doqud7mvuq50v" path="res://Assets/Tiny RPG Character Asset Pack 02 -Free Demon_A&Blood Monster_A/Characters(100x100 split)/Blood Monster_A/Blood Monster_A/Blood Monster_A_Death.png" id="3_jbmg5"]
 [ext_resource type="Texture2D" uid="uid://dpe6t5mltus62" path="res://Assets/Tiny RPG Character Asset Pack 02 -Free Demon_A&Blood Monster_A/Characters(100x100 split)/Blood Monster_A/Blood Monster_A/Blood Monster_A_Hurt.png" id="4_igxwu"]
 [ext_resource type="Texture2D" uid="uid://dc7cxpfnhl1ti" path="res://Assets/Tiny RPG Character Asset Pack 02 -Free Demon_A&Blood Monster_A/Characters(100x100 split)/Blood Monster_A/Blood Monster_A/Blood Monster_A_Idle.png" id="5_jbmg5"]
+[ext_resource type="PackedScene" uid="uid://bgpxg1n5kovrm" path="res://escenas/empanada_drop.tscn" id="7_igxwu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7srg4"]
 atlas = ExtResource("2_8m4uo")
@@ -252,7 +253,7 @@ radius = 56.666668
 radius = 117.094444
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b1lj4"]
-radius = 53.333332
+radius = 36.666664
 
 [node name="PalomaMutante" type="CharacterBody2D" unique_id=1613642628]
 position = Vector2(1, 0)
@@ -260,6 +261,7 @@ scale = Vector2(0.3, 0.3)
 collision_layer = 4
 script = ExtResource("1_1jscv")
 distancia_ataque = 15.0
+empanada_scene = ExtResource("7_igxwu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1659756272]
 position = Vector2(1.5258789e-05, -3.3332977)
@@ -268,12 +270,10 @@ sprite_frames = SubResource("SpriteFrames_xrivr")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1250684838]
-visible = false
 position = Vector2(-2.3841858e-07, 0)
 shape = SubResource("CircleShape2D_xrivr")
 
 [node name="ZonaDeteccion" type="Area2D" parent="." unique_id=1528317421]
-visible = false
 collision_layer = 0
 collision_mask = 2
 

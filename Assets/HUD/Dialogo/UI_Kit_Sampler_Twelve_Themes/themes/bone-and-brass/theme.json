@@ -1,0 +1,194 @@
+{
+  "schema": "csaf-uikit-theme/1",
+  "id": "bone-and-brass",
+  "name": "Bone and Brass",
+  "note": "Kit 3 (2026-10-16): a grim dark-fantasy bevel theme. Heavy 4-unit bone frames with near-square corners over iron-dark panels, tarnished brass for the accent family, blood red for danger, and brass L-bracket corner caps with bone studs on the window, dialogue box, portrait frame and MZ windowskin (geometry.corner \"cap\", 2026-10-17). For action RPGs, roguelikes and crawlers. Every text-on-fill pair is re-measured by the gate.",
+  "geometry": {
+    "border": 4,
+    "radius": 1,
+    "shadow": 1,
+    "hdScale": 3,
+    "style": "bevel",
+    "ornaments": true,
+    "corner": "cap"
+  },
+  "demo": {
+    "buttons": [
+      "Descend",
+      "Inventory",
+      "Abandon",
+      "Sealed"
+    ],
+    "checks": [
+      "Gore",
+      "Hardcore"
+    ],
+    "toggle": "Permadeath",
+    "slider": "Torchlight",
+    "field": "Name your hero",
+    "options": [
+      "Mortal",
+      "Cursed",
+      "Damned"
+    ],
+    "tabs": [
+      "Gear",
+      "Relics",
+      "Bestiary"
+    ],
+    "tooltip": "Bone Cleaver  +18 DMG",
+    "speaker": "The Warden",
+    "lines": [
+      "The crypt gate is shut. Bring me the iron key.",
+      "Do not let the dead follow you out."
+    ]
+  },
+  "colors": {
+    "outline": "#100b09",
+    "shadow": "#060403",
+    "track": "#17110e",
+    "trackLight": "#2a211c",
+    "backdrop": "#3a3532",
+    "cursorFill": "#efe4c8",
+    "cursorShade": "#b8a57c",
+    "textDim": "#a8987a",
+    "hp": [
+      "#4a0c10",
+      "#b0242c",
+      "#ff6a5a"
+    ],
+    "mp": [
+      "#1c2f5a",
+      "#3a5fb0",
+      "#8fb0f0"
+    ],
+    "xp": [
+      "#5a4210",
+      "#c99a2a",
+      "#ffd870"
+    ],
+    "stamina": [
+      "#24451c",
+      "#4f8f3a",
+      "#a5d77f"
+    ],
+    "boss": [
+      "#2a0a2e",
+      "#6e1f78",
+      "#c06ad0"
+    ],
+    "panelDarkFill": "#0e0907dc"
+  },
+  "families": {
+    "frame": {
+      "normal": {
+        "light": "#efe4c8",
+        "mid": "#bfae86",
+        "dark": "#6e5f44",
+        "fill": "#2b2522",
+        "shade": "#211c1a",
+        "text": "#efe4c8"
+      },
+      "hover": {
+        "light": "#fff4d8",
+        "mid": "#d6c49a",
+        "dark": "#857350",
+        "fill": "#37302c",
+        "shade": "#2b2522",
+        "text": "#fff4dc"
+      },
+      "pressed": {
+        "light": "#efe4c8",
+        "mid": "#a8986f",
+        "dark": "#574a34",
+        "fill": "#211c1a",
+        "shade": "#181412",
+        "text": "#efe4c8"
+      },
+      "active": {
+        "light": "#fff4d8",
+        "mid": "#d6c49a",
+        "dark": "#857350",
+        "fill": "#2b2522",
+        "shade": "#211c1a",
+        "text": "#fff4dc"
+      },
+      "disabled": {
+        "light": "#8a837a",
+        "mid": "#625c55",
+        "dark": "#3f3a35",
+        "fill": "#2e2b29",
+        "shade": "#252220",
+        "text": "#c8c1b8"
+      }
+    },
+    "accent": {
+      "normal": {
+        "light": "#f0cf7a",
+        "mid": "#b8893a",
+        "dark": "#6b4a1a",
+        "fill": "#7a5520",
+        "shade": "#5f421a",
+        "text": "#fff1d6"
+      },
+      "hover": {
+        "light": "#ffe09a",
+        "mid": "#c99a45",
+        "dark": "#7a5520",
+        "fill": "#8a6126",
+        "shade": "#7a5520",
+        "text": "#fff6e4"
+      },
+      "pressed": {
+        "light": "#f0cf7a",
+        "mid": "#a07530",
+        "dark": "#4e3512",
+        "fill": "#634418",
+        "shade": "#4e3512",
+        "text": "#fff1d6"
+      },
+      "disabled": {
+        "light": "#9a9080",
+        "mid": "#6e665a",
+        "dark": "#47423a",
+        "fill": "#3a3630",
+        "shade": "#2e2b26",
+        "text": "#d4cbbd"
+      }
+    },
+    "danger": {
+      "normal": {
+        "light": "#ff8a7a",
+        "mid": "#a8242a",
+        "dark": "#4a0c10",
+        "fill": "#7e1820",
+        "shade": "#621218",
+        "text": "#ffe9e4"
+      },
+      "hover": {
+        "light": "#ff9a8a",
+        "mid": "#c02e36",
+        "dark": "#5a1016",
+        "fill": "#922028",
+        "shade": "#7e1820",
+        "text": "#fff0ec"
+      },
+      "pressed": {
+        "light": "#ff8a7a",
+        "mid": "#8e1d24",
+        "dark": "#3a080d",
+        "fill": "#661219",
+        "shade": "#4f0d13",
+        "text": "#ffe9e4"
+      },
+      "disabled": {
+        "light": "#9a8a8a",
+        "mid": "#685a5a",
+        "dark": "#433838",
+        "fill": "#352c2c",
+        "shade": "#2a2323",
+        "text": "#d8cccc"
+      }
+    }
+  }
+}

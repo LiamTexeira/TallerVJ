@@ -1,0 +1,15 @@
+mode,sprite,file,width,height,margin_left_px,margin_top_px,margin_right_px,margin_bottom_px,margin_left,margin_top,margin_right,margin_bottom
+pixel,spr_casual_pop_pixel_panel_window_normal,pixel/sprites/panel_window__normal.png,32,32,6,7,6,7,0.1875,0.2188,0.1875,0.2188
+pixel,spr_casual_pop_pixel_panel_header_normal,pixel/sprites/panel_header__normal.png,32,16,6,7,6,7,0.1875,0.4375,0.1875,0.4375
+pixel,spr_casual_pop_pixel_dialogue_box_normal,pixel/sprites/dialogue_box__normal.png,64,28,6,7,6,7,0.0938,0.2500,0.0938,0.2500
+pixel,spr_casual_pop_pixel_nameplate_normal,pixel/sprites/nameplate__normal.png,36,15,4,5,4,5,0.1111,0.3333,0.1111,0.3333
+pixel,spr_casual_pop_pixel_bar_frame_normal,pixel/sprites/bar_frame__normal.png,40,8,3,0,3,0,0.0750,0.0000,0.0750,0.0000
+pixel,spr_casual_pop_pixel_bar_hp_fill_normal,pixel/sprites/bar_hp_fill__normal.png,36,4,1,0,1,0,0.0278,0.0000,0.0278,0.0000
+pixel,spr_casual_pop_pixel_button_primary_normal,pixel/sprites/button_primary__normal.png,40,16,6,7,6,7,0.1500,0.4375,0.1500,0.4375
+pixel,spr_casual_pop_pixel_button_primary_hover,pixel/sprites/button_primary__hover.png,40,16,6,7,6,7,0.1500,0.4375,0.1500,0.4375
+pixel,spr_casual_pop_pixel_button_primary_pressed,pixel/sprites/button_primary__pressed.png,40,16,6,7,6,7,0.1500,0.4375,0.1500,0.4375
+pixel,spr_casual_pop_pixel_button_primary_disabled,pixel/sprites/button_primary__disabled.png,40,16,6,7,6,7,0.1500,0.4375,0.1500,0.4375
+pixel,spr_casual_pop_pixel_slot_inventory_normal,pixel/sprites/slot_inventory__normal.png,20,20,4,5,4,5,0.2000,0.2500,0.2000,0.2500
+pixel,spr_casual_pop_pixel_slot_inventory_hover,pixel/sprites/slot_inventory__hover.png,20,20,4,5,4,5,0.2000,0.2500,0.2000,0.2500
+pixel,spr_casual_pop_pixel_slot_inventory_selected,pixel/sprites/slot_inventory__selected.png,20,20,4,5,4,5,0.2000,0.2500,0.2000,0.2500
+pixel,spr_casual_pop_pixel_slot_inventory_disabled,pixel/sprites/slot_inventory__disabled.png,20,20,4,5,4,5,0.2000,0.2500,0.2000,0.2500

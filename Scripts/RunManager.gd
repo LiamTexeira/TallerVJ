@@ -52,3 +52,9 @@ func iniciar_expedicion(temperatura: int) -> void:
 
 func recibir_danio(cantidad: int) -> void:
 	self.vida_actual -= cantidad
+
+
+
+func reiniciar_run() -> void:
+	vida_actual = vida_maxima
+	# Se podrian resetear otras cosas

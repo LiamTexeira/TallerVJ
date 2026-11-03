@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://c50s0n7viab3b"]
+
+[ext_resource type="Script" uid="uid://b6laphg8vyfpy" path="res://escenas/npc_tortas_fritas.gd" id="1_jyoob"]
+[ext_resource type="Texture2D" uid="uid://diabd0pug47e3" path="res://Assets/atok.png" id="2_jyoob"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h756n"]
+atlas = ExtResource("2_jyoob")
+region = Rect2(112, 0, 112, 130)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_as4k3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h756n")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xrivr"]
+radius = 11.0
+
+[node name="NpcEl10" type="Area2D" unique_id=522372568]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_jyoob")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1412978783]
+position = Vector2(-3, -4)
+scale = Vector2(0.13839285, 0.15)
+sprite_frames = SubResource("SpriteFrames_as4k3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1610709578]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_xrivr")

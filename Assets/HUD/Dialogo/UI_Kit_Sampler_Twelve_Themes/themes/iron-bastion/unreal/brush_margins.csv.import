@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://cvedvhc110h1v"
+
+[deps]
+
+files=["res://Assets/HUD/Dialogo/UI_Kit_Sampler_Twelve_Themes/themes/iron-bastion/unreal/brush_margins.sprite.translation", "res://Assets/HUD/Dialogo/UI_Kit_Sampler_Twelve_Themes/themes/iron-bastion/unreal/brush_margins.file.translation", "res://Assets/HUD/Dialogo/UI_Kit_Sampler_Twelve_Themes/themes/iron-bastion/unreal/brush_margins.width.translation", "res://Assets/HUD/Dialogo/UI_Kit_Sampler_Twelve_Themes/themes/iron-bastion/unreal/brush_margins.height.translation", "res://Assets/HUD/Dialogo/UI_Kit_Sampler_Twelve_Themes/themes/iron-bastion/unreal/brush_margins.margin.translation", "res://Assets/HUD/Dialogo/UI_Kit_Sampler_Twelve_Themes/themes/iron-bastion/unreal/brush_margins.margin.translation", "res://Assets/HUD/Dialogo/UI_Kit_Sampler_Twelve_Themes/themes/iron-bastion/unreal/brush_margins.margin.translation", "res://Assets/HUD/Dialogo/UI_Kit_Sampler_Twelve_Themes/themes/iron-bastion/unreal/brush_margins.margin.translation", "res://Assets/HUD/Dialogo/UI_Kit_Sampler_Twelve_Themes/themes/iron-bastion/unreal/brush_margins.margin.translation", "res://Assets/HUD/Dialogo/UI_Kit_Sampler_Twelve_Themes/themes/iron-bastion/unreal/brush_margins.margin.translation", "res://Assets/HUD/Dialogo/UI_Kit_Sampler_Twelve_Themes/themes/iron-bastion/unreal/brush_margins.margin.translation", "res://Assets/HUD/Dialogo/UI_Kit_Sampler_Twelve_Themes/themes/iron-bastion/unreal/brush_margins.margin.translation"]
+
+source_file="res://Assets/HUD/Dialogo/UI_Kit_Sampler_Twelve_Themes/themes/iron-bastion/unreal/brush_margins.csv"
+dest_files=["res://Assets/HUD/Dialogo/UI_Kit_Sampler_Twelve_Themes/themes/iron-bastion/unreal/brush_margins.sprite.translation", "res://Assets/HUD/Dialogo/UI_Kit_Sampler_Twelve_Themes/themes/iron-bastion/unreal/brush_margins.file.translation", "res://Assets/HUD/Dialogo/UI_Kit_Sampler_Twelve_Themes/themes/iron-bastion/unreal/brush_margins.width.translation", "res://Assets/HUD/Dialogo/UI_Kit_Sampler_Twelve_Themes/themes/iron-bastion/unreal/brush_margins.height.translation", "res://Assets/HUD/Dialogo/UI_Kit_Sampler_Twelve_Themes/themes/iron-bastion/unreal/brush_margins.margin.translation", "res://Assets/HUD/Dialogo/UI_Kit_Sampler_Twelve_Themes/themes/iron-bastion/unreal/brush_margins.margin.translation", "res://Assets/HUD/Dialogo/UI_Kit_Sampler_Twelve_Themes/themes/iron-bastion/unreal/brush_margins.margin.translation", "res://Assets/HUD/Dialogo/UI_Kit_Sampler_Twelve_Themes/themes/iron-bastion/unreal/brush_margins.margin.translation", "res://Assets/HUD/Dialogo/UI_Kit_Sampler_Twelve_Themes/themes/iron-bastion/unreal/brush_margins.margin.translation", "res://Assets/HUD/Dialogo/UI_Kit_Sampler_Twelve_Themes/themes/iron-bastion/unreal/brush_margins.margin.translation", "res://Assets/HUD/Dialogo/UI_Kit_Sampler_Twelve_Themes/themes/iron-bastion/unreal/brush_margins.margin.translation", "res://Assets/HUD/Dialogo/UI_Kit_Sampler_Twelve_Themes/themes/iron-bastion/unreal/brush_margins.margin.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true
