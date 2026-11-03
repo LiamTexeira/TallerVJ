@@ -34,6 +34,7 @@ func _play_attack_animation() -> void:
 
 func _enable_hitbox() -> void:
 	hitbox.monitoring = true
+	print("hitbox ON, mask: ", hitbox.collision_mask)
 
 
 func _disable_hitbox() -> void:
@@ -41,11 +42,11 @@ func _disable_hitbox() -> void:
 
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
-	if body in hit_targets:
+	if body.is_in_group("Player") or body in hit_targets:
 		return
-	if body.has_method("take_damage"):
+	if body.has_method("recibir_danio"):
 		hit_targets.append(body)
-		body.take_damage(damage)
+		body.recibir_danio(damage)
 
 
 func _finish_attack() -> void:
