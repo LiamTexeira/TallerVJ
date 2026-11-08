@@ -41,7 +41,7 @@ script = ExtResource("1_jyoob")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1412978783]
 position = Vector2(0, -3)
-scale = Vector2(0.035, 0.038)
+scale = Vector2(0.045, 0.049)
 sprite_frames = SubResource("SpriteFrames_as4k3")
 animation = &"idle"
 

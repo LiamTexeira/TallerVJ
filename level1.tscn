@@ -2474,6 +2474,20 @@ texture = ExtResource("1_jwv3a")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_dopym")
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fs2fy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fs2fy"]
+size = Vector2(306, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qeg6f"]
+size = Vector2(458, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cbfr4"]
+size = Vector2(15.333334, 171)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3eqau"]
+size = Vector2(15.5, 171.33334)
+
 [node name="Node2D" type="Node2D" unique_id=892104349]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1923002569]
@@ -2523,3 +2537,26 @@ position = Vector2(636, 417)
 
 [node name="SpawnTortasFritas" type="Marker2D" parent="." unique_id=940705572]
 position = Vector2(861, 104)
+
+[node name="Limites" type="StaticBody2D" parent="." unique_id=1433906300]
+physics_material_override = SubResource("PhysicsMaterial_fs2fy")
+
+[node name="paredSuperior" type="CollisionShape2D" parent="Limites" unique_id=1928360826]
+position = Vector2(457, -20)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_fs2fy")
+
+[node name="paredInferior" type="CollisionShape2D" parent="Limites" unique_id=1953168540]
+position = Vector2(457, 531)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_qeg6f")
+
+[node name="paredIzquierda" type="CollisionShape2D" parent="Limites" unique_id=1948260373]
+position = Vector2(-20, 254.50002)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_cbfr4")
+
+[node name="ParedDerecha" type="CollisionShape2D" parent="Limites" unique_id=917487507]
+position = Vector2(936, 254)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_3eqau")
