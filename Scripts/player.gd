@@ -1,4 +1,6 @@
 extends CharacterBody2D
+const TERMO_SCENE := preload("res://termo.tscn")
+const MATE_SCENE := preload("res://mate.tscn")
 
 signal vida_cambiada(vida_actual, vida_maxima)
 signal jugador_muerto
@@ -10,6 +12,12 @@ const DASH_COOLDOWN := 0.5
 const ATTACK_TIME := 0.3
 const ALCANCE_ATAQUE := 16.0 # Distancia a la que se desplaza la hitbox desde el centro
 
+const STAMINA_MAX := 100.0
+const STAMINA_REGEN := 15.0  # por segundo
+
+var current_weapon: Weapon
+var stamina := 100.0
+
 var is_dashing := false
 var is_attacking := false
 var dash_timer := 0.0
@@ -17,6 +25,9 @@ var dash_cooldown_timer := 0.0
 var attack_timer := 0.0
 var dash_direction := Vector2.ZERO
 var facing := Vector2.DOWN
+var side := 1  # 1 = derecha, -1 = izquierda
+
+@onready var weapon_holder: Marker2D = $WeaponHolder
 
 # --- VARIABLES DE VIDA E INVULNERABILIDAD ---
 @export var vida_maxima: int = 100
@@ -35,6 +46,7 @@ var is_invulnerable := false
 func _ready() -> void:
 	vida_actual = RunManager.vida_actual # Sincronizar vida inicial con el RunManager
 	emit_signal("vida_cambiada", vida_actual, vida_maxima) # Notifica vida inicial
+	equip_weapon(TERMO_SCENE)  # arma inicial
 	
 	# Aseguramos que el hitbox comience desactivado
 	if collision_ataque:
@@ -48,6 +60,11 @@ func _unhandled_input(event: InputEvent) -> void:
 	# Verificamos si se presiono la tecla y evitamos que se repita si queda apretada
 	if event.is_action_pressed("ui_accept") and not event.is_echo():
 		tomar_mate()
+		
+	if event.is_action_pressed("weapon_1"):
+		equip_weapon(MATE_SCENE)
+	elif event.is_action_pressed("weapon_2"):
+		equip_weapon(TERMO_SCENE)
 		
 	# Teclas 1, 2 y 3 para cambiar la temperatura en tiempo real
 	if event is InputEventKey and event.pressed and not event.echo:
@@ -88,7 +105,8 @@ func _notificar_hud_temperatura() -> void:
 
 func _physics_process(delta: float) -> void:
 	dash_cooldown_timer = max(dash_cooldown_timer - delta, 0.0)
-	
+	stamina = min(stamina + STAMINA_REGEN * delta, STAMINA_MAX)
+
 	# Reducir tiempo de invulnerabilidad
 	if is_invulnerable:
 		invulnerable_timer -= delta
@@ -101,20 +119,24 @@ func _physics_process(delta: float) -> void:
 
 	# Flechas + WASD (ya mapeados). get_vector normaliza la diagonal.
 	var input_dir := Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	if input_dir != Vector2.ZERO:
+	if input_dir != Vector2.ZERO and not is_attacking:
 		facing = input_dir.normalized()
+		if input_dir.x != 0.0:
+			side = 1 if input_dir.x > 0.0 else -1
 
+	# Fuera del ataque, el arma solo mira como el personaje
+	if not is_attacking:
+		weapon_holder.rotation = facing.angle()
+		weapon_holder.scale = Vector2(1.0, -1.0 if facing.x < 0.0 else 1.0)
+ 
 	if is_dashing:
 		dash_timer -= delta
 		velocity = dash_direction * DASH_SPEED
 		if dash_timer <= 0.0:
 			is_dashing = false
 	elif is_attacking:
-		attack_timer -= delta
 		velocity = Vector2.ZERO # Quieto mientras ataca
-		if attack_timer <= 0.0:
-			is_attacking = false
-			collision_ataque.disabled = true # Desactivamos el hitbox al finalizar el ataque
+
 	else:
 		var speed_actual: float = SPEED * RunManager.multiplicador_buff_yerba
 		velocity = input_dir * speed_actual
@@ -141,38 +163,73 @@ func start_dash(input_dir: Vector2) -> void:
 	# Si esta quieto, dashea hacia donde mirabas
 	dash_direction = input_dir.normalized() if input_dir != Vector2.ZERO else facing
 
+func equip_weapon(weapon_scene: PackedScene) -> void:
+	if is_attacking:
+		return
+	if current_weapon:
+		current_weapon.queue_free()
+	current_weapon = weapon_scene.instantiate()
+	weapon_holder.add_child(current_weapon)
 
 func start_attack() -> void:
+	if not current_weapon or is_attacking:
+		return
+	if stamina < current_weapon.stamina_cost:
+		return
+	stamina -= current_weapon.stamina_cost
 	is_attacking = true
-	attack_timer = ATTACK_TIME
-	
-	# Posicionamos el Area2D en frente del jugador según la dirección 'facing'
-	area_ataque.position = facing * ALCANCE_ATAQUE
-	
-	# Activamos la colision de ataque
-	collision_ataque.disabled = false
-	
-	if sprite and sprite.sprite_frames.has_animation("attack"):
-		sprite.play("attack")
 
+	# Durante el ataque, el arma apunta hacia donde venías caminando (8 direcciones)
+	weapon_holder.rotation = facing.angle()
+	weapon_holder.scale = Vector2(1.0, -1.0 if facing.x < 0.0 else 1.0)
+
+	# Evita el error de "ya está conectada"
+	if not current_weapon.attack_finished.is_connected(_on_attack_finished):
+		current_weapon.attack_finished.connect(_on_attack_finished, CONNECT_ONE_SHOT)
+
+	current_weapon.do_attack()
+	## Red de seguridad por si el arma nunca avisa (solo afecta a este mismo arma)
+	var arma := current_weapon
+	get_tree().create_timer(1.5).timeout.connect(func():
+		if arma == current_weapon and is_attacking:
+			is_attacking = false
+	)
+
+
+func _on_attack_finished() -> void:
+	is_attacking = false
 
 func _actualizar_animacion(input_dir: Vector2) -> void:
 	if not sprite:
 		return
 		
 	# Volteamos el sprite en X segun hacia donde camine o mire
-	if facing.x != 0:
-		sprite.flip_h = facing.x < 0
-
+	#if facing.x != 0:
+	#	sprite.flip_h = facing.x < 0
+	sprite.flip_h = false  # ya hay animaciones para izquierda y derecha
+	
+	
 	if is_attacking:
 		return # Mantiene la animacion "attack" activada en start_attack()
-		
-	if velocity != Vector2.ZERO:
-		if sprite.sprite_frames.has_animation("walk"):
-			sprite.play("walk")
+	
+	# Elige la dirección según el eje dominante de hacia dónde mirás
+	var dir := "s"
+	if abs(facing.x) > abs(facing.y):
+		dir = "e" if facing.x > 0.0 else "o"
 	else:
-		if sprite.sprite_frames.has_animation("idle"):
-			sprite.play("idle")
+		dir = "n" if facing.y < 0.0 else "s"
+
+	var nombre := "walk3_" + dir
+	if not sprite.sprite_frames.has_animation(nombre):
+		return
+
+	if velocity != Vector2.ZERO:
+		sprite.play(nombre)
+	else:
+		# Quieto: se queda en el primer frame mirando hacia donde iba
+		sprite.animation = nombre
+		sprite.stop()
+		sprite.frame = 0
 
 
 # SEÑAL CONECTADA DESDE AreaAtaque

@@ -2,10 +2,15 @@
 
 [ext_resource type="Script" uid="uid://b6laphg8vyfpy" path="res://escenas/npc_tortas_fritas.gd" id="1_jyoob"]
 [ext_resource type="Texture2D" uid="uid://diabd0pug47e3" path="res://Assets/atok.png" id="2_jyoob"]
+[ext_resource type="Texture2D" uid="uid://bh4sjwk0cinik" path="res://Assets/asset_npcs.png" id="3_h756n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h756n"]
 atlas = ExtResource("2_jyoob")
 region = Rect2(112, 0, 112, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hu8q8"]
+atlas = ExtResource("3_h756n")
+region = Rect2(665, 70, 387, 500)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_as4k3"]
 animations = [{
@@ -15,6 +20,14 @@ animations = [{
 }],
 "loop": 1,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hu8q8")
+}],
+"loop": 1,
+"name": &"idle",
 "speed": 5.0
 }]
 
@@ -27,9 +40,10 @@ collision_mask = 2
 script = ExtResource("1_jyoob")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1412978783]
-position = Vector2(-3, -4)
-scale = Vector2(0.13839285, 0.15)
+position = Vector2(0, -3)
+scale = Vector2(0.045, 0.049)
 sprite_frames = SubResource("SpriteFrames_as4k3")
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1610709578]
 position = Vector2(0, -3)

@@ -76,16 +76,23 @@ func _actualizar_animacion() -> void:
 
 	match estado_actual:
 		Estado.PATRULLA:
-			sprite.play("walk" if velocity != Vector2.ZERO else "idle")
+			sprite.play(_animacion_caminar("walk") if velocity != Vector2.ZERO else "idle")
 		Estado.PERSECUCION:
-			sprite.play("walk")
+			sprite.play(_animacion_caminar("walk_c"))
 		Estado.ATAQUE:
-			sprite.play("attack")
+			sprite.play("attack2")
 		Estado.HERIDO:
-			sprite.play("hurt")
+			sprite.play("hurt2")
 		Estado.MUERTE:
-			sprite.play("death")
+			sprite.play("death2")
 
+func _animacion_caminar(base: String) -> String:
+	# Si se mueve hacia arriba y más en vertical que en horizontal, usa la variante _n
+	if velocity.y < 0.0 and abs(velocity.y) > abs(velocity.x):
+		var nombre := base + "_n"
+		if sprite.sprite_frames.has_animation(nombre):
+			return nombre
+	return base
 
 func _logica_patrulla(delta: float) -> void:
 	tiempo_cambio_patrulla -= delta
@@ -218,18 +225,18 @@ func _desactivar_dano() -> void:
 
 func _on_animation_finished() -> void:
 	match sprite.animation:
-		"attack":
+		"attack2":
 			_desactivar_dano()
 			if objetivo_jugador:
 				estado_actual = Estado.PERSECUCION
 			else:
 				estado_actual = Estado.PATRULLA
-		"hurt":
+		"hurt2":
 			if objetivo_jugador:
 				estado_actual = Estado.PERSECUCION
 			else:
 				estado_actual = Estado.PATRULLA
-		"death":
+		"death2":
 			morir() # <-- Llamamos a morir() para procesar el drop antes del queue_free
 
 
