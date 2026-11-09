@@ -6,6 +6,9 @@ extends Node2D
 @export var radio_minimo: float = 120.0
 @export var radio_maximo: float = 220.0
 @export var max_intentos_spawn: int = 10
+# Piso del nivel: los enemigos solo aparecen sobre una casilla valida de este TileMapLayer.
+# Si se deja vacio, se busca automaticamente en la escena al iniciar.
+@export var tilemap_piso: TileMapLayer
 
 # Cola exacta de enemigos para la oleada actual
 var cola_enemigos_oleada: Array[PackedScene] = []
@@ -18,6 +21,18 @@ func _ready() -> void:
 	if timer_spawn:
 		if not timer_spawn.timeout.is_connected(_on_timer_spawn_timeout):
 			timer_spawn.timeout.connect(_on_timer_spawn_timeout)
+
+	# Si no se asigno el piso en el editor, lo buscamos en la escena actual
+	if tilemap_piso == null:
+		tilemap_piso = _buscar_tilemap()
+
+
+func _buscar_tilemap() -> TileMapLayer:
+	var raiz := get_tree().current_scene
+	if raiz:
+		for n in raiz.find_children("*", "TileMapLayer", true, false):
+			return n
+	return null
 
 
 # Recibe la composición exacta de la oleada desde el WaveManager y arma la cola fija
@@ -92,9 +107,20 @@ func _generar_enemigo(escena_a_instanciar: PackedScene) -> void:
 
 
 func _es_posicion_caminable(pos: Vector2) -> bool:
+	# 1) No debe haber una pared justo en ese punto
 	var espacio_fisico := get_world_2d().direct_space_state
 	var query := PhysicsPointQueryParameters2D.new()
 	query.position = pos
-	query.collision_mask = 1 
+	query.collision_mask = 1
 	var resultado := espacio_fisico.intersect_point(query)
-	return resultado.is_empty()
+	if not resultado.is_empty():
+		return false
+
+	# 2) Debe estar DENTRO del mapa: sobre una casilla valida del piso.
+	# Esto evita que los enemigos aparezcan fuera del mapa (donde no hay pared pero tampoco piso).
+	if tilemap_piso:
+		var celda := tilemap_piso.local_to_map(tilemap_piso.to_local(pos))
+		if tilemap_piso.get_cell_source_id(celda) == -1:
+			return false
+
+	return true

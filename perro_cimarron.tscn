@@ -451,7 +451,7 @@ radius = 117.094444
 radius = 36.666664
 
 [node name="perro_cimarron" type="CharacterBody2D" unique_id=1613642628]
-modulate = Color(1, 0, 0.016666412, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(1, 0)
 scale = Vector2(0.3, 0.3)
 collision_layer = 4

@@ -57,10 +57,10 @@ func _ready() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	# Verificamos si se presiono la tecla y evitamos que se repita si queda apretada
-	if event.is_action_pressed("ui_accept") and not event.is_echo():
+	# Cebar mate con la tecla E (antes estaba en la barra espaciadora, que ahora es el dash)
+	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_E:
 		tomar_mate()
-		
+
 	if event.is_action_pressed("weapon_1"):
 		equip_weapon(MATE_SCENE)
 	elif event.is_action_pressed("weapon_2"):
