@@ -2528,6 +2528,7 @@ npc_tortas_fritas_scene = ExtResource("11_hx44q")
 stream = ExtResource("8_xy4tn")
 volume_db = -20.632
 autoplay = true
+bus = &"Music"
 
 [node name="SpawnEl10" type="Marker2D" parent="." unique_id=1233196043]
 position = Vector2(281, 387)
