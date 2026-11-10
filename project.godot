@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Poyecto"
-run/main_scene="uid://dw4chnwehktwe"
+run/main_scene="res://MenuPrincipal.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 RunManager="*uid://cubilfn0lvuuf"
 Hud="*uid://coa12iwiag5p3"
+Opciones="*res://Opciones.gd"
 
 [display]
 

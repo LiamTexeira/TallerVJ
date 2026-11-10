@@ -51,3 +51,4 @@ layout_mode = 2
 text = "SALIR AL MENU"
 
 [connection signal="pressed" from="MenuPause/CenterContainer/VBoxContainer/BotonReanudar" to="." method="_on_boton_reanudar_pressed"]
+[connection signal="pressed" from="MenuPause/CenterContainer/VBoxContainer/BotonSalir" to="." method="_on_boton_salir_pressed"]
