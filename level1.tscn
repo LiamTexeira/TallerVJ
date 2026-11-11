@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://da1wsqqmvfruc" path="res://escenas/npc_el10.tscn" id="9_5j5gb"]
 [ext_resource type="PackedScene" uid="uid://c50s0n7viab3b" path="res://escenas/npc_tortas_fritas.tscn" id="11_hx44q"]
 [ext_resource type="PackedScene" uid="uid://dascr1wqrcqa0" path="res://escenas/jefe.tscn" id="12_hx44q"]
+[ext_resource type="PackedScene" uid="uid://bubusw7qf5mnt" path="res://escenas/victoria.tscn" id="13_vctr0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dopym"]
 texture = ExtResource("1_jwv3a")
@@ -2525,6 +2526,7 @@ npc_el10_scene = ExtResource("9_5j5gb")
 npc_chofer_scene = ExtResource("8_5j5gb")
 npc_tortas_fritas_scene = ExtResource("11_hx44q")
 jefe_scene = ExtResource("12_hx44q")
+victoria_scene = ExtResource("13_vctr0")
 
 [node name="BGM" type="AudioStreamPlayer2D" parent="." unique_id=1141073140]
 stream = ExtResource("8_xy4tn")
