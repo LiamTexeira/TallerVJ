@@ -6,6 +6,10 @@ extends Node
 @export var posicion_spawn_npc: Vector2 = Vector2(0, 0) 
 @export var npc_tortas_fritas_scene: PackedScene
 
+@export var jefe_scene: PackedScene                     # jefe.tscn
+@export var victoria_scene: PackedScene                 # victoria.tscn
+var jefe_activo := false
+
 # Control de oleadas
 var oleada_actual: int = 1
 var max_oleadas: int = 10 # 10 oleadas en total (la última de 10 perros cimarrones)
@@ -135,6 +139,7 @@ func _finalizar_descanso() -> void:
 	
 	if oleada_actual >= max_oleadas:
 		print("¡Tiempo de pausa del jefe final terminado! Disparando evento de jefe...")
+		_invocar_jefe()
 		return
 		
 	_siguiente_oleada()
@@ -268,3 +273,34 @@ func registrar_enemigo_derrotado() -> void:
 	
 	if enemigos_vivos_en_mapa <= 0:
 		_completar_oleada()
+		
+func _invocar_jefe() -> void:
+	if not jefe_scene or jefe_activo:
+		return
+	jefe_activo = true
+
+	var escena := get_tree().current_scene
+	var jefe := jefe_scene.instantiate()
+	escena.add_child(jefe)
+
+	# Posición: marcador "SpawnJefe" si existe; si no, cerca del jugador
+	var punto := escena.find_child("SpawnJefe", true, false)
+	if punto:
+		jefe.global_position = punto.global_position
+	else:
+		var player := get_tree().get_first_node_in_group("Player")
+		jefe.global_position = (player.global_position if player else Vector2(200, 200)) + Vector2(150, 0)
+
+	jefe.jefe_muerto.connect(_on_jefe_muerto)
+
+	var hud := _buscar_hud()
+	if hud and hud.has_method("mostrar_anuncio_npc"):
+		hud.mostrar_anuncio_npc("⚠️ ¡El jefe final ha aparecido! ⚠️")
+
+
+func _on_jefe_muerto() -> void:
+	jefe_activo = false
+	await get_tree().create_timer(1.5).timeout   # deja ver la animación de muerte
+	_limpiar_enemigos_mapa()
+	if victoria_scene:
+		get_tree().current_scene.add_child(victoria_scene.instantiate())
