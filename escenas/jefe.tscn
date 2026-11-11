@@ -172,9 +172,7 @@ barra_scene = ExtResource("2_3t1mq")
 position = Vector2(0, -6.999999)
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_o0nu5")
-animation = &"death"
-frame = 2
-frame_progress = 0.3445907
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=218635190]
 shape = SubResource("CircleShape2D_cxbuq")

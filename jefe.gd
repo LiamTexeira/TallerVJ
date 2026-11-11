@@ -172,6 +172,13 @@ func recibir_danio(cantidad: int) -> void:
 		print("¡Fase 2!")
 
 
+func debug_vida_a_uno() -> void:
+	if estado == Estado.MUERTE:
+		return
+	vida_actual = 1
+	vida_cambiada.emit(vida_actual, vida_maxima)
+
+
 func _morir() -> void:
 	estado = Estado.MUERTE
 	velocity = Vector2.ZERO

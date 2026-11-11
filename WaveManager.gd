@@ -9,6 +9,7 @@ extends Node
 @export var jefe_scene: PackedScene                     # jefe.tscn
 @export var victoria_scene: PackedScene                 # victoria.tscn
 var jefe_activo := false
+var _jefe_ref: Node = null
 
 # Control de oleadas
 var oleada_actual: int = 1
@@ -38,6 +39,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			_completar_oleada()
 		elif event.keycode == KEY_MINUS:
 			_saltar_a_jefe()
+		elif event.keycode == KEY_0:
+			_debug_jefe_vida_uno()
 
 
 func _process(delta: float) -> void:
@@ -293,6 +296,7 @@ func _invocar_jefe() -> void:
 
 	var escena := get_tree().current_scene
 	var jefe := jefe_scene.instantiate()
+	_jefe_ref = jefe
 	escena.add_child(jefe)
 
 	# Posición: marcador "SpawnJefe" si existe; si no, cerca del jugador
@@ -312,7 +316,14 @@ func _invocar_jefe() -> void:
 
 func _on_jefe_muerto() -> void:
 	jefe_activo = false
+	_jefe_ref = null
 	await get_tree().create_timer(1.5).timeout   # deja ver la animación de muerte
 	_limpiar_enemigos_mapa()
 	if victoria_scene:
 		get_tree().current_scene.add_child(victoria_scene.instantiate())
+
+
+func _debug_jefe_vida_uno() -> void:
+	# tecla 0 : deja al jefe en 1 de vida para testear
+	if is_instance_valid(_jefe_ref) and _jefe_ref.has_method("debug_vida_a_uno"):
+		_jefe_ref.debug_vida_a_uno()
