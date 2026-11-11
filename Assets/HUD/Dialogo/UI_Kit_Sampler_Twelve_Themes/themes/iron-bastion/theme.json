@@ -1,0 +1,195 @@
+{
+  "schema": "csaf-uikit-theme/1",
+  "id": "iron-bastion",
+  "name": "Iron Bastion",
+  "note": "Kit 6 (2026-10-17): a stone-and-iron theme for strategy games, city builders and kingdom sims. Grey ashlar frames over dark oak-brown panels; the heavy frames (window, dialogue box, portrait frame, the MZ window) are castle walls seen from the side: a corbelled turret with three merlons and an arrow slit rises above each top corner and each bottom corner stands on a battered footing (geometry.corner \"tower\"). A heraldic blue banner accent with white ink for the main actions, a crimson danger family. Every text-on-fill pair is re-measured by the gate.",
+  "geometry": {
+    "border": 4,
+    "radius": 2,
+    "shadow": 1,
+    "hdScale": 3,
+    "style": "bevel",
+    "ornaments": true,
+    "corner": "tower",
+    "coin": "disc"
+  },
+  "demo": {
+    "buttons": [
+      "Build",
+      "Recruit",
+      "Raze",
+      "Locked"
+    ],
+    "checks": [
+      "Fog of war",
+      "Auto harvest"
+    ],
+    "toggle": "Grid",
+    "slider": "Game speed",
+    "field": "Settlement",
+    "options": [
+      "Footmen",
+      "Archers",
+      "Knights"
+    ],
+    "tabs": [
+      "Economy",
+      "Army",
+      "Realm"
+    ],
+    "tooltip": "Granary  +40 food",
+    "speaker": "Castellan",
+    "lines": [
+      "The east wall is finished, and the moat is full.",
+      "Grain stores will last us nine winters."
+    ]
+  },
+  "colors": {
+    "outline": "#14110e",
+    "shadow": "#0a0807",
+    "track": "#1c1915",
+    "trackLight": "#2e2a24",
+    "backdrop": "#34402a",
+    "cursorFill": "#f2e6c4",
+    "cursorShade": "#a8946a",
+    "textDim": "#c4b99f",
+    "hp": [
+      "#6a1414",
+      "#c8302a",
+      "#ff8a70"
+    ],
+    "mp": [
+      "#14306a",
+      "#2f6fd0",
+      "#9cc4ff"
+    ],
+    "xp": [
+      "#6a4a0a",
+      "#d8a020",
+      "#ffe08a"
+    ],
+    "stamina": [
+      "#1f4a14",
+      "#4fa030",
+      "#b4f08a"
+    ],
+    "boss": [
+      "#3a1450",
+      "#8c3ac0",
+      "#d8a0ff"
+    ],
+    "panelDarkFill": "#100e0cd0"
+  },
+  "families": {
+    "frame": {
+      "normal": {
+        "light": "#d2cbbb",
+        "mid": "#8f8878",
+        "dark": "#57514a",
+        "fill": "#2b261f",
+        "shade": "#231f19",
+        "text": "#f2ead8"
+      },
+      "hover": {
+        "light": "#e6e0d1",
+        "mid": "#a39c8b",
+        "dark": "#655f56",
+        "fill": "#352f27",
+        "shade": "#2b261f",
+        "text": "#ffffff"
+      },
+      "pressed": {
+        "light": "#d2cbbb",
+        "mid": "#7d7768",
+        "dark": "#48433d",
+        "fill": "#231f19",
+        "shade": "#1b1814",
+        "text": "#f2ead8"
+      },
+      "active": {
+        "light": "#e6e0d1",
+        "mid": "#a39c8b",
+        "dark": "#655f56",
+        "fill": "#2b261f",
+        "shade": "#231f19",
+        "text": "#ffffff"
+      },
+      "disabled": {
+        "light": "#7e7a71",
+        "mid": "#5e5a53",
+        "dark": "#3e3b37",
+        "fill": "#25221e",
+        "shade": "#1f1c19",
+        "text": "#b4aea2"
+      }
+    },
+    "accent": {
+      "normal": {
+        "light": "#9cbcf0",
+        "mid": "#3a6cc0",
+        "dark": "#1a3466",
+        "fill": "#2a56a0",
+        "shade": "#224a8a",
+        "text": "#ffffff"
+      },
+      "hover": {
+        "light": "#b8d0f6",
+        "mid": "#4a7cd0",
+        "dark": "#203e78",
+        "fill": "#3462b0",
+        "shade": "#2a56a0",
+        "text": "#ffffff"
+      },
+      "pressed": {
+        "light": "#9cbcf0",
+        "mid": "#2e5aa6",
+        "dark": "#142a56",
+        "fill": "#224a8a",
+        "shade": "#1c3e76",
+        "text": "#ffffff"
+      },
+      "disabled": {
+        "light": "#7c8496",
+        "mid": "#585f6f",
+        "dark": "#373c48",
+        "fill": "#3a404c",
+        "shade": "#30353f",
+        "text": "#d2d6de"
+      }
+    },
+    "danger": {
+      "normal": {
+        "light": "#f08a7a",
+        "mid": "#b8302a",
+        "dark": "#4a0c0a",
+        "fill": "#9a2420",
+        "shade": "#821c18",
+        "text": "#fff0ec"
+      },
+      "hover": {
+        "light": "#ffa898",
+        "mid": "#cc3c34",
+        "dark": "#5a1010",
+        "fill": "#ae2c26",
+        "shade": "#9a2420",
+        "text": "#ffffff"
+      },
+      "pressed": {
+        "light": "#f08a7a",
+        "mid": "#9a2420",
+        "dark": "#3a0808",
+        "fill": "#821c18",
+        "shade": "#6a1612",
+        "text": "#fff0ec"
+      },
+      "disabled": {
+        "light": "#8e7472",
+        "mid": "#64524f",
+        "dark": "#3f3331",
+        "fill": "#3a2c2a",
+        "shade": "#302422",
+        "text": "#d8c6c2"
+      }
+    }
+  }
+}

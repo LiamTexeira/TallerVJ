@@ -1,0 +1,272 @@
+{
+  "schema": "csaf-uikit-nineslice/1",
+  "theme": "iron-bastion",
+  "sprites": [
+    {
+      "mode": "pixel",
+      "sprite": "spr_iron_bastion_pixel_panel_window_normal",
+      "file": "pixel/sprites/panel_window__normal.png",
+      "width": 32,
+      "height": 32,
+      "nineSlice": {
+        "enabled": true,
+        "left": 12,
+        "top": 12,
+        "right": 12,
+        "bottom": 7
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_iron_bastion_pixel_panel_header_normal",
+      "file": "pixel/sprites/panel_header__normal.png",
+      "width": 32,
+      "height": 16,
+      "nineSlice": {
+        "enabled": true,
+        "left": 4,
+        "top": 5,
+        "right": 5,
+        "bottom": 5
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_iron_bastion_pixel_dialogue_box_normal",
+      "file": "pixel/sprites/dialogue_box__normal.png",
+      "width": 64,
+      "height": 28,
+      "nineSlice": {
+        "enabled": true,
+        "left": 13,
+        "top": 13,
+        "right": 13,
+        "bottom": 8
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_iron_bastion_pixel_nameplate_normal",
+      "file": "pixel/sprites/nameplate__normal.png",
+      "width": 36,
+      "height": 12,
+      "nineSlice": {
+        "enabled": true,
+        "left": 3,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_iron_bastion_pixel_bar_frame_normal",
+      "file": "pixel/sprites/bar_frame__normal.png",
+      "width": 40,
+      "height": 8,
+      "nineSlice": {
+        "enabled": true,
+        "left": 3,
+        "top": 0,
+        "right": 3,
+        "bottom": 0
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_iron_bastion_pixel_bar_hp_fill_normal",
+      "file": "pixel/sprites/bar_hp_fill__normal.png",
+      "width": 36,
+      "height": 4,
+      "nineSlice": {
+        "enabled": true,
+        "left": 1,
+        "top": 0,
+        "right": 1,
+        "bottom": 0
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_iron_bastion_pixel_button_primary_normal",
+      "file": "pixel/sprites/button_primary__normal.png",
+      "width": 40,
+      "height": 16,
+      "nineSlice": {
+        "enabled": true,
+        "left": 5,
+        "top": 6,
+        "right": 6,
+        "bottom": 6
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_iron_bastion_pixel_button_primary_hover",
+      "file": "pixel/sprites/button_primary__hover.png",
+      "width": 40,
+      "height": 16,
+      "nineSlice": {
+        "enabled": true,
+        "left": 5,
+        "top": 6,
+        "right": 6,
+        "bottom": 6
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_iron_bastion_pixel_button_primary_pressed",
+      "file": "pixel/sprites/button_primary__pressed.png",
+      "width": 40,
+      "height": 16,
+      "nineSlice": {
+        "enabled": true,
+        "left": 5,
+        "top": 6,
+        "right": 6,
+        "bottom": 6
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_iron_bastion_pixel_button_primary_disabled",
+      "file": "pixel/sprites/button_primary__disabled.png",
+      "width": 40,
+      "height": 16,
+      "nineSlice": {
+        "enabled": true,
+        "left": 5,
+        "top": 6,
+        "right": 6,
+        "bottom": 6
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_iron_bastion_pixel_slot_inventory_normal",
+      "file": "pixel/sprites/slot_inventory__normal.png",
+      "width": 20,
+      "height": 20,
+      "nineSlice": {
+        "enabled": true,
+        "left": 3,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_iron_bastion_pixel_slot_inventory_hover",
+      "file": "pixel/sprites/slot_inventory__hover.png",
+      "width": 20,
+      "height": 20,
+      "nineSlice": {
+        "enabled": true,
+        "left": 3,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_iron_bastion_pixel_slot_inventory_selected",
+      "file": "pixel/sprites/slot_inventory__selected.png",
+      "width": 20,
+      "height": 20,
+      "nineSlice": {
+        "enabled": true,
+        "left": 3,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_iron_bastion_pixel_slot_inventory_disabled",
+      "file": "pixel/sprites/slot_inventory__disabled.png",
+      "width": 20,
+      "height": 20,
+      "nineSlice": {
+        "enabled": true,
+        "left": 3,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_iron_bastion_pixel_cursor_pointer_normal",
+      "file": "pixel/sprites/cursor_pointer__normal.png",
+      "width": 10,
+      "height": 14,
+      "nineSlice": {
+        "enabled": false
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_iron_bastion_pixel_cursor_select_normal",
+      "file": "pixel/sprites/cursor_select__normal.png",
+      "width": 6,
+      "height": 9,
+      "nineSlice": {
+        "enabled": false
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_iron_bastion_pixel_advance_arrow_frame0",
+      "file": "pixel/sprites/advance_arrow__frame0.png",
+      "width": 7,
+      "height": 6,
+      "nineSlice": {
+        "enabled": false
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_iron_bastion_pixel_advance_arrow_frame1",
+      "file": "pixel/sprites/advance_arrow__frame1.png",
+      "width": 7,
+      "height": 6,
+      "nineSlice": {
+        "enabled": false
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_iron_bastion_pixel_heart_full_normal",
+      "file": "pixel/sprites/heart_full__normal.png",
+      "width": 7,
+      "height": 7,
+      "nineSlice": {
+        "enabled": false
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_iron_bastion_pixel_heart_empty_normal",
+      "file": "pixel/sprites/heart_empty__normal.png",
+      "width": 7,
+      "height": 7,
+      "nineSlice": {
+        "enabled": false
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_iron_bastion_pixel_icon_coin_normal",
+      "file": "pixel/sprites/icon_coin__normal.png",
+      "width": 8,
+      "height": 8,
+      "nineSlice": {
+        "enabled": false
+      }
+    }
+  ]
+}

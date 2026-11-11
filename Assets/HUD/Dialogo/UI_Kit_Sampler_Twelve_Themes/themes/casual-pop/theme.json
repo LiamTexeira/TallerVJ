@@ -1,0 +1,196 @@
+{
+  "schema": "csaf-uikit-theme/1",
+  "id": "casual-pop",
+  "name": "Casual Pop",
+  "note": "Kit 7 (2026-10-18): a chunky, bright, flat candy theme for casual and party games. A 2-unit grape ink outline in each family's deep tone, 4-unit rounded corners, a solid ink drop shadow, and the kit's own frame idea: a gloss shine strip under the top of every raised body and a thick 2-unit lip along its bottom (geometry.gloss + geometry.lip, added to the generator for this kit); a pressed button loses both and reads pushed in. Cream panels, a bubblegum primary, a tangerine danger family, candy bars, a round coin. Dark grape ink for every caption (white on candy fills fails 4.5:1). Every text-on-fill pair is re-measured by the gate.",
+  "geometry": {
+    "border": 2,
+    "radius": 4,
+    "shadow": 1,
+    "hdScale": 3,
+    "style": "flat",
+    "ornaments": false,
+    "gloss": true,
+    "lip": 2,
+    "coin": "disc"
+  },
+  "demo": {
+    "buttons": [
+      "Play",
+      "Shop",
+      "Quit",
+      "Locked"
+    ],
+    "checks": [
+      "Music",
+      "Vibration"
+    ],
+    "toggle": "Party mode",
+    "slider": "Volume",
+    "field": "Team name",
+    "options": [
+      "Solo",
+      "Duo",
+      "Party"
+    ],
+    "tabs": [
+      "Levels",
+      "Prizes",
+      "Friends"
+    ],
+    "tooltip": "Combo x3  +500",
+    "speaker": "Pip",
+    "lines": [
+      "Pop four bubbles of one colour to clear them!",
+      "Three stars on a level win a party hat."
+    ]
+  },
+  "colors": {
+    "outline": "#3a1f5c",
+    "shadow": "#2a1546",
+    "track": "#ead9f2",
+    "trackLight": "#f6edfa",
+    "backdrop": "#7cc8f8",
+    "cursorFill": "#ffffff",
+    "cursorShade": "#d9c6e6",
+    "textDim": "#4a2d6e",
+    "hp": [
+      "#b0204a",
+      "#ff4d7a",
+      "#ffa3bd"
+    ],
+    "mp": [
+      "#1f5fc4",
+      "#3fa0ff",
+      "#a8d8ff"
+    ],
+    "xp": [
+      "#c27a00",
+      "#ffc21a",
+      "#ffe98a"
+    ],
+    "stamina": [
+      "#1f9a5a",
+      "#3fd98a",
+      "#b0f5cf"
+    ],
+    "boss": [
+      "#6a2bb0",
+      "#a45cff",
+      "#dcbfff"
+    ],
+    "panelDarkFill": "#3a1f5cd0"
+  },
+  "families": {
+    "frame": {
+      "normal": {
+        "light": "#ffffff",
+        "mid": "#ffdf96",
+        "dark": "#4b2a73",
+        "fill": "#ffecb8",
+        "shade": "#f2cc78",
+        "text": "#3a1f5c"
+      },
+      "hover": {
+        "light": "#ffffff",
+        "mid": "#ffe8b0",
+        "dark": "#7a4bb5",
+        "fill": "#fff3d1",
+        "shade": "#f5d68e",
+        "text": "#2e1749"
+      },
+      "pressed": {
+        "light": "#ffffff",
+        "mid": "#ffd77e",
+        "dark": "#2e1749",
+        "fill": "#f9e09c",
+        "shade": "#ebc266",
+        "text": "#3a1f5c"
+      },
+      "active": {
+        "light": "#ffffff",
+        "mid": "#ffd1e4",
+        "dark": "#8a1a52",
+        "fill": "#ffffff",
+        "shade": "#ffd1e4",
+        "text": "#2e1749"
+      },
+      "disabled": {
+        "light": "#f4f0f6",
+        "mid": "#e8e1ec",
+        "dark": "#a99bb5",
+        "fill": "#ede7f0",
+        "shade": "#ddd3e3",
+        "text": "#5a4a66"
+      }
+    },
+    "accent": {
+      "normal": {
+        "light": "#ffc6de",
+        "mid": "#ff9cc4",
+        "dark": "#8a1a52",
+        "fill": "#ff6fa5",
+        "shade": "#e24d88",
+        "text": "#3a1f5c"
+      },
+      "hover": {
+        "light": "#ffd9ea",
+        "mid": "#ffb0d0",
+        "dark": "#8a1a52",
+        "fill": "#ff86b4",
+        "shade": "#ee5f96",
+        "text": "#2e1749"
+      },
+      "pressed": {
+        "light": "#ffb3d2",
+        "mid": "#f77fae",
+        "dark": "#7a1447",
+        "fill": "#f0568f",
+        "shade": "#cf3b74",
+        "text": "#24113b"
+      },
+      "disabled": {
+        "light": "#f6e6ee",
+        "mid": "#ecd2de",
+        "dark": "#bd93a8",
+        "fill": "#efd6e2",
+        "shade": "#e2c3d2",
+        "text": "#6a3a52"
+      }
+    },
+    "danger": {
+      "normal": {
+        "light": "#ffd6b0",
+        "mid": "#ffad73",
+        "dark": "#8a3410",
+        "fill": "#ff8a4c",
+        "shade": "#e2692d",
+        "text": "#3a1f5c"
+      },
+      "hover": {
+        "light": "#ffe2c6",
+        "mid": "#ffbd8d",
+        "dark": "#8a3410",
+        "fill": "#ff9d66",
+        "shade": "#ec7a3e",
+        "text": "#2e1749"
+      },
+      "pressed": {
+        "light": "#ffc59a",
+        "mid": "#f7995c",
+        "dark": "#7a2c0c",
+        "fill": "#f0743a",
+        "shade": "#cf5a22",
+        "text": "#24113b"
+      },
+      "disabled": {
+        "light": "#f7ece4",
+        "mid": "#eddccf",
+        "dark": "#c09d86",
+        "fill": "#efdccf",
+        "shade": "#e2c9b8",
+        "text": "#6a3a28"
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://d1fwgugvp4px7"]
+
+[ext_resource type="Script" uid="uid://clc6r5r05472o" path="res://escenas/spawner.gd" id="1_jjnfx"]
+[ext_resource type="PackedScene" uid="uid://c4op6cup2nrcs" path="res://paloma_mutante.tscn" id="2_d4jfx"]
+
+[node name="Spawner" type="Node2D" unique_id=379270129]
+script = ExtResource("1_jjnfx")
+enemigo_scene = ExtResource("2_d4jfx")
+radio_minimo = 150.0
+
+[node name="TimerSpawn" type="Timer" parent="." unique_id=608485058]
+wait_time = 5.0
+autostart = true
