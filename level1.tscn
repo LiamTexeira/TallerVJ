@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://00ufkvp7lhif" path="res://Assets/ACTION PACK 1 OGG/Battle Encounter.ogg" id="8_xy4tn"]
 [ext_resource type="PackedScene" uid="uid://da1wsqqmvfruc" path="res://escenas/npc_el10.tscn" id="9_5j5gb"]
 [ext_resource type="PackedScene" uid="uid://c50s0n7viab3b" path="res://escenas/npc_tortas_fritas.tscn" id="11_hx44q"]
+[ext_resource type="PackedScene" uid="uid://dascr1wqrcqa0" path="res://escenas/jefe.tscn" id="12_hx44q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dopym"]
 texture = ExtResource("1_jwv3a")
@@ -2483,10 +2484,10 @@ size = Vector2(306, 12)
 size = Vector2(458, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cbfr4"]
-size = Vector2(15.333334, 171)
+size = Vector2(15.333334, 197.00002)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3eqau"]
-size = Vector2(15.5, 171.33334)
+size = Vector2(15.5, 196.33334)
 
 [node name="Node2D" type="Node2D" unique_id=892104349]
 
@@ -2523,6 +2524,7 @@ script = ExtResource("7_i2041")
 npc_el10_scene = ExtResource("9_5j5gb")
 npc_chofer_scene = ExtResource("8_5j5gb")
 npc_tortas_fritas_scene = ExtResource("11_hx44q")
+jefe_scene = ExtResource("12_hx44q")
 
 [node name="BGM" type="AudioStreamPlayer2D" parent="." unique_id=1141073140]
 stream = ExtResource("8_xy4tn")
@@ -2552,11 +2554,11 @@ scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_qeg6f")
 
 [node name="paredIzquierda" type="CollisionShape2D" parent="Limites" unique_id=1948260373]
-position = Vector2(-20, 254.50002)
+position = Vector2(-20, 255.5)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_cbfr4")
 
 [node name="ParedDerecha" type="CollisionShape2D" parent="Limites" unique_id=917487507]
-position = Vector2(936, 254)
+position = Vector2(936, 256.5)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_3eqau")
