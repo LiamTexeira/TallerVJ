@@ -165,7 +165,7 @@ func _construir_controles() -> CenterContainer:
 
 	var filas := [
 		["Moverse", "WASD / Flechas"],
-		["Dash / esquivar", "J  (y Barra espaciadora)"],
+		["Dash / esquivar", "J"],
 		["Atacar", "K  /  X"],
 		["Cambiar arma", "4 (mate)  ·  5 (termo)"],
 		["Cebar mate", "E"],
@@ -308,8 +308,7 @@ func _texto_como_jugar() -> String:
 
 # ---------- Acciones ----------
 func _on_jugar() -> void:
-	if has_node("/root/Hud"):
-		get_node("/root/Hud").visible = true
+	# El HUD lo muestra El Calentador recien al entrar al parque
 	get_tree().change_scene_to_file(ESCENA_JUEGO)
 
 

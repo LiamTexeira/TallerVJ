@@ -182,7 +182,7 @@ func _construir_ayuda() -> Control:
 
 	var filas := [
 		["Moverse", "WASD / Flechas"],
-		["Dash / esquivar", "J  ·  Espacio"],
+		["Dash / esquivar", "J"],
 		["Atacar", "K  /  X"],
 		["Cambiar arma", "4 (mate) · 5 (termo)"],
 		["Cebar mate", "E"],

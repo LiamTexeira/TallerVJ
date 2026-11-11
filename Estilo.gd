@@ -22,7 +22,7 @@ static func fuente_titulo() -> FontFile:
 	if _titulo == null:
 		_titulo = _cargar(RUTA_TITULO)
 		if _titulo:
-			# Si al titulo le falta un glifo, cae a la UI y despues al sistema.
+			# Si al titulo le falta un glifo, cae a la UI y despues al sistema
 			var ui := fuente_ui()
 			_titulo.fallbacks = [ui] if ui else [_sistema()]
 	return _titulo
