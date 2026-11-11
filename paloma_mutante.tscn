@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c4op6cup2nrcs"]
 
 [ext_resource type="Script" uid="uid://deu50dqbhls4" path="res://Scripts/paloma_mutante.gd" id="1_1jscv"]
+[ext_resource type="PackedScene" uid="uid://dcnxs8wxg878r" path="res://escenas/yerba_drop.tscn" id="2_igxwu"]
 [ext_resource type="Texture2D" uid="uid://dokfjbscsp3h8" path="res://Assets/asset-paloma-death.png" id="6_ompyt"]
 [ext_resource type="Texture2D" uid="uid://d302xvi4dpr1c" path="res://Assets/asset-paloma-walk.png" id="7_cfcpd"]
 [ext_resource type="Texture2D" uid="uid://c64adndqx8evm" path="res://Assets/asset-paloma-hurt.png" id="7_qeqbc"]
@@ -376,6 +377,7 @@ scale = Vector2(0.3, 0.3)
 collision_layer = 4
 script = ExtResource("1_1jscv")
 distancia_ataque = 15.0
+yerba_scene = ExtResource("2_igxwu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1659756272]
 position = Vector2(0, 1.866)

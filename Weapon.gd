@@ -6,6 +6,7 @@ class_name Weapon
 @export var attack_duration: float = 0.3  # cuánto tarda la animación completa
 @export var cooldown: float = 0.2         # tiempo antes de poder atacar de nuevo
 
+var mult_danio := 1.0
 var can_attack := true
 var hit_targets: Array = []  # evita golpear al mismo enemigo varias veces en un swing
 
@@ -46,7 +47,7 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 		return
 	if body.has_method("recibir_danio"):
 		hit_targets.append(body)
-		body.recibir_danio(damage)
+		body.recibir_danio(int(round(damage * mult_danio)))
 
 
 func _finish_attack() -> void:

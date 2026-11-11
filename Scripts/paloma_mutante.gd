@@ -13,9 +13,9 @@ var vida_actual: int
 @export var velocidad_persecucion: float = 50.0
 @export var distancia_ataque: float = 20.0
 
-#Empanada
-@export var empanada_scene: PackedScene
-@export_range(0.0, 1.0) var probabilidad_drop: float = 0.4 # 40% de probabilidad de caer
+# Drop de yerba
+@export var yerba_scene: PackedScene
+@export_range(0.0, 1.0) var probabilidad_drop: float = 0.4
 
 
 var objetivo_jugador: Node2D = null
@@ -262,20 +262,15 @@ func morir() -> void:
 	queue_free()
 
 func _intentar_drop() -> void:
-	if not empanada_scene:
-		print("OJO: No hay empanada_scene asignada en el Inspector de la Paloma")
+	if not yerba_scene:
+		print("OJO: No hay yerba_scene asignada en el Inspector")
+		return
+	if randf() > probabilidad_drop:
 		return
 
-	var numero_azar := randf()
-	if numero_azar <= probabilidad_drop:
-		var empanada = empanada_scene.instantiate()
-		empanada.global_position = global_position
-		
-		# Agregamos al nivel para que persista
-		get_parent().add_child(empanada)
-		print("¡Empanada soltada con éxito en la posición: ", global_position)
-	else:
-		print("Mala suerte, esta paloma no soltó empanada (roll: ", numero_azar, ")")
+	var yerba := yerba_scene.instantiate()
+	yerba.position = position
+	get_parent().add_child.call_deferred(yerba)
 
 
 func _on_zona_deteccion_body_entered(body: Node2D) -> void:

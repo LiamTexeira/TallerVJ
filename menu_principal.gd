@@ -165,7 +165,7 @@ func _construir_controles() -> CenterContainer:
 
 	var filas := [
 		["Moverse", "WASD / Flechas"],
-		["Dash / esquivar", "J"],
+		["Dash / esquivar", "J / Z"],
 		["Atacar", "K  /  X"],
 		["Cambiar arma", "4 (mate)  ·  5 (termo)"],
 		["Cebar mate", "E"],

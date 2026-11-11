@@ -15,6 +15,20 @@ const ALCANCE_ATAQUE := 16.0 # Distancia a la que se desplaza la hitbox desde el
 const STAMINA_MAX := 100.0
 const STAMINA_REGEN := 15.0  # por segundo
 
+# --- YERBAS ---
+const YERBA_CLASICA_CURACION := 15
+const YUYOS_DURACION := 30.0
+const YUYOS_CURA_POR_TICK := 1          # 1 de vida por segundo, 30 en total
+const DESPALADA_DURACION := 10.0
+const DESPALADA_MULT_DANIO := 2.0
+const DESPALADA_MULT_VELOCIDAD := 1.5
+
+var mult_danio := 1.0
+var mult_velocidad := 1.0
+var timer_yuyos: Timer
+var timer_tick_yuyos: Timer
+var timer_despalada: Timer
+
 var current_weapon: Weapon
 var stamina := 100.0
 
@@ -32,6 +46,7 @@ var side := 1  # 1 = derecha, -1 = izquierda
 # --- VARIABLES DE VIDA E INVULNERABILIDAD ---
 @export var vida_maxima: int = 100
 var vida_actual: int
+var esta_muerto := false
 
 const TIEMPO_INVULNERABLE := 0.8 # Segundos de proteccion tras ser golpeado
 var invulnerable_timer := 0.0
@@ -47,6 +62,7 @@ func _ready() -> void:
 	vida_actual = RunManager.vida_actual # Sincronizar vida inicial con el RunManager
 	emit_signal("vida_cambiada", vida_actual, vida_maxima) # Notifica vida inicial
 	equip_weapon(TERMO_SCENE)  # arma inicial
+	_crear_timers_yerba()
 	
 	# Aseguramos que el hitbox comience desactivado
 	if collision_ataque:
@@ -131,14 +147,14 @@ func _physics_process(delta: float) -> void:
  
 	if is_dashing:
 		dash_timer -= delta
-		velocity = dash_direction * DASH_SPEED
+		velocity = dash_direction * DASH_SPEED * mult_velocidad
 		if dash_timer <= 0.0:
 			is_dashing = false
 	elif is_attacking:
 		velocity = Vector2.ZERO # Quieto mientras ataca
 
 	else:
-		var speed_actual: float = SPEED * RunManager.multiplicador_buff_yerba
+		var speed_actual: float = SPEED * RunManager.multiplicador_buff_yerba * mult_velocidad
 		velocity = input_dir * speed_actual
 
 		if Input.is_action_just_pressed("dash") and dash_cooldown_timer <= 0.0:
@@ -187,6 +203,7 @@ func start_attack() -> void:
 	if not current_weapon.attack_finished.is_connected(_on_attack_finished):
 		current_weapon.attack_finished.connect(_on_attack_finished, CONNECT_ONE_SHOT)
 
+	current_weapon.mult_danio = mult_danio
 	current_weapon.do_attack()
 	## Red de seguridad por si el arma nunca avisa (solo afecta a este mismo arma)
 	var arma := current_weapon
@@ -240,7 +257,7 @@ func _on_area_ataque_body_entered(body: Node2D) -> void:
 
 # FUNCIÓN PARA RECIBIR DAÑO
 func recibir_danio(cantidad: int) -> void:
-	if is_invulnerable:
+	if is_invulnerable or esta_muerto:
 		return
 		
 	RunManager.recibir_danio(cantidad)
@@ -270,13 +287,17 @@ func tomar_mate() -> void:
 func curar(cantidad: int) -> void:
 	if vida_actual < vida_maxima:
 		vida_actual = min(vida_actual + cantidad, vida_maxima)
+		RunManager.vida_actual = vida_actual  # sincroniza, si no se pierde la curación
 		print("Jugador curado. Vida actual: ", vida_actual)
-		
-		if has_signal("vida_cambiada"):
-			emit_signal("vida_cambiada", vida_actual, vida_maxima)
-
+		emit_signal("vida_cambiada", vida_actual, vida_maxima)
 
 func morir() -> void:
+	if esta_muerto:
+		return
+	esta_muerto = true
+	timer_yuyos.stop()
+	timer_tick_yuyos.stop()
+	timer_despalada.stop()
 	print("El jugador ha muerto")
 	emit_signal("jugador_muerto")
 	set_physics_process(false)
@@ -284,3 +305,53 @@ func morir() -> void:
 	
 	var pantalla_over = load("res://escenas/game_over.tscn").instantiate()
 	get_tree().current_scene.add_child(pantalla_over)
+	
+	
+func _crear_timers_yerba() -> void:
+	timer_yuyos = _crear_timer(YUYOS_DURACION, true, _fin_yuyos)
+	timer_tick_yuyos = _crear_timer(1.0, false, _tick_yuyos)
+	timer_despalada = _crear_timer(DESPALADA_DURACION, true, _fin_despalada)
+
+
+func _crear_timer(tiempo: float, una_vez: bool, callback: Callable) -> Timer:
+	var t := Timer.new()
+	t.wait_time = tiempo
+	t.one_shot = una_vez
+	t.timeout.connect(callback)
+	add_child(t)
+	return t
+
+
+# Devuelve true si la yerba se consumió
+func aplicar_yerba(tipo: int) -> bool:
+	if esta_muerto:
+		return false
+	match tipo:
+		YerbaDrop.Tipo.CLASICA:
+			if vida_actual >= vida_maxima:
+				return false              # no se gasta con la vida llena
+			curar(YERBA_CLASICA_CURACION)
+		YerbaDrop.Tipo.YUYOS:
+			timer_yuyos.start()           # si ya estaba activa, reinicia los 30 s
+			timer_tick_yuyos.start()
+		YerbaDrop.Tipo.DESPALADA:
+			mult_danio = DESPALADA_MULT_DANIO
+			mult_velocidad = DESPALADA_MULT_VELOCIDAD
+			sprite.self_modulate = Color(1.3, 0.8, 0.6)   # se nota el buff
+			timer_despalada.start()
+	return true
+
+
+func _tick_yuyos() -> void:
+	if not esta_muerto:
+		curar(YUYOS_CURA_POR_TICK)
+
+
+func _fin_yuyos() -> void:
+	timer_tick_yuyos.stop()
+
+
+func _fin_despalada() -> void:
+	mult_danio = 1.0
+	mult_velocidad = 1.0
+	sprite.self_modulate = Color.WHITE

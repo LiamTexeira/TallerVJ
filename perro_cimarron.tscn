@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://7pcrrydwp62y"]
 
 [ext_resource type="Script" uid="uid://c4y5yffobnx87" path="res://perro_cimarron.gd" id="1_4nffa"]
+[ext_resource type="PackedScene" uid="uid://dcnxs8wxg878r" path="res://escenas/yerba_drop.tscn" id="2_cktcm"]
 [ext_resource type="Texture2D" uid="uid://cqcl1qlq02fc7" path="res://Assets/asset_perro_cimarron_attack.png" id="3_y5i2g"]
 [ext_resource type="Texture2D" uid="uid://clyuj1a0u00mt" path="res://Assets/asset_perro_cimarron_death.png" id="5_eo7bp"]
 [ext_resource type="Texture2D" uid="uid://bdmqk80qkdibg" path="res://Assets/asset_perro_cimarron_hurt.png" id="7_hr5wm"]
@@ -321,11 +322,11 @@ radius = 117.094444
 radius = 36.666664
 
 [node name="perro_cimarron" type="CharacterBody2D" unique_id=1613642628]
-modulate = Color(1, 1, 1, 1)
 position = Vector2(1, 0)
 scale = Vector2(0.3, 0.3)
 collision_layer = 4
 script = ExtResource("1_4nffa")
+yerba_scene = ExtResource("2_cktcm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1659756272]
 scale = Vector2(0.44849536, 0.39308304)
