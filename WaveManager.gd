@@ -36,6 +36,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo:
 		if event.keycode == KEY_PERIOD:
 			_completar_oleada()
+		elif event.keycode == KEY_MINUS:
+			_saltar_a_jefe()
 
 
 func _process(delta: float) -> void:
@@ -274,6 +276,16 @@ func registrar_enemigo_derrotado() -> void:
 	if enemigos_vivos_en_mapa <= 0:
 		_completar_oleada()
 		
+func _saltar_a_jefe() -> void:
+	# tecla - : salta directo al jefe para testear
+	if is_instance_valid(spawner) and spawner.has_method("detener_spawner"):
+		spawner.detener_spawner()
+	_limpiar_enemigos_mapa()
+	oleada_activa = false
+	en_descanso = false
+	_invocar_jefe()
+
+
 func _invocar_jefe() -> void:
 	if not jefe_scene or jefe_activo:
 		return
