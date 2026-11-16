@@ -10,6 +10,8 @@ var mult_danio := 1.0
 var can_attack := true
 var hit_targets: Array = []  # evita golpear al mismo enemigo varias veces en un swing
 
+var escala_hitbox_original: Vector2 = Vector2.ONE
+
 @onready var hitbox: Area2D = $Area2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -17,6 +19,7 @@ signal attack_finished
 
 func _ready() -> void:
 	hitbox.monitoring = false
+	escala_hitbox_original = hitbox.scale
 	hitbox.body_entered.connect(_on_hitbox_body_entered)
 
 
@@ -25,6 +28,10 @@ func do_attack() -> void:
 		return
 	can_attack = false
 	hit_targets.clear()
+	
+	# Aumenta el tamaño de la hitbox según el bonus de la Espumadera
+	hitbox.scale = escala_hitbox_original * RunManager.bonus_rango_melee
+	
 	_play_attack_animation()
 
 

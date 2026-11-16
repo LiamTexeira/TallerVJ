@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://qa5sl6pwqtm8"]
+
+[ext_resource type="Script" uid="uid://dao6xx6xrdy7" path="res://escenas/item_permanente.gd" id="1_fm6c6"]
+[ext_resource type="Texture2D" uid="uid://bqt5ffbjoyu75" path="res://Assets/asset_Boletera_acero.png" id="2_uefia"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fs2fy"]
+
+[node name="item_botines" type="Area2D" unique_id=130443320]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_fm6c6")
+tipo = 1
+nombre_item = "Boletera de Acero"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1620180027]
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("2_uefia")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=720874661]
+shape = SubResource("CircleShape2D_fs2fy")

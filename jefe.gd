@@ -76,6 +76,7 @@ func _perseguir() -> void:
 
 
 var ultimo_ataque := ""
+var animacion_ataque := "attack"
 
 func _elegir_ataque() -> void:
 	var dist := global_position.distance_to(objetivo.global_position)
@@ -105,6 +106,7 @@ func _ataque_melee() -> void:
 	if not await _telegrafiar(0.5): return
 	var dir := (objetivo.global_position - global_position).normalized()
 	area_dano.position = dir * 24.0   # el golpe sale hacia el jugador
+	animacion_ataque = "attack"
 	estado = Estado.ATAQUE
 	area_dano_col.disabled = false
 	await get_tree().create_timer(0.3).timeout
@@ -195,11 +197,18 @@ func _morir() -> void:
 
 
 func _animar() -> void:
-	if estado == Estado.PERSECUCION:
-		if velocity.x != 0.0:
-			sprite.flip_h = velocity.x < 0.0
-		if sprite.sprite_frames.has_animation("walk"):
-			sprite.play("walk")
-	elif estado == Estado.ENTRADA or estado == Estado.TELEGRAFIA:
-		if sprite.sprite_frames.has_animation("idle"):
-			sprite.play("idle")
+	match estado:
+		Estado.PERSECUCION:
+			if velocity.x != 0.0:
+				sprite.flip_h = velocity.x < 0.0
+			if sprite.sprite_frames.has_animation("walk"):
+				sprite.play("walk")
+		Estado.ATAQUE:
+			# Mira hacia el jugador mientras ataca
+			if is_instance_valid(objetivo):
+				sprite.flip_h = objetivo.global_position.x < global_position.x
+			if sprite.sprite_frames.has_animation(animacion_ataque):
+				sprite.play(animacion_ataque)
+		Estado.ENTRADA, Estado.TELEGRAFIA:
+			if sprite.sprite_frames.has_animation("idle"):
+				sprite.play("idle")
