@@ -3,9 +3,33 @@
 [ext_resource type="Script" uid="uid://dlvwftiw2y78t" path="res://jefe.gd" id="1_umnab"]
 [ext_resource type="PackedScene" uid="uid://timsqwegv7ee" path="res://escenas/boss_bar.tscn" id="2_3t1mq"]
 [ext_resource type="Texture2D" uid="uid://bjlcc5tvda00r" path="res://Assets/asset_jefe_idle.png" id="3_2su6u"]
+[ext_resource type="Texture2D" uid="uid://c50prka4olt3x" path="res://Assets/asset_jefe_attack.png" id="3_caoxt"]
 [ext_resource type="Texture2D" uid="uid://clf6t38ystslt" path="res://Assets/asset_jefe_death.png" id="3_rqidq"]
 [ext_resource type="Texture2D" uid="uid://bq4gik35nv62s" path="res://Assets/asset_jefe_walk.png" id="4_vmol7"]
-[ext_resource type="Texture2D" uid="uid://c50prka4olt3x" path="res://Assets/asset_jefe_attack.png" id="5_atck0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhuvg"]
+atlas = ExtResource("3_caoxt")
+region = Rect2(39, 0, 244, 262)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sqct"]
+atlas = ExtResource("3_caoxt")
+region = Rect2(283, 0, 244, 262)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uyq88"]
+atlas = ExtResource("3_caoxt")
+region = Rect2(771, 0, 244, 262)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ry2k8"]
+atlas = ExtResource("3_caoxt")
+region = Rect2(39, 262, 244, 262)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0c0jj"]
+atlas = ExtResource("3_caoxt")
+region = Rect2(283, 262, 244, 262)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vrjsc"]
+atlas = ExtResource("3_caoxt")
+region = Rect2(771, 262, 244, 262)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2fgy5"]
 atlas = ExtResource("3_rqidq")
@@ -83,20 +107,31 @@ region = Rect2(720, 326, 180, 260)
 atlas = ExtResource("4_vmol7")
 region = Rect2(900, 326, 180, 260)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_atk01"]
-atlas = ExtResource("5_atck0")
-region = Rect2(0, 0, 300, 270)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_atk02"]
-atlas = ExtResource("5_atck0")
-region = Rect2(228, 0, 300, 270)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_atk03"]
-atlas = ExtResource("5_atck0")
-region = Rect2(719, 0, 300, 270)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_o0nu5"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhuvg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2sqct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uyq88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ry2k8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0c0jj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vrjsc")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 7.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2fgy5")
@@ -168,20 +203,6 @@ animations = [{
 "loop": 1,
 "name": &"walk",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_atk01")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_atk02")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_atk03")
-}],
-"loop": 0,
-"name": &"attack",
-"speed": 10.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cxbuq"]
@@ -199,7 +220,9 @@ barra_scene = ExtResource("2_3t1mq")
 position = Vector2(0, -6.999999)
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_o0nu5")
-animation = &"idle"
+animation = &"attack"
+frame = 5
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=218635190]
 shape = SubResource("CircleShape2D_cxbuq")

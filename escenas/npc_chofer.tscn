@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bcno3ne1vob2h" path="res://escenas/npc_chofer.gd" id="1_6om6a"]
 [ext_resource type="Texture2D" uid="uid://drs33r7us46n4" path="res://Assets/village_head.png" id="2_6om6a"]
+[ext_resource type="PackedScene" uid="uid://qa5sl6pwqtm8" path="res://escenas/item_boletera.tscn" id="2_xwagd"]
 [ext_resource type="Texture2D" uid="uid://bh4sjwk0cinik" path="res://Assets/asset_npcs.png" id="3_36s2r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_36s2r"]
@@ -38,6 +39,7 @@ radius = 11.401754
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_6om6a")
+item_scene = ExtResource("2_xwagd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1412978783]
 scale = Vector2(0.045, 0.037)

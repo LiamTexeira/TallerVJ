@@ -1,3 +1,7 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+
+# Export web (generado, no versionar)
+/Poyecto.*
+/web/

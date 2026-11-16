@@ -2,6 +2,8 @@ extends CharacterBody2D
 const TERMO_SCENE := preload("res://termo.tscn")
 const MATE_SCENE := preload("res://mate.tscn")
 
+enum Tipo { BOTINES, BOLETERA, ESPUMADERA }
+
 signal vida_cambiada(vida_actual, vida_maxima)
 signal jugador_muerto
 
@@ -147,7 +149,7 @@ func _physics_process(delta: float) -> void:
  
 	if is_dashing:
 		dash_timer -= delta
-		velocity = dash_direction * DASH_SPEED * mult_velocidad
+		velocity = dash_direction * DASH_SPEED * mult_velocidad * RunManager.bonus_distancia_dash
 		if dash_timer <= 0.0:
 			is_dashing = false
 	elif is_attacking:
@@ -347,3 +349,18 @@ func _fin_despalada() -> void:
 	mult_danio = 1.0
 	mult_velocidad = 1.0
 	sprite.self_modulate = Color.WHITE
+
+
+func aplicar_item(tipo: int) -> void:
+	match tipo:
+		0: # Botines de Oro
+			RunManager.bonus_distancia_dash = 2.0
+			print("¡Botines de Oro obtenidos! Dash x2")
+
+		1: # Boletera de Acero
+			RunManager.inmunidad_retroceso = true
+			print("¡Boletera de Acero obtenida! Inmunidad al retroceso")
+
+		2: # Espumadera de Hierro
+			RunManager.bonus_rango_melee = 1.5
+			print("¡Espumadera de Hierro obtenida! Rango melee +50%")

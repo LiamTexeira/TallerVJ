@@ -21,8 +21,19 @@ var vida_actual: int = 100:
 		vida_cambiada.emit(vida_actual, vida_maxima)
 
 
+# Mejoras permanentes obtenidas de los NPC
+var bonus_distancia_dash: float = 1.0
+var bonus_rango_melee: float = 1.0
+var inmunidad_retroceso: bool = false
+
+
+
 func iniciar_expedicion(temperatura: int) -> void:
 	temperatura_actual = temperatura
+	
+	bonus_distancia_dash = 1.0
+	bonus_rango_melee = 1.0
+	inmunidad_retroceso = false
 	
 	match temperatura_actual:
 		TemperaturaAgua.TEMP_80:
@@ -52,4 +63,7 @@ func recibir_danio(cantidad: int) -> void:
 
 func reiniciar_run() -> void:
 	vida_actual = vida_maxima
+	bonus_distancia_dash = 1.0
+	bonus_rango_melee = 1.0
+	inmunidad_retroceso = false
 	# Se podrian resetear otras cosas

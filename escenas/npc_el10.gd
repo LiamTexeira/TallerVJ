@@ -8,6 +8,10 @@ var nombre_npc: String = ""
 var jugador_cerca: bool = false
 var ya_se_hablo: bool = false
 
+var premio_ganado: bool = false
+
+@export var item_scene: PackedScene
+
 @onready var label_prompter: Label = $LabelPrompter if has_node("LabelPrompter") else null
 
 
@@ -74,6 +78,7 @@ func _ejecutar_resultado_mate() -> void:
 
 	var respuesta_texto: String = ""
 	if temp == 80:
+		premio_ganado = true
 		respuesta_texto = "¡Qué cal a gusto, bo! Justo a 80°C, un manjar. Tomá, guardate estos Botines de Oro."
 	elif temp == 100:
 		respuesta_texto = "Mmh, está medio lavado este agua... pero se toma igual. Gracias por la compañía, gurí."
@@ -93,5 +98,19 @@ func _mostrar_y_conectar_final(nombre: String, texto: String) -> void:
 
 
 func _on_hud_dialogo_cerrado() -> void:
+	#Si el jugador ganó el premio, creamos el objeto
+	if premio_ganado:
+		if item_scene != null:
+			var item = item_scene.instantiate()
+			# Guardamos la posición donde aparecerá el objeto
+			var posicion_premio = global_position + Vector2(0, 24)
+			# Agregamos el objeto a la escena actual
+			get_tree().current_scene.add_child(item)
+			# Ubicamos el objeto cerca del NPC
+			item.global_position = posicion_premio
+			print("El 10 entregó los Botines de Oro")
+
+		else:
+			push_error("El 10 no tiene asignada la escena del premio en el Inspector")
 	dialogo_finalizado.emit()
 	queue_free()
