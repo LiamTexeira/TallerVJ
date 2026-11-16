@@ -241,24 +241,17 @@ func _on_animation_finished() -> void:
 
 
 func morir() -> void:
-	print("--- ENEMIGO MUERTO (Diagnóstico) ---")
-	print("Escena actual: ", get_tree().current_scene)
 	
 	var wave_mgr = get_tree().current_scene.find_child("WaveManager", true, false)
-	print("¿Encontró WaveManager con find_child?: ", wave_mgr)
 	
 	if wave_mgr and wave_mgr.has_method("registrar_enemigo_derrotado"):
 		wave_mgr.registrar_enemigo_derrotado()
-		print("¡Éxito! Baja registrada.")
-	else:
-		print("FALLÓ: El WaveManager no existe en esta escena o no tiene el método.")
 
 	_intentar_drop()
 	queue_free()
 
 func _intentar_drop() -> void:
 	if not yerba_scene:
-		print("OJO: No hay yerba_scene asignada en el Inspector")
 		return
 	if randf() > probabilidad_drop:
 		return

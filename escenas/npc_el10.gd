@@ -71,7 +71,6 @@ func _ejecutar_resultado_mate() -> void:
 	var rm = get_node_or_null("/root/RunManager")
 	if rm and "temperatura_actual" in rm:
 		temp = rm.temperatura_actual
-		print("NPC detectó temperatura de la run: ", temp)
 
 	var respuesta_texto: String = ""
 	if temp == 80:

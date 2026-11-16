@@ -35,7 +35,6 @@ func _play_attack_animation() -> void:
 
 func _enable_hitbox() -> void:
 	hitbox.monitoring = true
-	print("hitbox ON, mask: ", hitbox.collision_mask)
 
 
 func _disable_hitbox() -> void:

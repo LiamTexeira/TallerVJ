@@ -263,7 +263,6 @@ func recibir_danio(cantidad: int) -> void:
 	RunManager.recibir_danio(cantidad)
 	vida_actual = RunManager.vida_actual
 	emit_signal("vida_cambiada", vida_actual, vida_maxima)
-	print("¡Jugador golpeado! Vida restante: ", vida_actual)
 	
 	if vida_actual <= 0:
 		morir()
@@ -274,21 +273,15 @@ func recibir_danio(cantidad: int) -> void:
 
 # FUNCIÓN PARA TOMAR MATE Y APLICAR MECÁNICAS DE TEMPERATURA
 func tomar_mate() -> void:
-	print("\n--- CEBANDO MATE ---")
-	print("Temperatura elegida en El Calentador: ", RunManager.temperatura_actual, "°C")
 	
 	if RunManager.dano_quemadura_por_sorbo > 0:
 		recibir_danio(RunManager.dano_quemadura_por_sorbo)
-		print("¡Te quemaste la boca al cebar a ", RunManager.temperatura_actual, "°C! Daño sufrido: ", RunManager.dano_quemadura_por_sorbo)
-	else:
-		print("Mate cebado sin quemaduras. Buff multiplicador: x", RunManager.multiplicador_buff_yerba)
 
 
 func curar(cantidad: int) -> void:
 	if vida_actual < vida_maxima:
 		vida_actual = min(vida_actual + cantidad, vida_maxima)
 		RunManager.vida_actual = vida_actual  # sincroniza, si no se pierde la curación
-		print("Jugador curado. Vida actual: ", vida_actual)
 		emit_signal("vida_cambiada", vida_actual, vida_maxima)
 
 func morir() -> void:
@@ -298,7 +291,6 @@ func morir() -> void:
 	timer_yuyos.stop()
 	timer_tick_yuyos.stop()
 	timer_despalada.stop()
-	print("El jugador ha muerto")
 	emit_signal("jugador_muerto")
 	set_physics_process(false)
 	visible = false

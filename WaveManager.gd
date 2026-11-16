@@ -86,7 +86,6 @@ func _iniciar_oleada() -> void:
 	
 	var probabilidad_perro = float(perros) / float(enemigos_totales_oleada) if enemigos_totales_oleada > 0 else 0.0
 	
-	print("--- INICIANDO OLEADA ", oleada_actual, " (Palomas: ", palomas, " | Perros: ", perros, ") ---")
 	
 	if not is_instance_valid(spawner):
 		var escena_actual = get_tree().current_scene
@@ -105,7 +104,6 @@ func _iniciar_oleada() -> void:
 
 func _completar_oleada() -> void:
 	oleada_activa = false
-	print("--- OLEADA ", oleada_actual, " COMPLETADA ---")
 
 	if is_instance_valid(spawner) and spawner.has_method("detener_spawner"):
 		spawner.detener_spawner()
@@ -126,13 +124,11 @@ func _completar_oleada() -> void:
 func _iniciar_descanso(segundos: float) -> void:
 	en_descanso = true
 	tiempo_descanso = segundos
-	print("=== COMIENZAN ", segundos, " SEGUNDOS DE DESCANSO ===")
 
 
 func _iniciar_pausa_jefe_final() -> void:
 	en_descanso = true
 	tiempo_descanso = 60.0 # 1 minuto de pausa antes del jefe / fase final
-	print("=== ¡TODAS LAS OLEADAS COMPLETADAS! INICIANDO PAUSA DE 1 MINUTO PARA EL JEFE FINAL ===")
 	
 	var hud = _buscar_hud()
 	if hud and hud.has_method("mostrar_anuncio_npc"):
@@ -143,7 +139,6 @@ func _finalizar_descanso() -> void:
 	en_descanso = false
 	
 	if oleada_actual >= max_oleadas:
-		print("¡Tiempo de pausa del jefe final terminado! Disparando evento de jefe...")
 		_invocar_jefe()
 		return
 		
@@ -156,7 +151,6 @@ func _siguiente_oleada() -> void:
 
 
 func _iniciar_evento_npc() -> void:
-	print("=== EVENTO EL 10 ===")
 	_preparar_evento_npc()
 	if npc_el10_scene:
 		npc_instanciado = npc_el10_scene.instantiate()
@@ -164,7 +158,6 @@ func _iniciar_evento_npc() -> void:
 
 
 func _iniciar_evento_chofer() -> void:
-	print("=== EVENTO CHOFER ===")
 	_preparar_evento_npc()
 	if npc_chofer_scene:
 		npc_instanciado = npc_chofer_scene.instantiate()
@@ -172,7 +165,6 @@ func _iniciar_evento_chofer() -> void:
 
 
 func _iniciar_evento_tortas_fritas() -> void:
-	print("=== EVENTO TORTAS FRITAS ===")
 	_preparar_evento_npc()
 	if npc_tortas_fritas_scene:
 		npc_instanciado = npc_tortas_fritas_scene.instantiate()
@@ -229,7 +221,6 @@ func _limpiar_enemigos_mapa() -> void:
 		if is_instance_valid(nodo):
 			nodo.queue_free()
 			
-	print("Limpieza de enemigos completada con éxito.")
 
 
 func _on_npc_dialogo_finalizado() -> void:
@@ -272,7 +263,6 @@ func registrar_enemigo_derrotado() -> void:
 		return
 		
 	enemigos_vivos_en_mapa = max(0, enemigos_vivos_en_mapa - 1)
-	print("Enemigo derrotado. Restantes en oleada: ", enemigos_vivos_en_mapa)
 	
 	_actualizar_ui()
 	

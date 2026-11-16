@@ -52,7 +52,6 @@ func iniciar_tanda_spawn_fija(palomas: int, perros: int, intervalo: float) -> vo
 	# Mezclamos la cola para que salgan intercalados de forma aleatoria pero manteniendo el total exacto
 	cola_enemigos_oleada.shuffle()
 	
-	print("Spawner: Tanda fija armada -> ", palomas, " Palomas y ", perros, " Perros. Total en cola: ", cola_enemigos_oleada.size())
 	
 	if timer_spawn and not cola_enemigos_oleada.is_empty():
 		timer_spawn.stop()
