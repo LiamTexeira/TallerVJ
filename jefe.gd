@@ -169,7 +169,6 @@ func recibir_danio(cantidad: int) -> void:
 		_morir()
 	elif fase == 1 and vida_actual <= vida_maxima / 2:
 		fase = 2
-		print("¡Fase 2!")
 
 
 func debug_vida_a_uno() -> void:
@@ -200,6 +199,12 @@ func _animar() -> void:
 			sprite.flip_h = velocity.x < 0.0
 		if sprite.sprite_frames.has_animation("walk"):
 			sprite.play("walk")
+	elif estado == Estado.ATAQUE:
+		# arranca el swing una vez y lo orienta hacia el jugador
+		if sprite.sprite_frames.has_animation("attack") and sprite.animation != &"attack":
+			if is_instance_valid(objetivo):
+				sprite.flip_h = objetivo.global_position.x < global_position.x
+			sprite.play("attack")
 	elif estado == Estado.ENTRADA or estado == Estado.TELEGRAFIA:
 		if sprite.sprite_frames.has_animation("idle"):
 			sprite.play("idle")
