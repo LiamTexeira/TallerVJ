@@ -32,7 +32,7 @@ horizontal_alignment = 1
 
 [node name="TextoInstruccion" type="Label" parent="CenterContainer/VBoxContainer" unique_id=296164321]
 layout_mode = 2
-text = "Los enemigos te han superado... presiona R para intentar de nuevo "
+text = "Los enemigos te han superado — R para reintentar · ESC para volver al menú"
 
 [node name="Espaciador" type="Control" parent="CenterContainer/VBoxContainer" unique_id=1423579270]
 layout_mode = 2
@@ -43,7 +43,14 @@ layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
 text = "REINTENTAR"
 
+[node name="BotonMenu" type="Button" parent="CenterContainer/VBoxContainer" unique_id=4918841]
+custom_minimum_size = Vector2(160, 40)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+text = "VOLVER AL MENÚ"
+
 [node name="Espaciador2" type="Control" parent="CenterContainer/VBoxContainer" unique_id=554492263]
 layout_mode = 2
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/BotonReiniciar" to="." method="_on_boton_reiniciar_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/BotonMenu" to="." method="_on_volver_menu_pressed"]
