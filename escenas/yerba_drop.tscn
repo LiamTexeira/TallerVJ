@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dcnxs8wxg878r"]
+
+[ext_resource type="Script" uid="uid://d0fstfxnobhdm" path="res://yerba_drop.gd" id="1_dr5dw"]
+[ext_resource type="Texture2D" uid="uid://db2quhxijmvj8" path="res://Assets/asset_Yerba_Clasica.png" id="2_ipnik"]
+[ext_resource type="Texture2D" uid="uid://cqxlk48xy1xxp" path="res://Assets/asset_Yerba_Yuyos.png" id="3_ghlgs"]
+[ext_resource type="Texture2D" uid="uid://bnctjrxq6u2yh" path="res://Assets/asset_Yerba_Despalada.png" id="4_4x3gs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fs2fy"]
+radius = 8.0
+
+[node name="YerbaDrop" type="Area2D" unique_id=1263622460]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_dr5dw")
+textura_clasica = ExtResource("2_ipnik")
+textura_yuyos = ExtResource("3_ghlgs")
+textura_despalada = ExtResource("4_4x3gs")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1882958113]
+scale = Vector2(0.07, 0.07)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=69164121]
+shape = SubResource("CircleShape2D_fs2fy")

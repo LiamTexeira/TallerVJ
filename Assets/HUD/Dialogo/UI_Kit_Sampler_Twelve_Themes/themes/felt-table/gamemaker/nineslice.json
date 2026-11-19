@@ -1,0 +1,366 @@
+{
+  "schema": "csaf-uikit-nineslice/1",
+  "theme": "felt-table",
+  "sprites": [
+    {
+      "mode": "pixel",
+      "sprite": "spr_felt_table_pixel_panel_window_normal",
+      "file": "pixel/sprites/panel_window__normal.png",
+      "width": 32,
+      "height": 32,
+      "nineSlice": {
+        "enabled": true,
+        "left": 11,
+        "top": 11,
+        "right": 12,
+        "bottom": 12
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_felt_table_pixel_panel_header_normal",
+      "file": "pixel/sprites/panel_header__normal.png",
+      "width": 32,
+      "height": 16,
+      "nineSlice": {
+        "enabled": true,
+        "left": 4,
+        "top": 5,
+        "right": 5,
+        "bottom": 5
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_felt_table_pixel_dialogue_box_normal",
+      "file": "pixel/sprites/dialogue_box__normal.png",
+      "width": 64,
+      "height": 28,
+      "nineSlice": {
+        "enabled": true,
+        "left": 11,
+        "top": 11,
+        "right": 12,
+        "bottom": 12
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_felt_table_pixel_nameplate_normal",
+      "file": "pixel/sprites/nameplate__normal.png",
+      "width": 36,
+      "height": 12,
+      "nineSlice": {
+        "enabled": true,
+        "left": 3,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_felt_table_pixel_bar_frame_normal",
+      "file": "pixel/sprites/bar_frame__normal.png",
+      "width": 40,
+      "height": 8,
+      "nineSlice": {
+        "enabled": true,
+        "left": 3,
+        "top": 0,
+        "right": 3,
+        "bottom": 0
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_felt_table_pixel_bar_hp_fill_normal",
+      "file": "pixel/sprites/bar_hp_fill__normal.png",
+      "width": 36,
+      "height": 4,
+      "nineSlice": {
+        "enabled": true,
+        "left": 1,
+        "top": 0,
+        "right": 1,
+        "bottom": 0
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_felt_table_pixel_button_primary_normal",
+      "file": "pixel/sprites/button_primary__normal.png",
+      "width": 40,
+      "height": 16,
+      "nineSlice": {
+        "enabled": true,
+        "left": 5,
+        "top": 6,
+        "right": 6,
+        "bottom": 6
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_felt_table_pixel_button_primary_hover",
+      "file": "pixel/sprites/button_primary__hover.png",
+      "width": 40,
+      "height": 16,
+      "nineSlice": {
+        "enabled": true,
+        "left": 5,
+        "top": 6,
+        "right": 6,
+        "bottom": 6
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_felt_table_pixel_button_primary_pressed",
+      "file": "pixel/sprites/button_primary__pressed.png",
+      "width": 40,
+      "height": 16,
+      "nineSlice": {
+        "enabled": true,
+        "left": 5,
+        "top": 6,
+        "right": 6,
+        "bottom": 6
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_felt_table_pixel_button_primary_disabled",
+      "file": "pixel/sprites/button_primary__disabled.png",
+      "width": 40,
+      "height": 16,
+      "nineSlice": {
+        "enabled": true,
+        "left": 5,
+        "top": 6,
+        "right": 6,
+        "bottom": 6
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_felt_table_pixel_cursor_pointer_normal",
+      "file": "pixel/sprites/cursor_pointer__normal.png",
+      "width": 10,
+      "height": 14,
+      "nineSlice": {
+        "enabled": false
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_felt_table_pixel_cursor_select_normal",
+      "file": "pixel/sprites/cursor_select__normal.png",
+      "width": 6,
+      "height": 9,
+      "nineSlice": {
+        "enabled": false
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_felt_table_pixel_advance_arrow_frame0",
+      "file": "pixel/sprites/advance_arrow__frame0.png",
+      "width": 7,
+      "height": 6,
+      "nineSlice": {
+        "enabled": false
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_felt_table_pixel_advance_arrow_frame1",
+      "file": "pixel/sprites/advance_arrow__frame1.png",
+      "width": 7,
+      "height": 6,
+      "nineSlice": {
+        "enabled": false
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_felt_table_pixel_heart_full_normal",
+      "file": "pixel/sprites/heart_full__normal.png",
+      "width": 7,
+      "height": 7,
+      "nineSlice": {
+        "enabled": false
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_felt_table_pixel_card_attack_normal",
+      "file": "pixel/sprites/card_attack__normal.png",
+      "width": 52,
+      "height": 74,
+      "nineSlice": {
+        "enabled": true,
+        "left": 12,
+        "top": 19,
+        "right": 7,
+        "bottom": 32
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_felt_table_pixel_card_attack_hover",
+      "file": "pixel/sprites/card_attack__hover.png",
+      "width": 52,
+      "height": 74,
+      "nineSlice": {
+        "enabled": true,
+        "left": 12,
+        "top": 19,
+        "right": 7,
+        "bottom": 32
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_felt_table_pixel_card_attack_selected",
+      "file": "pixel/sprites/card_attack__selected.png",
+      "width": 52,
+      "height": 74,
+      "nineSlice": {
+        "enabled": true,
+        "left": 12,
+        "top": 19,
+        "right": 7,
+        "bottom": 32
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_felt_table_pixel_card_attack_disabled",
+      "file": "pixel/sprites/card_attack__disabled.png",
+      "width": 52,
+      "height": 74,
+      "nineSlice": {
+        "enabled": true,
+        "left": 12,
+        "top": 19,
+        "right": 7,
+        "bottom": 32
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_felt_table_pixel_card_back_normal",
+      "file": "pixel/sprites/card_back__normal.png",
+      "width": 52,
+      "height": 74,
+      "nineSlice": {
+        "enabled": true,
+        "left": 11,
+        "top": 11,
+        "right": 12,
+        "bottom": 12
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_felt_table_pixel_card_plate_normal",
+      "file": "pixel/sprites/card_plate__normal.png",
+      "width": 40,
+      "height": 12,
+      "nineSlice": {
+        "enabled": true,
+        "left": 2,
+        "top": 2,
+        "right": 2,
+        "bottom": 2
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_felt_table_pixel_end_turn_normal",
+      "file": "pixel/sprites/end_turn__normal.png",
+      "width": 64,
+      "height": 20,
+      "nineSlice": {
+        "enabled": true,
+        "left": 12,
+        "top": 0,
+        "right": 13,
+        "bottom": 0
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_felt_table_pixel_end_turn_hover",
+      "file": "pixel/sprites/end_turn__hover.png",
+      "width": 64,
+      "height": 20,
+      "nineSlice": {
+        "enabled": true,
+        "left": 12,
+        "top": 0,
+        "right": 13,
+        "bottom": 0
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_felt_table_pixel_end_turn_pressed",
+      "file": "pixel/sprites/end_turn__pressed.png",
+      "width": 64,
+      "height": 20,
+      "nineSlice": {
+        "enabled": true,
+        "left": 12,
+        "top": 0,
+        "right": 13,
+        "bottom": 0
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_felt_table_pixel_end_turn_disabled",
+      "file": "pixel/sprites/end_turn__disabled.png",
+      "width": 64,
+      "height": 20,
+      "nineSlice": {
+        "enabled": true,
+        "left": 12,
+        "top": 0,
+        "right": 13,
+        "bottom": 0
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_felt_table_pixel_cost_gem_normal",
+      "file": "pixel/sprites/cost_gem__normal.png",
+      "width": 11,
+      "height": 11,
+      "nineSlice": {
+        "enabled": false
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_felt_table_pixel_energy_full_normal",
+      "file": "pixel/sprites/energy_full__normal.png",
+      "width": 13,
+      "height": 13,
+      "nineSlice": {
+        "enabled": false
+      }
+    },
+    {
+      "mode": "pixel",
+      "sprite": "spr_felt_table_pixel_intent_attack_normal",
+      "file": "pixel/sprites/intent_attack__normal.png",
+      "width": 13,
+      "height": 13,
+      "nineSlice": {
+        "enabled": false
+      }
+    }
+  ]
+}

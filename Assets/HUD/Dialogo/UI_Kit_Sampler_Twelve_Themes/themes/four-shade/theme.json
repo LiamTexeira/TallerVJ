@@ -1,0 +1,194 @@
+{
+  "schema": "csaf-uikit-theme/1",
+  "id": "four-shade",
+  "name": "Four Shade",
+  "note": "Kit 12 (2026-10-25): a strict four-colour handheld theme, colourway \"Moss\" (#1b2a1e #466140 #97b267 #dfeab4). Every colour slot below is one of the four, so every pixel-mode pixel is one of four colours; the kit's other colourways are exact indexed recolours of the same art. New frame idea in the generator, geometry.corner \"bezel\": the heavy frames (window, popup, dialogue box, portrait and minimap frames, the MZ frame) take a handheld screen bezel's silhouette, three small corners and one big bottom-right curve drawn through every layer of the band, inside 8x8 corner tiles, plus an 8x8 tile cursor.",
+  "geometry": {
+    "border": 3,
+    "radius": 1,
+    "shadow": 1,
+    "hdScale": 3,
+    "corner": "bezel",
+    "coin": "disc",
+    "palette": 4
+  },
+  "demo": {
+    "buttons": [
+      "Start",
+      "Options",
+      "Erase",
+      "Locked"
+    ],
+    "checks": [
+      "Music",
+      "Sound FX"
+    ],
+    "toggle": "Fast text",
+    "slider": "Volume",
+    "field": "Hero name",
+    "options": [
+      "File 1",
+      "File 2",
+      "File 3"
+    ],
+    "tabs": [
+      "Items",
+      "Party",
+      "Map"
+    ],
+    "tooltip": "Potion: heals 20 HP",
+    "speaker": "Keeper",
+    "lines": [
+      "Four shades are all this world has.",
+      "Press A to keep walking."
+    ]
+  },
+  "colors": {
+    "outline": "#1b2a1e",
+    "shadow": "#1b2a1e",
+    "track": "#dfeab4",
+    "trackLight": "#dfeab4",
+    "backdrop": "#466140",
+    "cursorFill": "#dfeab4",
+    "cursorShade": "#97b267",
+    "textDim": "#466140",
+    "panelDarkFill": "#1b2a1e",
+    "hp": [
+      "#1b2a1e",
+      "#466140",
+      "#dfeab4"
+    ],
+    "mp": [
+      "#1b2a1e",
+      "#97b267",
+      "#dfeab4"
+    ],
+    "xp": [
+      "#466140",
+      "#97b267",
+      "#dfeab4"
+    ],
+    "stamina": [
+      "#1b2a1e",
+      "#1b2a1e",
+      "#97b267"
+    ],
+    "boss": [
+      "#1b2a1e",
+      "#1b2a1e",
+      "#466140"
+    ]
+  },
+  "families": {
+    "frame": {
+      "normal": {
+        "light": "#dfeab4",
+        "mid": "#97b267",
+        "dark": "#466140",
+        "fill": "#dfeab4",
+        "shade": "#97b267",
+        "text": "#1b2a1e"
+      },
+      "hover": {
+        "light": "#dfeab4",
+        "mid": "#466140",
+        "dark": "#1b2a1e",
+        "fill": "#97b267",
+        "shade": "#97b267",
+        "text": "#1b2a1e"
+      },
+      "pressed": {
+        "light": "#97b267",
+        "mid": "#466140",
+        "dark": "#1b2a1e",
+        "fill": "#97b267",
+        "shade": "#466140",
+        "text": "#1b2a1e"
+      },
+      "active": {
+        "light": "#dfeab4",
+        "mid": "#466140",
+        "dark": "#1b2a1e",
+        "fill": "#dfeab4",
+        "shade": "#dfeab4",
+        "text": "#1b2a1e"
+      },
+      "disabled": {
+        "light": "#97b267",
+        "mid": "#97b267",
+        "dark": "#97b267",
+        "fill": "#dfeab4",
+        "shade": "#dfeab4",
+        "text": "#466140"
+      }
+    },
+    "accent": {
+      "normal": {
+        "light": "#97b267",
+        "mid": "#466140",
+        "dark": "#1b2a1e",
+        "fill": "#466140",
+        "shade": "#1b2a1e",
+        "text": "#dfeab4"
+      },
+      "hover": {
+        "light": "#dfeab4",
+        "mid": "#97b267",
+        "dark": "#1b2a1e",
+        "fill": "#466140",
+        "shade": "#1b2a1e",
+        "text": "#dfeab4"
+      },
+      "pressed": {
+        "light": "#466140",
+        "mid": "#466140",
+        "dark": "#1b2a1e",
+        "fill": "#1b2a1e",
+        "shade": "#1b2a1e",
+        "text": "#dfeab4"
+      },
+      "disabled": {
+        "light": "#dfeab4",
+        "mid": "#97b267",
+        "dark": "#466140",
+        "fill": "#97b267",
+        "shade": "#97b267",
+        "text": "#1b2a1e"
+      }
+    },
+    "danger": {
+      "normal": {
+        "light": "#466140",
+        "mid": "#1b2a1e",
+        "dark": "#1b2a1e",
+        "fill": "#1b2a1e",
+        "shade": "#1b2a1e",
+        "text": "#dfeab4"
+      },
+      "hover": {
+        "light": "#dfeab4",
+        "mid": "#466140",
+        "dark": "#1b2a1e",
+        "fill": "#1b2a1e",
+        "shade": "#1b2a1e",
+        "text": "#dfeab4"
+      },
+      "pressed": {
+        "light": "#1b2a1e",
+        "mid": "#1b2a1e",
+        "dark": "#1b2a1e",
+        "fill": "#1b2a1e",
+        "shade": "#1b2a1e",
+        "text": "#97b267"
+      },
+      "disabled": {
+        "light": "#97b267",
+        "mid": "#466140",
+        "dark": "#466140",
+        "fill": "#97b267",
+        "shade": "#97b267",
+        "text": "#1b2a1e"
+      }
+    }
+  }
+}

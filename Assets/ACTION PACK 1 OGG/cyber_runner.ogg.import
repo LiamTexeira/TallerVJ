@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dc8dvjnkdurfa"
+path="res://.godot/imported/cyber_runner.ogg-98dd9931ca08677d1cbdfd6f5b3811ce.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/ACTION PACK 1 OGG/cyber_runner.ogg"
+dest_files=["res://.godot/imported/cyber_runner.ogg-98dd9931ca08677d1cbdfd6f5b3811ce.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

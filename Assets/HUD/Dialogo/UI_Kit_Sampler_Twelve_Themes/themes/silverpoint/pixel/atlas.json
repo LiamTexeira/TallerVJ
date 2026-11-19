@@ -1,0 +1,416 @@
+{
+  "schema": "csaf-uikit-atlas/1",
+  "theme": "silverpoint",
+  "themeName": "Silverpoint",
+  "mode": "pixel",
+  "unitPx": 1,
+  "image": "atlas.png",
+  "width": 256,
+  "height": 74,
+  "emptyRegion": {
+    "x": 255,
+    "y": 73,
+    "w": 1,
+    "h": 1
+  },
+  "widgets": [
+    {
+      "id": "panel_window",
+      "kind": "panel",
+      "w": 32,
+      "h": 32,
+      "axes": "hv",
+      "nineSlice": {
+        "l": 7,
+        "t": 7,
+        "r": 7,
+        "b": 8
+      },
+      "states": [
+        {
+          "name": "normal",
+          "x": 2,
+          "y": 2,
+          "w": 32,
+          "h": 32,
+          "sprite": "sprites/panel_window__normal.png",
+          "textColor": "#2b2118"
+        }
+      ]
+    },
+    {
+      "id": "panel_header",
+      "kind": "panel",
+      "w": 32,
+      "h": 16,
+      "axes": "hv",
+      "nineSlice": {
+        "l": 4,
+        "t": 5,
+        "r": 4,
+        "b": 5
+      },
+      "states": [
+        {
+          "name": "normal",
+          "x": 192,
+          "y": 36,
+          "w": 32,
+          "h": 16,
+          "sprite": "sprites/panel_header__normal.png",
+          "textColor": "#2a1f12"
+        }
+      ]
+    },
+    {
+      "id": "dialogue_box",
+      "kind": "panel",
+      "w": 64,
+      "h": 28,
+      "axes": "hv",
+      "nineSlice": {
+        "l": 8,
+        "t": 8,
+        "r": 8,
+        "b": 9
+      },
+      "states": [
+        {
+          "name": "normal",
+          "x": 36,
+          "y": 2,
+          "w": 64,
+          "h": 28,
+          "sprite": "sprites/dialogue_box__normal.png",
+          "textColor": "#2b2118"
+        }
+      ]
+    },
+    {
+      "id": "nameplate",
+      "kind": "panel",
+      "w": 36,
+      "h": 12,
+      "axes": "hv",
+      "nineSlice": {
+        "l": 4,
+        "t": 5,
+        "r": 4,
+        "b": 5
+      },
+      "states": [
+        {
+          "name": "normal",
+          "x": 2,
+          "y": 58,
+          "w": 36,
+          "h": 12,
+          "sprite": "sprites/nameplate__normal.png",
+          "textColor": "#2a1f12"
+        }
+      ]
+    },
+    {
+      "id": "bar_frame",
+      "kind": "bar",
+      "w": 40,
+      "h": 8,
+      "axes": "h",
+      "nineSlice": {
+        "l": 3,
+        "t": 0,
+        "r": 3,
+        "b": 0
+      },
+      "states": [
+        {
+          "name": "normal",
+          "x": 48,
+          "y": 58,
+          "w": 40,
+          "h": 8,
+          "sprite": "sprites/bar_frame__normal.png"
+        }
+      ]
+    },
+    {
+      "id": "bar_hp_fill",
+      "kind": "bar",
+      "w": 36,
+      "h": 4,
+      "axes": "h",
+      "nineSlice": {
+        "l": 1,
+        "t": 0,
+        "r": 1,
+        "b": 0
+      },
+      "states": [
+        {
+          "name": "normal",
+          "x": 136,
+          "y": 58,
+          "w": 36,
+          "h": 4,
+          "sprite": "sprites/bar_hp_fill__normal.png"
+        }
+      ]
+    },
+    {
+      "id": "button_primary",
+      "kind": "button",
+      "w": 40,
+      "h": 16,
+      "axes": "hv",
+      "nineSlice": {
+        "l": 4,
+        "t": 5,
+        "r": 4,
+        "b": 5
+      },
+      "states": [
+        {
+          "name": "normal",
+          "x": 24,
+          "y": 36,
+          "w": 40,
+          "h": 16,
+          "sprite": "sprites/button_primary__normal.png",
+          "textColor": "#2a1f12"
+        },
+        {
+          "name": "hover",
+          "x": 66,
+          "y": 36,
+          "w": 40,
+          "h": 16,
+          "sprite": "sprites/button_primary__hover.png",
+          "textColor": "#22190e"
+        },
+        {
+          "name": "pressed",
+          "x": 108,
+          "y": 36,
+          "w": 40,
+          "h": 16,
+          "sprite": "sprites/button_primary__pressed.png",
+          "textColor": "#2a1f12"
+        },
+        {
+          "name": "disabled",
+          "x": 150,
+          "y": 36,
+          "w": 40,
+          "h": 16,
+          "sprite": "sprites/button_primary__disabled.png",
+          "textColor": "#5a4c34"
+        }
+      ]
+    },
+    {
+      "id": "slot_inventory",
+      "kind": "slot",
+      "w": 20,
+      "h": 20,
+      "axes": "hv",
+      "nineSlice": {
+        "l": 4,
+        "t": 5,
+        "r": 4,
+        "b": 5
+      },
+      "states": [
+        {
+          "name": "normal",
+          "x": 102,
+          "y": 2,
+          "w": 20,
+          "h": 20,
+          "sprite": "sprites/slot_inventory__normal.png"
+        },
+        {
+          "name": "hover",
+          "x": 124,
+          "y": 2,
+          "w": 20,
+          "h": 20,
+          "sprite": "sprites/slot_inventory__hover.png"
+        },
+        {
+          "name": "selected",
+          "x": 146,
+          "y": 2,
+          "w": 20,
+          "h": 20,
+          "sprite": "sprites/slot_inventory__selected.png"
+        },
+        {
+          "name": "disabled",
+          "x": 168,
+          "y": 2,
+          "w": 20,
+          "h": 20,
+          "sprite": "sprites/slot_inventory__disabled.png"
+        }
+      ]
+    },
+    {
+      "id": "equip_weapon",
+      "kind": "slot",
+      "w": 20,
+      "h": 20,
+      "axes": null,
+      "nineSlice": null,
+      "states": [
+        {
+          "name": "normal",
+          "x": 190,
+          "y": 2,
+          "w": 20,
+          "h": 20,
+          "sprite": "sprites/equip_weapon__normal.png"
+        },
+        {
+          "name": "hover",
+          "x": 212,
+          "y": 2,
+          "w": 20,
+          "h": 20,
+          "sprite": "sprites/equip_weapon__hover.png"
+        },
+        {
+          "name": "selected",
+          "x": 234,
+          "y": 2,
+          "w": 20,
+          "h": 20,
+          "sprite": "sprites/equip_weapon__selected.png"
+        },
+        {
+          "name": "disabled",
+          "x": 2,
+          "y": 36,
+          "w": 20,
+          "h": 20,
+          "sprite": "sprites/equip_weapon__disabled.png"
+        }
+      ]
+    },
+    {
+      "id": "cursor_pointer",
+      "kind": "cursor",
+      "w": 10,
+      "h": 14,
+      "axes": null,
+      "nineSlice": null,
+      "states": [
+        {
+          "name": "normal",
+          "x": 226,
+          "y": 36,
+          "w": 10,
+          "h": 14,
+          "sprite": "sprites/cursor_pointer__normal.png"
+        }
+      ]
+    },
+    {
+      "id": "cursor_select",
+      "kind": "cursor",
+      "w": 6,
+      "h": 9,
+      "axes": null,
+      "nineSlice": null,
+      "states": [
+        {
+          "name": "normal",
+          "x": 40,
+          "y": 58,
+          "w": 6,
+          "h": 9,
+          "sprite": "sprites/cursor_select__normal.png"
+        }
+      ]
+    },
+    {
+      "id": "advance_arrow",
+      "kind": "anim",
+      "w": 7,
+      "h": 6,
+      "axes": null,
+      "nineSlice": null,
+      "states": [
+        {
+          "name": "frame0",
+          "x": 118,
+          "y": 58,
+          "w": 7,
+          "h": 6,
+          "sprite": "sprites/advance_arrow__frame0.png"
+        },
+        {
+          "name": "frame1",
+          "x": 127,
+          "y": 58,
+          "w": 7,
+          "h": 6,
+          "sprite": "sprites/advance_arrow__frame1.png"
+        }
+      ]
+    },
+    {
+      "id": "heart_full",
+      "kind": "icon",
+      "w": 7,
+      "h": 7,
+      "axes": null,
+      "nineSlice": null,
+      "states": [
+        {
+          "name": "normal",
+          "x": 100,
+          "y": 58,
+          "w": 7,
+          "h": 7,
+          "sprite": "sprites/heart_full__normal.png"
+        }
+      ]
+    },
+    {
+      "id": "heart_empty",
+      "kind": "icon",
+      "w": 7,
+      "h": 7,
+      "axes": null,
+      "nineSlice": null,
+      "states": [
+        {
+          "name": "normal",
+          "x": 109,
+          "y": 58,
+          "w": 7,
+          "h": 7,
+          "sprite": "sprites/heart_empty__normal.png"
+        }
+      ]
+    },
+    {
+      "id": "icon_coin",
+      "kind": "icon",
+      "w": 8,
+      "h": 8,
+      "axes": null,
+      "nineSlice": null,
+      "states": [
+        {
+          "name": "normal",
+          "x": 90,
+          "y": 58,
+          "w": 8,
+          "h": 8,
+          "sprite": "sprites/icon_coin__normal.png"
+        }
+      ]
+    }
+  ]
+}

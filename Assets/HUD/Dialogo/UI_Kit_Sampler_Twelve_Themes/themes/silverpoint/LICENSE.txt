@@ -1,0 +1,25 @@
+Silverpoint - Minimal Fantasy UI Kit
+Copyright (c) 2026 Core Systems Asset Factory. All rights reserved except as granted below.
+
+WHAT YOU MAY DO
+- Use these files in any number of games and interactive projects you make, commercial or free, on any platform.
+- Use them in your game's trailers, screenshots, store pages and marketing.
+- Edit, recolour, crop, resize and combine them with your own art.
+- Use the kit's pixel typeface (the font files under godot/uikit/silverpoint/font/) inside those projects.
+- No credit is required. If you want to give one, you can copy this line:
+  "UI: Silverpoint UI Kit by Core Systems Asset Factory"
+
+WHAT YOU MAY NOT DO
+- Resell, share or redistribute these files (edited or not) as an asset pack, UI kit, template, font or image
+  collection, or as part of one, free or paid.
+- Upload them to a marketplace, or claim them as your own work in a way that stops others using their copies.
+- Use them to train or fine-tune an AI model.
+
+AI-GENERATED ART - PLEASE READ
+The art in this kit is AI-generated: every widget, frame, icon, cursor and letter of the typeface was drawn by
+program code that was itself written by an AI, from one theme specification. No artist drew these pixels by hand.
+The kit's store page discloses this, and you may want to say so in your own credits.
+
+NO WARRANTY
+The files are provided "as is", without warranty of any kind. Core Systems Asset Factory is not liable for any claim or
+damage arising from their use.

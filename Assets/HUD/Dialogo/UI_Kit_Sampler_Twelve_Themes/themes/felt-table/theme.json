@@ -1,0 +1,236 @@
+{
+  "schema": "csaf-uikit-theme/1",
+  "id": "felt-table",
+  "name": "Felt Table",
+  "note": "Kit 10 (2026-10-23): a card-table theme for deckbuilders and card games. Lacquered mahogany rails around green baize, a brass stringing line inlaid in every heavy rail and a brass playing-card suit pip on each of its corners (geometry.corner \"suit\", new in the generator), brass buttons with dark ink, crimson lacquer for danger and the card back. geometry.cards adds the card-game set: a card frame per card type (attack, skill, power, curse) in normal / hover / selected / disabled with the cost gem, name plate and rules box inside the 9-slice margins, a card back + emblem, a play-zone slot, an end-turn plaque, a turn banner, a price tag, a count badge, energy orbs, a block shield, four enemy-intent marks, four rarity gems, three pile icons and three booster packs. Every text-on-fill pair is re-measured by the gate.",
+  "geometry": {
+    "border": 4,
+    "radius": 2,
+    "shadow": 1,
+    "hdScale": 3,
+    "corner": "suit",
+    "coin": "disc",
+    "cards": true
+  },
+  "demo": {
+    "buttons": [
+      "Play",
+      "Deck",
+      "Forfeit",
+      "Locked"
+    ],
+    "checks": [
+      "Music",
+      "Fast mode"
+    ],
+    "toggle": "Auto end",
+    "slider": "Volume",
+    "field": "Deck name",
+    "options": [
+      "Standard",
+      "Draft",
+      "Endless"
+    ],
+    "tabs": [
+      "Relics",
+      "Deck",
+      "Map"
+    ],
+    "tooltip": "Exhaust: gone until the fight ends",
+    "speaker": "Dealer",
+    "lines": [
+      "The house deals first tonight.",
+      "Draw five and play what you can."
+    ],
+    "bars": [
+      "HpBar"
+    ],
+    "skip": [
+      "slider",
+      "field"
+    ],
+    "slotIcons": [
+      "rarity_common",
+      "rarity_uncommon",
+      "rarity_rare",
+      "rarity_legendary",
+      "block_badge",
+      "icon_coin",
+      "energy_spent",
+      "intent_unknown"
+    ]
+  },
+  "colors": {
+    "outline": "#140c0a",
+    "shadow": "#0a0605",
+    "track": "#0f2a1c",
+    "trackLight": "#173d29",
+    "backdrop": "#211715",
+    "cursorFill": "#fff3da",
+    "cursorShade": "#cdb58a",
+    "textDim": "#b8a88a",
+    "hp": [
+      "#5c1016",
+      "#c4363a",
+      "#f07a68"
+    ],
+    "mp": [
+      "#15306a",
+      "#3a6bd0",
+      "#90b8ff"
+    ],
+    "xp": [
+      "#5e4512",
+      "#d6a52b",
+      "#ffe07a"
+    ],
+    "stamina": [
+      "#1d5428",
+      "#4ea63a",
+      "#a6e278"
+    ],
+    "boss": [
+      "#3a1040",
+      "#8a2c88",
+      "#d777c8"
+    ],
+    "panelDarkFill": "#0d0806dc",
+    "cardAttack": [
+      "#4e1014",
+      "#a3302c",
+      "#e0806a"
+    ],
+    "cardSkill": [
+      "#123558",
+      "#2f6aa3",
+      "#8cc0ea"
+    ],
+    "cardPower": [
+      "#5a4210",
+      "#b88a2c",
+      "#efd085"
+    ],
+    "cardCurse": [
+      "#2a2030",
+      "#5a4a68",
+      "#a493b6"
+    ],
+    "cardPlate": [
+      "#2a1c12",
+      "#f0e4c6",
+      "#cdb98c"
+    ]
+  },
+  "families": {
+    "frame": {
+      "normal": {
+        "light": "#c98258",
+        "mid": "#8a3f24",
+        "dark": "#4a1d10",
+        "fill": "#1f5a3c",
+        "shade": "#174a31",
+        "text": "#f4ebd4"
+      },
+      "hover": {
+        "light": "#e0a078",
+        "mid": "#9e4a2b",
+        "dark": "#56220f",
+        "fill": "#246646",
+        "shade": "#1c5539",
+        "text": "#fff7e2"
+      },
+      "pressed": {
+        "light": "#c98258",
+        "mid": "#7a3520",
+        "dark": "#3c170c",
+        "fill": "#1a4f34",
+        "shade": "#13402a",
+        "text": "#f4ebd4"
+      },
+      "active": {
+        "light": "#f4d98a",
+        "mid": "#c49b3e",
+        "dark": "#6a4e15",
+        "fill": "#2a7350",
+        "shade": "#225f42",
+        "text": "#fff7e2"
+      },
+      "disabled": {
+        "light": "#8e7f77",
+        "mid": "#5e514b",
+        "dark": "#3a302c",
+        "fill": "#2e3933",
+        "shade": "#26302a",
+        "text": "#cbc5bb"
+      }
+    },
+    "accent": {
+      "normal": {
+        "light": "#f4d98a",
+        "mid": "#c49b3e",
+        "dark": "#6a4e15",
+        "fill": "#c9a043",
+        "shade": "#b08a33",
+        "text": "#24180a"
+      },
+      "hover": {
+        "light": "#fbe7a8",
+        "mid": "#d4ad52",
+        "dark": "#77591a",
+        "fill": "#d8b25a",
+        "shade": "#c49b3e",
+        "text": "#1e1408"
+      },
+      "pressed": {
+        "light": "#f4d98a",
+        "mid": "#ae8932",
+        "dark": "#574011",
+        "fill": "#b38d35",
+        "shade": "#9c7a2c",
+        "text": "#24180a"
+      },
+      "disabled": {
+        "light": "#d2c8aa",
+        "mid": "#a39a80",
+        "dark": "#625b4b",
+        "fill": "#a8a088",
+        "shade": "#968e78",
+        "text": "#29241b"
+      }
+    },
+    "danger": {
+      "normal": {
+        "light": "#e8806a",
+        "mid": "#a62e2a",
+        "dark": "#4f0f12",
+        "fill": "#861f24",
+        "shade": "#6e181d",
+        "text": "#fff1e0"
+      },
+      "hover": {
+        "light": "#f59c86",
+        "mid": "#bb3a33",
+        "dark": "#5c1216",
+        "fill": "#962528",
+        "shade": "#861f24",
+        "text": "#fff7ec"
+      },
+      "pressed": {
+        "light": "#e8806a",
+        "mid": "#8c2624",
+        "dark": "#3c0b0e",
+        "fill": "#701a1e",
+        "shade": "#5c1418",
+        "text": "#fff1e0"
+      },
+      "disabled": {
+        "light": "#9c8a88",
+        "mid": "#6a5757",
+        "dark": "#433638",
+        "fill": "#3a3032",
+        "shade": "#2f2729",
+        "text": "#d9cccc"
+      }
+    }
+  }
+}

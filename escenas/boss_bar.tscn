@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://timsqwegv7ee"]
+
+[ext_resource type="Script" uid="uid://cam4njia83y8e" path="res://escenas/boss_bar.gd" id="1_cxbuq"]
+
+[node name="BossBar" type="CanvasLayer" unique_id=1331358908]
+script = ExtResource("1_cxbuq")
+
+[node name="Raiz" type="Control" parent="." unique_id=1749428250]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Contenedor" type="VBoxContainer" parent="Raiz" unique_id=1323923431]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_right = 200.0
+offset_bottom = 59.0
+grow_horizontal = 2
+
+[node name="Nombre" type="Label" parent="Raiz/Contenedor" unique_id=1749283443]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Barra" type="ProgressBar" parent="Raiz/Contenedor" unique_id=1303490057]
+modulate = Color(0.81960785, 0, 0, 1)
+custom_minimum_size = Vector2(400, 16)
+layout_mode = 2
+value = 100.0
+show_percentage = false

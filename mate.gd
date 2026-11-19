@@ -2,7 +2,7 @@ extends Weapon
 
 func _ready() -> void:
 	super._ready()
-	damage = 12
+	damage = 1
 	stamina_cost = 12.0
 	attack_duration = 0.15  # rápido
 	cooldown = 0.1

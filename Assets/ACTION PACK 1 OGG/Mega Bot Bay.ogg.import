@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d4apgefylhbym"
+path="res://.godot/imported/Mega Bot Bay.ogg-3a94c739fedba38556f408a01e837cb4.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/ACTION PACK 1 OGG/Mega Bot Bay.ogg"
+dest_files=["res://.godot/imported/Mega Bot Bay.ogg-3a94c739fedba38556f408a01e837cb4.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,15 @@
+MATEÁLOS — Laboratorio 2 (Videojuegos, Paysandú 2026)
+Equipo: Federico Martini y Liam Texeira
+
+------------------------------------------------------------
+Repositorio de control de versiones (código fuente e historial de commits):
+
+    https://github.com/LiamTexeira/TallerVJ
+
+------------------------------------------------------------
+Juego jugable en el navegador (HTML5 / WebGL):
+
+    >>> COMPLETAR con el enlace de itch.io una vez publicado <<<
+
+(El export web debe abrirse servido por HTTP o desde itch.io; no funciona
+abriendo index.html con doble clic.)

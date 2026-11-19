@@ -1,0 +1,208 @@
+{
+  "schema": "csaf-uikit-theme/1",
+  "id": "night-terminal",
+  "name": "Night Terminal",
+  "note": "Kit 5 (2026-10-17): a dark sci-fi HUD theme. Cyan steel frames with 45-degree chamfered corners (geometry.cut) over deep navy panels, amber HUD corner ticks flanking every chamfer on the heavy frames (geometry.corner \"bracket\"), an amber accent family with dark ink for the main actions, a red danger family, and fixed-size segment cells for segmented shield and energy gauges (geometry.segments). For shooters, hacking and space games. Every text-on-fill pair is re-measured by the gate.",
+  "geometry": {
+    "border": 3,
+    "radius": 4,
+    "shadow": 1,
+    "hdScale": 3,
+    "style": "bevel",
+    "ornaments": true,
+    "corner": "bracket",
+    "cut": true,
+    "segments": true
+  },
+  "demo": {
+    "buttons": [
+      "Engage",
+      "Scan",
+      "Abort",
+      "Locked"
+    ],
+    "checks": [
+      "Night vision",
+      "Comms"
+    ],
+    "toggle": "Auto aim",
+    "slider": "Gain",
+    "field": "Access code",
+    "options": [
+      "Sector 7",
+      "Sector 9",
+      "Orbit"
+    ],
+    "tabs": [
+      "Systems",
+      "Cargo",
+      "Logs"
+    ],
+    "tooltip": "Plasma cell  x3",
+    "speaker": "Relay AI",
+    "lines": [
+      "Hull breach sealed. Oxygen at 64%.",
+      "Two contacts closing from the north."
+    ],
+    "gauges": [
+      [
+        "SHIELD",
+        "mp",
+        7
+      ],
+      [
+        "ENERGY",
+        "stamina",
+        4
+      ]
+    ]
+  },
+  "colors": {
+    "outline": "#05080d",
+    "shadow": "#020407",
+    "track": "#071019",
+    "trackLight": "#0f2130",
+    "backdrop": "#1b2c3e",
+    "cursorFill": "#8ff6ff",
+    "cursorShade": "#2aa8c0",
+    "textDim": "#7fa6b8",
+    "hp": [
+      "#7a0f22",
+      "#e8304e",
+      "#ff8ca0"
+    ],
+    "mp": [
+      "#0b4f7a",
+      "#1fa8e8",
+      "#9ee6ff"
+    ],
+    "xp": [
+      "#7a4a00",
+      "#f0a92a",
+      "#ffe08a"
+    ],
+    "stamina": [
+      "#1a5a2a",
+      "#3ccf6a",
+      "#a8ffbf"
+    ],
+    "boss": [
+      "#4a0f6a",
+      "#b03ae0",
+      "#e8a8ff"
+    ],
+    "panelDarkFill": "#050b12d0"
+  },
+  "families": {
+    "frame": {
+      "normal": {
+        "light": "#7fe9ff",
+        "mid": "#2a9fbf",
+        "dark": "#145a70",
+        "fill": "#0d1b28",
+        "shade": "#0a1520",
+        "text": "#d6f7ff"
+      },
+      "hover": {
+        "light": "#b0f4ff",
+        "mid": "#39b7d8",
+        "dark": "#1a6f88",
+        "fill": "#112536",
+        "shade": "#0d1b28",
+        "text": "#ffffff"
+      },
+      "pressed": {
+        "light": "#7fe9ff",
+        "mid": "#1f8aa8",
+        "dark": "#0e4558",
+        "fill": "#0a1520",
+        "shade": "#071019",
+        "text": "#d6f7ff"
+      },
+      "active": {
+        "light": "#b0f4ff",
+        "mid": "#39b7d8",
+        "dark": "#1a6f88",
+        "fill": "#0d1b28",
+        "shade": "#0a1520",
+        "text": "#ffffff"
+      },
+      "disabled": {
+        "light": "#5d7480",
+        "mid": "#3b4d57",
+        "dark": "#25323a",
+        "fill": "#121a20",
+        "shade": "#0e151a",
+        "text": "#a9bcc6"
+      }
+    },
+    "accent": {
+      "normal": {
+        "light": "#ffcf5c",
+        "mid": "#d48a10",
+        "dark": "#7a4a00",
+        "fill": "#f0a92a",
+        "shade": "#d8921a",
+        "text": "#1c1200"
+      },
+      "hover": {
+        "light": "#ffe08a",
+        "mid": "#e8a020",
+        "dark": "#8a5600",
+        "fill": "#ffbb40",
+        "shade": "#f0a92a",
+        "text": "#1c1200"
+      },
+      "pressed": {
+        "light": "#ffcf5c",
+        "mid": "#b87808",
+        "dark": "#6a4000",
+        "fill": "#d8921a",
+        "shade": "#b87808",
+        "text": "#1c1200"
+      },
+      "disabled": {
+        "light": "#7a6e58",
+        "mid": "#5a5040",
+        "dark": "#352e22",
+        "fill": "#3a3428",
+        "shade": "#2e2920",
+        "text": "#d2c6ac"
+      }
+    },
+    "danger": {
+      "normal": {
+        "light": "#ff7088",
+        "mid": "#d83050",
+        "dark": "#5a0818",
+        "fill": "#b0203a",
+        "shade": "#96182e",
+        "text": "#ffeef2"
+      },
+      "hover": {
+        "light": "#ff98aa",
+        "mid": "#e84462",
+        "dark": "#6a0c20",
+        "fill": "#c42844",
+        "shade": "#b0203a",
+        "text": "#ffffff"
+      },
+      "pressed": {
+        "light": "#ff7088",
+        "mid": "#b02040",
+        "dark": "#440510",
+        "fill": "#96182e",
+        "shade": "#7a1024",
+        "text": "#ffeef2"
+      },
+      "disabled": {
+        "light": "#806068",
+        "mid": "#56404a",
+        "dark": "#382a2e",
+        "fill": "#2a1a1e",
+        "shade": "#22161a",
+        "text": "#d0bcc2"
+      }
+    }
+  }
+}

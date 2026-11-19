@@ -1,0 +1,632 @@
+{
+  "schema": "csaf-uikit-atlas/1",
+  "theme": "codex-pages",
+  "themeName": "Codex Pages",
+  "mode": "pixel",
+  "unitPx": 1,
+  "image": "atlas.png",
+  "width": 256,
+  "height": 164,
+  "emptyRegion": {
+    "x": 255,
+    "y": 163,
+    "w": 1,
+    "h": 1
+  },
+  "widgets": [
+    {
+      "id": "panel_window",
+      "kind": "panel",
+      "w": 32,
+      "h": 32,
+      "axes": "hv",
+      "nineSlice": {
+        "l": 11,
+        "t": 11,
+        "r": 12,
+        "b": 12
+      },
+      "states": [
+        {
+          "name": "normal",
+          "x": 134,
+          "y": 2,
+          "w": 32,
+          "h": 32,
+          "sprite": "sprites/panel_window__normal.png",
+          "textColor": "#2e1c10"
+        }
+      ]
+    },
+    {
+      "id": "panel_header",
+      "kind": "panel",
+      "w": 32,
+      "h": 16,
+      "axes": "hv",
+      "nineSlice": {
+        "l": 4,
+        "t": 5,
+        "r": 5,
+        "b": 5
+      },
+      "states": [
+        {
+          "name": "normal",
+          "x": 216,
+          "y": 84,
+          "w": 32,
+          "h": 16,
+          "sprite": "sprites/panel_header__normal.png",
+          "textColor": "#fbf3dc"
+        }
+      ]
+    },
+    {
+      "id": "dialogue_box",
+      "kind": "panel",
+      "w": 64,
+      "h": 28,
+      "axes": "hv",
+      "nineSlice": {
+        "l": 12,
+        "t": 12,
+        "r": 13,
+        "b": 13
+      },
+      "states": [
+        {
+          "name": "normal",
+          "x": 168,
+          "y": 2,
+          "w": 64,
+          "h": 28,
+          "sprite": "sprites/dialogue_box__normal.png",
+          "textColor": "#2e1c10"
+        }
+      ]
+    },
+    {
+      "id": "nameplate",
+      "kind": "panel",
+      "w": 36,
+      "h": 12,
+      "axes": "hv",
+      "nineSlice": {
+        "l": 3,
+        "t": 4,
+        "r": 4,
+        "b": 4
+      },
+      "states": [
+        {
+          "name": "normal",
+          "x": 212,
+          "y": 132,
+          "w": 36,
+          "h": 12,
+          "sprite": "sprites/nameplate__normal.png",
+          "textColor": "#fbf3dc"
+        }
+      ]
+    },
+    {
+      "id": "bar_frame",
+      "kind": "bar",
+      "w": 40,
+      "h": 8,
+      "axes": "h",
+      "nineSlice": {
+        "l": 3,
+        "t": 0,
+        "r": 3,
+        "b": 0
+      },
+      "states": [
+        {
+          "name": "normal",
+          "x": 122,
+          "y": 148,
+          "w": 40,
+          "h": 8,
+          "sprite": "sprites/bar_frame__normal.png"
+        }
+      ]
+    },
+    {
+      "id": "bar_hp_fill",
+      "kind": "bar",
+      "w": 36,
+      "h": 4,
+      "axes": "h",
+      "nineSlice": {
+        "l": 1,
+        "t": 0,
+        "r": 1,
+        "b": 0
+      },
+      "states": [
+        {
+          "name": "normal",
+          "x": 191,
+          "y": 148,
+          "w": 36,
+          "h": 4,
+          "sprite": "sprites/bar_hp_fill__normal.png"
+        }
+      ]
+    },
+    {
+      "id": "button_primary",
+      "kind": "button",
+      "w": 40,
+      "h": 16,
+      "axes": "hv",
+      "nineSlice": {
+        "l": 5,
+        "t": 6,
+        "r": 6,
+        "b": 6
+      },
+      "states": [
+        {
+          "name": "normal",
+          "x": 48,
+          "y": 84,
+          "w": 40,
+          "h": 16,
+          "sprite": "sprites/button_primary__normal.png",
+          "textColor": "#fbf3dc"
+        },
+        {
+          "name": "hover",
+          "x": 90,
+          "y": 84,
+          "w": 40,
+          "h": 16,
+          "sprite": "sprites/button_primary__hover.png",
+          "textColor": "#fffaea"
+        },
+        {
+          "name": "pressed",
+          "x": 132,
+          "y": 84,
+          "w": 40,
+          "h": 16,
+          "sprite": "sprites/button_primary__pressed.png",
+          "textColor": "#fbf3dc"
+        },
+        {
+          "name": "disabled",
+          "x": 174,
+          "y": 84,
+          "w": 40,
+          "h": 16,
+          "sprite": "sprites/button_primary__disabled.png",
+          "textColor": "#41465a"
+        }
+      ]
+    },
+    {
+      "id": "cursor_pointer",
+      "kind": "cursor",
+      "w": 10,
+      "h": 14,
+      "axes": null,
+      "nineSlice": null,
+      "states": [
+        {
+          "name": "normal",
+          "x": 150,
+          "y": 132,
+          "w": 10,
+          "h": 14,
+          "sprite": "sprites/cursor_pointer__normal.png"
+        }
+      ]
+    },
+    {
+      "id": "cursor_select",
+      "kind": "cursor",
+      "w": 6,
+      "h": 9,
+      "axes": null,
+      "nineSlice": null,
+      "states": [
+        {
+          "name": "normal",
+          "x": 114,
+          "y": 148,
+          "w": 6,
+          "h": 9,
+          "sprite": "sprites/cursor_select__normal.png"
+        }
+      ]
+    },
+    {
+      "id": "advance_arrow",
+      "kind": "anim",
+      "w": 7,
+      "h": 6,
+      "axes": null,
+      "nineSlice": null,
+      "states": [
+        {
+          "name": "frame0",
+          "x": 173,
+          "y": 148,
+          "w": 7,
+          "h": 6,
+          "sprite": "sprites/advance_arrow__frame0.png"
+        },
+        {
+          "name": "frame1",
+          "x": 182,
+          "y": 148,
+          "w": 7,
+          "h": 6,
+          "sprite": "sprites/advance_arrow__frame1.png"
+        }
+      ]
+    },
+    {
+      "id": "heart_full",
+      "kind": "icon",
+      "w": 7,
+      "h": 7,
+      "axes": null,
+      "nineSlice": null,
+      "states": [
+        {
+          "name": "normal",
+          "x": 164,
+          "y": 148,
+          "w": 7,
+          "h": 7,
+          "sprite": "sprites/heart_full__normal.png"
+        }
+      ]
+    },
+    {
+      "id": "page_left",
+      "kind": "panel",
+      "w": 64,
+      "h": 80,
+      "axes": "hv",
+      "nineSlice": {
+        "l": 9,
+        "t": 9,
+        "r": 5,
+        "b": 10
+      },
+      "states": [
+        {
+          "name": "normal",
+          "x": 2,
+          "y": 2,
+          "w": 64,
+          "h": 80,
+          "sprite": "sprites/page_left__normal.png",
+          "textColor": "#2e1c10"
+        }
+      ]
+    },
+    {
+      "id": "page_right",
+      "kind": "panel",
+      "w": 64,
+      "h": 80,
+      "axes": "hv",
+      "nineSlice": {
+        "l": 5,
+        "t": 9,
+        "r": 9,
+        "b": 10
+      },
+      "states": [
+        {
+          "name": "normal",
+          "x": 68,
+          "y": 2,
+          "w": 64,
+          "h": 80,
+          "sprite": "sprites/page_right__normal.png",
+          "textColor": "#2e1c10"
+        }
+      ]
+    },
+    {
+      "id": "bookmark_red",
+      "kind": "tab",
+      "w": 9,
+      "h": 28,
+      "axes": "v",
+      "nineSlice": {
+        "l": 0,
+        "t": 3,
+        "r": 0,
+        "b": 5
+      },
+      "states": [
+        {
+          "name": "normal",
+          "x": 234,
+          "y": 2,
+          "w": 9,
+          "h": 28,
+          "sprite": "sprites/bookmark_red__normal.png"
+        },
+        {
+          "name": "hover",
+          "x": 245,
+          "y": 2,
+          "w": 9,
+          "h": 28,
+          "sprite": "sprites/bookmark_red__hover.png"
+        },
+        {
+          "name": "active",
+          "x": 2,
+          "y": 84,
+          "w": 9,
+          "h": 28,
+          "sprite": "sprites/bookmark_red__active.png"
+        },
+        {
+          "name": "disabled",
+          "x": 13,
+          "y": 84,
+          "w": 9,
+          "h": 28,
+          "sprite": "sprites/bookmark_red__disabled.png"
+        }
+      ]
+    },
+    {
+      "id": "edge_tab_blue",
+      "kind": "tab",
+      "w": 26,
+      "h": 12,
+      "axes": "h",
+      "nineSlice": {
+        "l": 4,
+        "t": 0,
+        "r": 5,
+        "b": 0
+      },
+      "states": [
+        {
+          "name": "normal",
+          "x": 2,
+          "y": 148,
+          "w": 26,
+          "h": 12,
+          "sprite": "sprites/edge_tab_blue__normal.png",
+          "textColor": "#2e1c10"
+        },
+        {
+          "name": "hover",
+          "x": 30,
+          "y": 148,
+          "w": 26,
+          "h": 12,
+          "sprite": "sprites/edge_tab_blue__hover.png",
+          "textColor": "#2e1c10"
+        },
+        {
+          "name": "active",
+          "x": 58,
+          "y": 148,
+          "w": 26,
+          "h": 12,
+          "sprite": "sprites/edge_tab_blue__active.png",
+          "textColor": "#2e1c10"
+        },
+        {
+          "name": "disabled",
+          "x": 86,
+          "y": 148,
+          "w": 26,
+          "h": 12,
+          "sprite": "sprites/edge_tab_blue__disabled.png",
+          "textColor": "#4e453d"
+        }
+      ]
+    },
+    {
+      "id": "quest_entry",
+      "kind": "slot",
+      "w": 72,
+      "h": 14,
+      "axes": "h",
+      "nineSlice": {
+        "l": 13,
+        "t": 0,
+        "r": 2,
+        "b": 0
+      },
+      "states": [
+        {
+          "name": "normal",
+          "x": 99,
+          "y": 114,
+          "w": 72,
+          "h": 14,
+          "sprite": "sprites/quest_entry__normal.png",
+          "textColor": "#2e1c10"
+        },
+        {
+          "name": "hover",
+          "x": 173,
+          "y": 114,
+          "w": 72,
+          "h": 14,
+          "sprite": "sprites/quest_entry__hover.png",
+          "textColor": "#2e1c10"
+        },
+        {
+          "name": "selected",
+          "x": 2,
+          "y": 132,
+          "w": 72,
+          "h": 14,
+          "sprite": "sprites/quest_entry__selected.png",
+          "textColor": "#2e1c10"
+        },
+        {
+          "name": "disabled",
+          "x": 76,
+          "y": 132,
+          "w": 72,
+          "h": 14,
+          "sprite": "sprites/quest_entry__disabled.png",
+          "textColor": "#4e453d"
+        }
+      ]
+    },
+    {
+      "id": "stamp_active",
+      "kind": "icon",
+      "w": 13,
+      "h": 13,
+      "axes": null,
+      "nineSlice": null,
+      "states": [
+        {
+          "name": "normal",
+          "x": 182,
+          "y": 132,
+          "w": 13,
+          "h": 13,
+          "sprite": "sprites/stamp_active__normal.png"
+        }
+      ]
+    },
+    {
+      "id": "stamp_done",
+      "kind": "icon",
+      "w": 13,
+      "h": 13,
+      "axes": null,
+      "nineSlice": null,
+      "states": [
+        {
+          "name": "normal",
+          "x": 197,
+          "y": 132,
+          "w": 13,
+          "h": 13,
+          "sprite": "sprites/stamp_done__normal.png"
+        }
+      ]
+    },
+    {
+      "id": "wax_seal",
+      "kind": "icon",
+      "w": 15,
+      "h": 15,
+      "axes": null,
+      "nineSlice": null,
+      "states": [
+        {
+          "name": "normal",
+          "x": 82,
+          "y": 114,
+          "w": 15,
+          "h": 15,
+          "sprite": "sprites/wax_seal__normal.png"
+        }
+      ]
+    },
+    {
+      "id": "cursor_quill",
+      "kind": "cursor",
+      "w": 12,
+      "h": 16,
+      "axes": null,
+      "nineSlice": null,
+      "states": [
+        {
+          "name": "normal",
+          "x": 2,
+          "y": 114,
+          "w": 12,
+          "h": 16,
+          "sprite": "sprites/cursor_quill__normal.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter_heading",
+      "kind": "panel",
+      "w": 64,
+      "h": 15,
+      "axes": "h",
+      "nineSlice": {
+        "l": 8,
+        "t": 0,
+        "r": 8,
+        "b": 0
+      },
+      "states": [
+        {
+          "name": "normal",
+          "x": 16,
+          "y": 114,
+          "w": 64,
+          "h": 15,
+          "sprite": "sprites/chapter_heading__normal.png",
+          "textColor": "#2e1c10"
+        }
+      ]
+    },
+    {
+      "id": "page_number",
+      "kind": "panel",
+      "w": 18,
+      "h": 13,
+      "axes": "hv",
+      "nineSlice": {
+        "l": 5,
+        "t": 4,
+        "r": 5,
+        "b": 4
+      },
+      "states": [
+        {
+          "name": "normal",
+          "x": 162,
+          "y": 132,
+          "w": 18,
+          "h": 13,
+          "sprite": "sprites/page_number__normal.png",
+          "textColor": "#2e1c10"
+        }
+      ]
+    },
+    {
+      "id": "drop_cap",
+      "kind": "panel",
+      "w": 22,
+      "h": 22,
+      "axes": "hv",
+      "nineSlice": {
+        "l": 6,
+        "t": 6,
+        "r": 6,
+        "b": 6
+      },
+      "states": [
+        {
+          "name": "normal",
+          "x": 24,
+          "y": 84,
+          "w": 22,
+          "h": 22,
+          "sprite": "sprites/drop_cap__normal.png",
+          "textColor": "#f8eed4"
+        }
+      ]
+    }
+  ]
+}
